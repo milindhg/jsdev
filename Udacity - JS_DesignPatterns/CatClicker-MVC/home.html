@@ -1,39 +1,60 @@
 <html>
 
-    <head>
-        <title>The Cat Clicker Project </title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    </head>
+<head>
+<title>The Cat Clicker Project</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+</head>
 
-    <body>
-        <div class='container-fluid center-block'>
-            <div class="row">
-                <div class="col-md-2" "col-xs-12">
-                    Cat Listing Area
-                    <table id="cat-list" class="table table-hover table-responsive">
-                    </table>
-                </div>
-                <div id="cat" class="col-md-8 col-xs-12 center-block">
-                    Cat Display Area
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 center-block">
-                            <h2 id="cat-name">Fluffy</h2>
-                            <h3 id="cat-count">Click Count: </h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 center-block">
-                            <img src="" class="img-responsive img-rounded" alt="cute cat" id="cat-image" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" src="scripts\app.js">
-        </script>
-    </body>
+<body>
+	<div class='container-fluid center-block'>
+		<div class="row">
+			<div class="col-md-2""col-xs-12">
+				Cat Listing Area
+				<table id="cat-list" class="table table-hover table-responsive">
+				</table>
+			</div>
+			<div id="cat" class="col-md-10 col-xs-12 center-block">
+				Cat Display Area
+				<div class="row">
+					<div class="col-md-12 col-xs-12 center-block">
+						<h2 id="cat-name" align="center">Fluffy</h2>
+						<h3 id="cat-count" align="center">Click Count:</h3>
+					</div>
+				</div>
+				<div class="row" align="center">
+					<div class="col-md-12 col-xs-12">
+						<img src="" class="img-responsive img-rounded center-block"
+							alt="cute cat" id="cat-image" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-xs-12" align="center">
+						<input id="admin-button" class="center-block" type="button"
+							value="Admin" />
+					</div>
+					<div class="col-md-8 col-xs-12" align="center">
+						<form id="admin-form">
+							<label>Name: </label> <input id="name-field" value="" /> <label>Click
+								Count: </label> <input id="click-cnt-field" value="" /> <br /> <input
+								id="save-button" type="button" value="Save" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="scripts\app.js">
+	
+    </script>
+</body>
 
 </html>
