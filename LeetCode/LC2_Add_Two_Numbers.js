@@ -14,7 +14,7 @@
  * Definition for singly-linked list. function ListNode(val) { this.val = val; this.next = null; }
  */
 
-function ListNode(val) {
+function ListNode (val) {
     this.val = val;
     this.next = null;
 }
@@ -24,119 +24,119 @@ function ListNode(val) {
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = function (l1, l2) {
     var l3;
     var carry = 0;
     var l3Head;
     while (l1 !== null && l2 !== null) {
-	var num = l1.val + l2.val + carry;
-	carry = 0;
-	if (num > 9) {
-	    carry = 1;
-	    num = num % 10;
-	}
-	if (l3 === undefined || l3 === null) {
-	    l3 = new ListNode(num);
-	    l3Head = l3;
-	} else {
-	    l3.next = new ListNode(num);
-	    l3 = l3.next;
-	}
-	l1 = l1.next;
-	l2 = l2.next;
+        var num = l1.val + l2.val + carry;
+        carry = 0;
+        if (num > 9) {
+            carry = 1;
+            num = num % 10;
+        }
+        if (l3 === undefined || l3 === null) {
+            l3 = new ListNode(num);
+            l3Head = l3;
+        } else {
+            l3.next = new ListNode(num);
+            l3 = l3.next;
+        }
+        l1 = l1.next;
+        l2 = l2.next;
     }
     if (l1 !== null) {
-	while (l1 !== null) {
-	    num = l1.val + carry;
-	    carry = 0;
-	    if (num > 9) {
-		carry = 1;
-		num = num % 10;
-	    }
-	    if (l3 === undefined || l3 === null) {
-		l3 = new ListNode(num);
-		l3Head = l3;
-	    } else {
-		l3.next = new ListNode(num);
-		l3 = l3.next;
-	    }
-	    l1 = l1.next;
-	}
+        while (l1 !== null) {
+            num = l1.val + carry;
+            carry = 0;
+            if (num > 9) {
+                carry = 1;
+                num = num % 10;
+            }
+            if (l3 === undefined || l3 === null) {
+                l3 = new ListNode(num);
+                l3Head = l3;
+            } else {
+                l3.next = new ListNode(num);
+                l3 = l3.next;
+            }
+            l1 = l1.next;
+        }
     }
     if (l2 !== null) {
-	while (l2 !== null) {
-	    num = l2.val + carry;
-	    carry = 0;
-	    if (num > 9) {
-		carry = 1;
-		num = num % 10;
-	    }
-	    if (l3 === undefined || l3 === null) {
-		l3 = new ListNode(num);
-		l3Head = l3;
-	    } else {
-		l3.next = new ListNode(num);
-		l3 = l3.next;
-	    }
-	    l2 = l2.next;
-	}
+        while (l2 !== null) {
+            num = l2.val + carry;
+            carry = 0;
+            if (num > 9) {
+                carry = 1;
+                num = num % 10;
+            }
+            if (l3 === undefined || l3 === null) {
+                l3 = new ListNode(num);
+                l3Head = l3;
+            } else {
+                l3.next = new ListNode(num);
+                l3 = l3.next;
+            }
+            l2 = l2.next;
+        }
     }
     if (carry > 0) {
-	l3.next = new ListNode(carry);
-	l3 = l3.next;
+        l3.next = new ListNode(carry);
+        l3 = l3.next;
     }
     return l3Head;
 };
 
-var printList = function(list) {
+var printList = function (list) {
     var trav = list;
     var output = "";
     while (trav.next !== null) {
-	output += trav.val + " -> ";
-	trav = trav.next;
+        output += trav.val + " -> ";
+        trav = trav.next;
     }
     output += trav.val;
     console.log(output);
 };
 
-var reverse = function(list) {
+var reverse = function (list) {
     var prev = null;
     var trav = list;
     var nextnode = list.next;
     while (nextnode !== null) {
-	// console.log(trav.val);
-	trav.next = prev;
-	prev = trav;
-	trav = nextnode;
-	nextnode = trav.next;
+        // console.log(trav.val);
+        trav.next = prev;
+        prev = trav;
+        trav = nextnode;
+        nextnode = trav.next;
     }
     trav.next = prev;
     return trav;
 }
 
-var main = function() {
+var main = function () {
     var list = new ListNode(10);
     var head = list;
     for (var i = 2; i < 7; i++) {
-	list.next = new ListNode(i * 10);
-	list = list.next;
+        list.next = new ListNode(i * 10);
+        list = list.next;
     }
     head = reverse(head);
-    
+
     l1 = new ListNode(2);
     l1head = l1;
     l1.next = new ListNode(4);
     l1 = l1.next;
     l1.next = new ListNode(3);
     printList(l1head);
-    
+
     l2 = new ListNode(5);
     l2head = l2;
     l2.next = new ListNode(6);
     l2 = l2.next;
     l2.next = new ListNode(4);
     printList(l2head);
-    
+
     var l3 = addTwoNumbers(l1head, l2head);
     printList(l3);
 }

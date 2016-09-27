@@ -14,37 +14,37 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function ( nums, val ) {
-	var i = 0;
-	var j = nums.length - 1;
-	while ( nums[ j ] == val ) {
-		j -= 1;
-	}
-	while ( i <= j && j >= 0 ) {
-		if ( nums[ i ] == val ) {
-			var temp = nums[ i ];
-			nums[ i ] = nums[ j ];
-			nums[ j ] = temp;
-			i += 1;
-			j -= 1;
-			while ( nums[ j ] == val && j >= 0 ) {
-				j -= 1;
-			}
-			// console.log( i );
-			// console.log( j );
-			// console.log( nums );
-		} else {
-			i += 1;
-		}
-	}
-	// console.log(i);
-	// console.log(j);
-	// console.log(nums);
-	while ( nums[ j ] == val && j >= 0 ) {
-		j -= 1;
-	}
-	return j + 1;
+var removeElement = function (nums, val) {
+    var i = 0;
+    var j = nums.length - 1;
+    while (nums[j] == val) {
+        j -= 1;
+    }
+    while (i <= j && j >= 0) {
+        if (nums[i] == val) {
+            var temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i += 1;
+            j -= 1;
+            while (nums[j] == val && j >= 0) {
+                j -= 1;
+            }
+            // console.log( i );
+            // console.log( j );
+            // console.log( nums );
+        } else {
+            i += 1;
+        }
+    }
+    // console.log(i);
+    // console.log(j);
+    // console.log(nums);
+    while (nums[j] == val && j >= 0) {
+        j -= 1;
+    }
+    return j + 1;
 };
 
 // console.log( removeElement( [4,2,0,2,2,1,4,4,1,4,3,2], 4 ) );
-console.log( removeElement( [], 0 ) );
+console.log(removeElement([], 0));

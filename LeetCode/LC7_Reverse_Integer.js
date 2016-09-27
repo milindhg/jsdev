@@ -19,27 +19,27 @@ For the purpose of this problem, assume that your function returns 0 when the re
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
+var reverse = function (x) {
     var outputnumber = 0;
     var negflag = false;
     if (x < 0) {
-	x *= -1;
-	negflag = true;
+        x *= -1;
+        negflag = true;
     }
     while (x > 0) {
-	outputnumber = outputnumber * 10 + (x % 10);
-	x = Math.floor(x / 10);
+        outputnumber = outputnumber * 10 + (x % 10);
+        x = Math.floor(x / 10);
     }
     if (outputnumber > Math.pow(2, 31)) {
-	return 0;
+        return 0;
     }
     if (negflag) {
-	outputnumber *= -1;
+        outputnumber *= -1;
     }
     return outputnumber;
 };
 
-var main = function() {
+var main = function () {
     var inputnumber = -100000;
     console.log(reverse(inputnumber));
 }

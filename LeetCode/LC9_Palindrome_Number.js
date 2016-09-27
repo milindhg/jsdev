@@ -20,38 +20,53 @@ Best way then is to do / and % operations to compare first and last digit every 
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
-    if(typeof(x)!=typeof(1)){
-	return false;
+var isPalindrome = function (x) {
+    // should be a number in input.
+    if (typeof (x) != typeof (1)) {
+        return false;
     }
+
+    // should not be a negative number.
     if (x < 0) {
-	return false;
+        return false;
     }
+
+    // if single digit positive number then return true
     if (x < 10) {
-	return true;
+        return true;
     }
+
+    // prepare divider
     var divider = 1;
     while (Math.floor(x / divider) >= 10) {
-	divider *= 10;
+        divider *= 10;
     }
+    // console.log(divider);
 
     var front, end;
     while (x > 0) {
-	front = Math.floor(x / divider);
-	end = x % 10;
-	if (front != end) {
-	    return false;
-	}
-	x = Math.floor((x % divider) / 10);
-	divider = Math.floor(divider / 100);
+        // get first and last digit everytime and compare them.
+        front = Math.floor(x / divider);
+        end = x % 10;
+        console.log("front=" + front + " end=" + end);
+        if (front != end) {
+            return false;
+        }
+
+        // update the input number and divider by removing the first and the last digits compared
+        // already.
+        x = Math.floor((x % divider) / 10);
+        divider = Math.floor(divider / 100);
+        console.log("x=" + x + " divider=" + divider);
     }
-    
+
     return true;
 };
 
-var main = function() {
-    var inputnumber = 121;
+var main = function () {
+    var inputnumber = 1020201;
+    console.log("Hi");
     console.log(isPalindrome(inputnumber));
-}
+};
 
 main();

@@ -19,43 +19,43 @@ Solution: First, depending on number of rows given, create empty lists of numRow
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
+var convert = function (s, numRows) {
     if (numRows < 2) {
-	return s;
+        return s;
     }
     var arraymatrix = [];
     for (var i = 0; i < numRows; i++) {
-	arraymatrix.push([]);
+        arraymatrix.push([]);
     }
     var rowToPushTo = 0;
     var rowFlowUp = true;
-       
+
     for ( var c in s) {
-	console.log(rowToPushTo);
-	arraymatrix[rowToPushTo].push(s[c]);
-	if (rowFlowUp) {
-	    rowToPushTo += 1;
-	} else {
-	    rowToPushTo -= 1;
-	}
-	if (rowToPushTo == numRows-1) {
-	    rowFlowUp = false;
-	} else if(rowToPushTo==0){
-	    rowFlowUp = true;
-	}
-	
+        console.log(rowToPushTo);
+        arraymatrix[rowToPushTo].push(s[c]);
+        if (rowFlowUp) {
+            rowToPushTo += 1;
+        } else {
+            rowToPushTo -= 1;
+        }
+        if (rowToPushTo == numRows - 1) {
+            rowFlowUp = false;
+        } else if (rowToPushTo == 0) {
+            rowFlowUp = true;
+        }
+
     }
     var outputstring = "";
     for ( var i in arraymatrix) {
-	for ( var j in arraymatrix[i]) {
-	    outputstring += arraymatrix[i][j];
-	}
+        for ( var j in arraymatrix[i]) {
+            outputstring += arraymatrix[i][j];
+        }
     }
     return outputstring;
 
 };
 
-var main = function() {
+var main = function () {
     var inputstring = 'PAYPALISHIRING';
     var numRows = 4;
     console.log(convert(inputstring, numRows));
