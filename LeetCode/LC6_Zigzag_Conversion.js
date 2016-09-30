@@ -31,7 +31,7 @@ var convert = function (s, numRows) {
     var rowFlowUp = true;
 
     for ( var c in s) {
-        console.log(rowToPushTo);
+        //console.log(rowToPushTo);
         arraymatrix[rowToPushTo].push(s[c]);
         if (rowFlowUp) {
             rowToPushTo += 1;
@@ -40,15 +40,15 @@ var convert = function (s, numRows) {
         }
         if (rowToPushTo == numRows - 1) {
             rowFlowUp = false;
-        } else if (rowToPushTo == 0) {
+        } else if (rowToPushTo === 0) {
             rowFlowUp = true;
         }
 
     }
     var outputstring = "";
-    for ( var i in arraymatrix) {
-        for ( var j in arraymatrix[i]) {
-            outputstring += arraymatrix[i][j];
+    for ( var x in arraymatrix) {
+        for ( var y in arraymatrix[x]) {
+            outputstring += arraymatrix[x][y];
         }
     }
     return outputstring;
@@ -59,6 +59,6 @@ var main = function () {
     var inputstring = 'PAYPALISHIRING';
     var numRows = 4;
     console.log(convert(inputstring, numRows));
-}
+};
 
 main();
