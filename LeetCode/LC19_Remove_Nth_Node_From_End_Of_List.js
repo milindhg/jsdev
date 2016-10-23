@@ -27,7 +27,7 @@ var removeNthFromEnd = function (head, n) {
     var slownode = head;
     var prev = null;
 
-    // Move the fast pointer n places ahead to get the nth plac efrom last element after this.
+    // Move the fast pointer n places ahead to get the nth place from last element after this.
     while (n > 0) {
         fastnode = fastnode.next;
         n--;
@@ -36,7 +36,7 @@ var removeNthFromEnd = function (head, n) {
     // Check if it is last element from the last element
     // i.e. first element from front to be removed.
     // Then simply remove the first element and return remaining list.
-    if (fastnode == null) {
+    if (fastnode === null) {
         head = slownode.next;
         return head;
     }
@@ -50,7 +50,7 @@ var removeNthFromEnd = function (head, n) {
     }
 
     // check whether is is the first element of a single element list to be removed.
-    if (prev == null) {
+    if (prev === null) {
         return null;
     } else {
         prev.next = slownode.next;
