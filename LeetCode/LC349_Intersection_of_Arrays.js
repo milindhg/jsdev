@@ -1,5 +1,5 @@
 /*
-
+https://leetcode.com/problems/intersection-of-two-arrays/?tab=Description
 Given two arrays, write a function to compute their intersection.
 
 Example:
@@ -10,6 +10,11 @@ Each element in the result must be unique.
 The result can be in any order.
 
 
+*/
+/*
+Solution:   https://leetcode.com/submissions/detail/93626481/
+            First traverse through first array and keep all the numbers in a hashmap.
+            Then traverse through other array and compare with the elements in the first array.
 */
 
 /**
@@ -32,8 +37,8 @@ var intersection = function (nums1, nums2) {
     }
 
     ans = [];
-    for ( var k in hm2) {
-        ans.push(parseInt(k));
+    for ( var key in hm2) {
+        ans.push(parseInt(key));
     }
     return ans;
 };

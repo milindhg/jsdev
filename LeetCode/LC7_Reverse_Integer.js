@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/reverse-integer/?tab=Description
 Reverse digits of an integer.
 
 Example1: x = 123, return 321
@@ -13,6 +14,12 @@ If the integer's last digit is 0, what should the output be? ie, cases such as 1
 Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?
 
 For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+*/
+/*
+Solution:   https://leetcode.com/submissions/detail/74600935/
+            output = output*10 + (num%10)
+            !!!Here keep in mind that number can overflow, so 2^31 power check should be present. If number overflows, then return 0
+            Also the number can be positive as well as negative. In case of negative, keep a flag and work on positive number. Later make the output result negative again and return.
 */
 
 /**

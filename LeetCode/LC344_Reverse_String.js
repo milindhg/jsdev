@@ -1,6 +1,15 @@
 /**
- * Reverse String
+https://leetcode.com/problems/reverse-string/?tab=Description
+Reverse String
  */
+
+/*
+Solution:   https://leetcode.com/submissions/detail/93616598/
+            beats 98% of js submissions.
+            Very easy and efficient with 2 pointers. 
+            1 from start and 1 from end. 
+            Keep swapping numbers till the middle of the string.
+*/
 
 /**
  * @param {string} s

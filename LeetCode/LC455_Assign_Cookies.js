@@ -1,5 +1,5 @@
 /*
-
+https://leetcode.com/problems/assign-cookies/?tab=Description
 Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size sj. If sj >= gi, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.
 
 Note:
@@ -25,6 +25,13 @@ Explanation: You have 2 children and 3 cookies. The greed factors of 2 children 
 You have 3 cookies and their sizes are big enough to gratify all of the children, 
 You need to output 2.
 
+*/
+/*
+Solution:   https://leetcode.com/submissions/detail/83271193/
+            Sort both the arrays of children greed factor and cookie sizes.
+            Then start from the end of both the arrays and keep checking if cookie size is greater than child greed factor.
+            If satisfied, increase satisfied children count and decrease both indices.
+            If not satisfied, decrease the children greed factor index so that with the current cookie size we may be able to satisfy next child with slightly less greed factor.
 */
 
 /**

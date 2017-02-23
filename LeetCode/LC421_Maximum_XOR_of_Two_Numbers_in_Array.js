@@ -16,6 +16,10 @@ Explanation: The maximum result is 5 ^ 25 = 28.
 
 */
 
+Solution:   
+
+
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -72,6 +76,7 @@ var findMaxNumInArray = function (nums) {
 
 var main = function () {
     nums = [ 10, 23, 20, 18, 28 ];
+    nums = [ 8, 10, 2];
     //answer 30
     console.log(findMaximumXOR(nums));
     console.log(findMaximumXOR_NSquare(nums));

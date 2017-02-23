@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/count-and-say/?tab=Description
 The count-and-say sequence is the sequence of integers beginning as follows:
 1, 11, 21, 1211, 111221, ...
 
@@ -9,6 +10,11 @@ Given an integer n, generate the nth sequence.
 
 Note: The sequence of integers will be represented as a string.
 
+*/
+/*
+Solution:   https:// leetcode.com/submissions/detail/77985323/
+            Solution is basically to go over each character digit, count it and prepare an answer to be given back.
+            Do this literally for each digit in the given input. Keep counting till the digit does not change. When digit changes, append count and digit to the output answer.
 */
 
 /**
@@ -50,6 +56,15 @@ var calcCount = function (n) {
     }
 }
 
+/**
+ * @param {string} stringN
+ * @return {string} output
+ * @logic: This function reads each character in the string and keeps a count of the digit. When
+ *         next digit or end of string is found, then it adds the count and digit for the last digit
+ *         and returns the output well formed. example: input 1221 will give output as 112211
+ * 
+ * 
+ */
 var parseAndPrepare = function (stringN) {
     var countCurrDigit = 0;
     var currDigit = stringN[0];
@@ -69,7 +84,7 @@ var parseAndPrepare = function (stringN) {
 
 var main = function () {
     var n = 8;
-    // console.log(parseAndPrepare("312211"));
+    console.log(parseAndPrepare("1220"));
     console.log(countAndSay(n));
 }
 

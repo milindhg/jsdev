@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+// https://leetcode.com/problems/swap-nodes-in-pairs/?tab=Description
 // Given a linked list, swap every two adjacent nodes and return its head.
 //
 // For example,
@@ -9,8 +9,6 @@
 //
 // Your algorithm should use only constant space. You may not modify the values in the list, only
 // nodes itself can be changed.
-
-
 // Definition for singly-linked list.
 function ListNode (val) {
     this.val = val;
@@ -37,9 +35,19 @@ var swapPairs = function (head) {
     return head;
 };
 
+var swapPairsRecursive = function (head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+    var n = head.next;
+    head.next = swapPairsRecursive(head.next.next);
+    n.next = head;
+    return n;
+}
+
 var printList = function (head) {
     var str = "";
-    if(head===null) {
+    if (head === null) {
         console.log(head);
         return str;
     }
@@ -65,7 +73,7 @@ var swap = function (prev, node1, node2) {
 }
 
 var main = function () {
-    //var nums = [ 1, 2, 3, 4 ];
+    // var nums = [ 1, 2, 3, 4 ];
     var nums = [];
     var head = null;
     for ( var i in nums) {
@@ -78,7 +86,7 @@ var main = function () {
         }
     }
     printList(head);
-    head=swapPairs(head);
+    head = swapPairs(head);
     printList(head);
 }
 

@@ -1,5 +1,5 @@
 /*
-
+https://leetcode.com/problems/intersection-of-two-arrays-ii/?tab=Description
 Given two arrays, write a function to compute their intersection.
 
 Example:
@@ -13,6 +13,10 @@ What if the given array is already sorted? How would you optimize your algorithm
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
         
+*/
+/*
+Solution:   https:// leetcode.com/submissions/detail/83274124/
+            The solution is very easy with a hashmap with the number from array as key and the number of times it is found as the value.
 */
 
 /**

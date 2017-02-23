@@ -1,5 +1,5 @@
 /*
-
+https://leetcode.com/problems/counting-bits/?tab=Description
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
 
 Example:
@@ -12,10 +12,11 @@ Space complexity should be O(n).
 Can you do it like a boss? Do it without using any builtin function like __builtin_popcount in c++ or in any other language.
         
         
-Solution: The first logic is to form array and run the bitwise check to find out number of 1s in the binary representation of each number as we traverse from 0 to num.
-So the run time of this solution becomes O(n * 32) since there are 32 bits for each of the numbers
+Solution:   The first logic is to form array and run the bitwise check to find out number of 1s in the binary representation of each number as we traverse from 0 to num.
+            So the run time of this solution becomes O(n * 32) since there are 32 bits for each of the numbers
 
-But another radical solution can be written based on looking at the pattern formed for the number of 1s in the binary representation of numbers as below
+            https://leetcode.com/submissions/detail/80105962/
+            But another radical solution can be written based on looking at the pattern formed for the number of 1s in the binary representation of numbers as below
 
 0 -> arr[0]=0 [0]
 1 -> arr[1-1]+1=1 [0, 1]

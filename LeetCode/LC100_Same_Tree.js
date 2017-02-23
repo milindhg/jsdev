@@ -1,5 +1,5 @@
 /*
-
+https://leetcode.com/problems/same-tree/
 Given two binary trees, write a function to check if they are equal or not.
 
 Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
@@ -13,6 +13,16 @@ Two binary trees are considered equal if they are structurally identical and the
  *     this.left = this.right = null;
  * }
  */
+/*
+Solution:   Use recursion, 
+            compare each node and check if the contents of the nodes are same. 
+            Also at any point if the nodes are not null at the same time, 
+            or not leaf nodes at the same time 
+            or not containing the same values then answer is false.
+    
+            https://leetcode.com/submissions/detail/91061436/
+
+*/
 /**
  * @param {TreeNode} p
  * @param {TreeNode} q

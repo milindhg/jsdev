@@ -1,11 +1,13 @@
 /**
+ * https://leetcode.com/problems/add-two-numbers/
  * You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 0 -> 8
  */
 
 /*
- * Logic: Since ethe numbers are in reverse order the unit's place is head of the list and the highest order bit is the last element of the list.
+ * https://leetcode.com/submissions/detail/74556531/
+ * Logic: Since the numbers are in reverse order the unit's place is head of the list and the highest order bit is the last element of the list.
  * Hence similar to the addition of numbers logic, we'll add the corresponding bit numbers and attach to the new linked list. 
  * Special conditions where one of the list might be null or one list ends and other remains are handled by iterating through the remaining list.
  * 

@@ -1,6 +1,7 @@
+/*
+https://leetcode.com/problems/3sum/
 //Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
-/*
 For example, given array S = [-1, 0, 1, 2, -1, -4],
 
 A solution set is:
@@ -9,8 +10,12 @@ A solution set is:
   [-1, -1, 2]
 ]
 
-Solution: First sort the numbers and have 3 pointers i,j,k on first, second and last index. and then keep i index constant and keep checking 2 numbers sum from j to k.
-Trick is to store the answer as found in hashmap with unique signature = here for signature we use sort the triplet and convert to string.
+Solution:   https://leetcode.com/submissions/detail/91227497/
+
+            First sort the numbers and have 3 pointers i,j,k on first, second and last index. and then keep i index constant and keep checking 2 numbers sum from j to k.
+            Trick is to store the answer as found in hashmap with unique signature = here for signature we use sort the triplet and convert to string.
+
+            Runtime: O(n^2)
 
 */
 

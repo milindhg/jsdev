@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/palindrome-number/?tab=Description
 Determine whether an integer is a palindrome. Do this without extra space.
 
 Some hints:
@@ -10,7 +11,8 @@ You could also try reversing an integer. However, if you have solved the problem
 
 There is a more generic way of solving this problem.
 
-Solution: Now we can solve this problem simply and efficiently by converting the number into string and then having 2 pointers at front and end.
+Solution:   https://leetcode.com/submissions/detail/75116403/
+            Now we can solve this problem simply and efficiently by converting the number into string and then having 2 pointers at front and end.
 However since the problem says no extra space, we also cannot convert to string or do recursion since recursion will also create extra stack space.
 Best way then is to do / and % operations to compare first and last digit every time until the number is not equal to zero.
 
@@ -55,7 +57,9 @@ var isPalindrome = function (x) {
 
         // update the input number and divider by removing the first and the last digits compared
         // already.
-        x = Math.floor((x % divider) / 10);
+        x = Math.floor((x % divider) / 10); // x%divider removes the FRONT number already
+        // considered. and resulting number/10 removes the END
+        // number already considered.
         divider = Math.floor(divider / 100);
         console.log("x=" + x + " divider=" + divider);
     }

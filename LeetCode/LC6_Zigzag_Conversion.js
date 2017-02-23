@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/zigzag-conversion/?tab=Description
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
 P   A   H   N
@@ -10,7 +11,8 @@ Write the code that will take a string and make this conversion given a number o
 string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
-Solution: First, depending on number of rows given, create empty lists of numRows count. Then just keep a flag to increment or decrement rowNum index and keep pushing in that list. Done.
+Solution:   https://leetcode.com/submissions/detail/74585299/
+            First, depending on number of rows given, create empty lists of numRows count. Then just keep a flag to increment or decrement rowNum index and keep pushing in that list. Done.
 
 */
 
@@ -31,7 +33,7 @@ var convert = function (s, numRows) {
     var rowFlowUp = true;
 
     for ( var c in s) {
-        //console.log(rowToPushTo);
+        // console.log(rowToPushTo);
         arraymatrix[rowToPushTo].push(s[c]);
         if (rowFlowUp) {
             rowToPushTo += 1;

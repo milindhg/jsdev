@@ -1,4 +1,6 @@
 /*
+ * 
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 Given a linked list, remove the nth node from the end of list and return its head.
 
 For example,
@@ -9,6 +11,14 @@ For example,
 Note:
 Given n will always be valid.
 Try to do this in one pass.
+*/
+/*
+Solution:   https://leetcode.com/submissions/detail/79619191/
+            If we want to remove n'th element from the end of list, 
+            keep 2 pointers. Fast to go till n from front.
+            then fast and slow move together untill fast reaches end of list. Automatically that slow pointer is at n from end of list.
+            Remove the element, slow pointer is pointing to. We get the updated LinkList.
+            
 */
 
 //Definition for singly-linked list.

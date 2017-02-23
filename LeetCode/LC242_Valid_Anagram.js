@@ -14,6 +14,17 @@ What if the inputs contain unicode characters? How would you adapt your solution
         
 */
 
+/*
+Solution:   https://leetcode.com/submissions/detail/79677998/
+            The simple solution is to keep track of the alphabets occuring in the words.
+            In first loop for first word, note counts of all the alphabets.
+            In second loop for second word, reduce counts of all the alphabets occurring.
+            At last if the alphabet counts are not zero return false.
+            
+            A normal way of doing it would be hashmap. However in some cases depending on the memory management of the language, its better to have an array of 26 size. 1 index for each alphabet.
+            
+*/
+
 /**
  * @param {string} s
  * @param {string} t

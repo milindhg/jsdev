@@ -1,15 +1,21 @@
 /**
- * 
+
+https://leetcode.com/problems/move-zeroes/
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+Note:
+You must do this in-place without making a copy of the array.
+Minimize the total number of operations.
+ 
  */
 
-//Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
-//
-//For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
-//Note:
-//You must do this in-place without making a copy of the array.
-//Minimize the total number of operations.
-//Solution: Keep 2 variables, one to iterate and second to count number of zeroes. While counting, wherever you find zero in iteration, overwrite next non-zero numbers into it. 
-//So basically move the non-zero elements to the left and finally write all zeroes to the end.
+/*
+Solution:   https://leetcode.com/submissions/detail/91970391/
+            Keep 2 variables, one to iterate and second to count number of zeroes. While counting, wherever you find zero in iteration, overwrite next non-zero numbers into it. 
+            So basically move the non-zero elements to the left and finally write all zeroes to the end.
+            
+*/
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
@@ -26,17 +32,14 @@ var moveZeroes = function (nums) {
         if (nums[iter] === 0) {
             cnt0++;
         } else {
-            nums[nonzero] = nums[iter];
-            nonzero++;
+            nums[nonzero++] = nums[iter];
         }
         iter++;
     }
 
     iter = 0;
-    while (iter < cnt0) {
-        nums[nonzero] = 0;
-        nonzero++;
-        iter++;
+    while (iter++ < cnt0) {
+        nums[nonzero++] = 0;
     }
 }
 
