@@ -1,9 +1,13 @@
 /*
+https://leetcode.com/problems/climbing-stairs/?tab=Description
 You are climbing a stair case. It takes n steps to reach to the top.
 
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
-Solution: This is basically following a fibonacci pattern. So you can write fibonacci program with memoization to avoid recalculation of steps already done and reduce run-time.
+Solution:   https://leetcode.com/submissions/detail/85326254/ - beats 79% in JS submissions.
+            Start writing the number of ways for 1 step, 2 steps, 3 steps and so on till 4 or 5.
+            You will realize that they form the fibonacci pattern.
+            This is basically following a fibonacci pattern. So you can write fibonacci program with memoization to avoid recalculation of steps already done and reduce run-time.
 
 */
 /**
