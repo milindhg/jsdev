@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="Udacity - JS_DesignPatterns/CatClicker1/scripts"/>
 	<classpathentry kind="src" path="Udacity - OOP-JS"/>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.USER_LIBRARY/LeetCodeUtilities"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
