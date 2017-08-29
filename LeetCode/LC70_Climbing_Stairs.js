@@ -9,6 +9,8 @@ Solution:   https://leetcode.com/submissions/detail/85326254/ - beats 79% in JS 
             You will realize that they form the fibonacci pattern.
             This is basically following a fibonacci pattern. So you can write fibonacci program with memoization to avoid recalculation of steps already done and reduce run-time.
 
+Another good explanation here: https://leetcode.com/problems/climbing-stairs/solution/#approach-3-dynamic-programming-accepted
+
 */
 /**
  * @param {number} n

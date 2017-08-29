@@ -1,0 +1,10 @@
+"Start Color Picker"
+exports.handler
+	onLaunch
+		getWelcomeResponse
+		
+"My favorite color is Red" | "get my color"
+exports.handler
+	onIntent
+		setColor | getColor | getWelcome | endSession
+		
