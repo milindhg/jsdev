@@ -16,9 +16,41 @@ Explanation: The maximum result is 5 ^ 25 = 28.
 
 */
 
-Solution:   
+/*
+ * Solution:
+ * 
+ */
 
-
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaximumXORNew = function (nums) {
+    var max = 0, mask = 0;
+    var hm = {};
+    for (var i = 31; i >= 0; i--) {
+        mask = mask | (1 << i);
+        for ( var numIndex in nums) {
+            var calc = (nums[numIndex] & mask);
+            hm[calc] = true;
+            numIndex++;
+        }
+        // console.log('contents of hm when i=' + i + ' are: '
+        // + JSON.stringify(hm));
+        var tmp = (1 << i) | max;
+        for ( var prefix in hm) {
+            // console.log('prefix is: ' + prefix);
+            var XORCalc = tmp ^ prefix;
+            // console.log('XORCalc is: ' + XORCalc);
+            if (hm[XORCalc] === true) {
+                max = tmp;
+                // console.log('max is: ' + max);
+                break;
+            }
+        }
+    }
+    return max;
+};
 
 /**
  * @param {number[]} nums
@@ -29,8 +61,8 @@ var findMaximumXOR = function (nums) {
     var i = 0;
     var max = Number.MIN_VALUE;
     while (i < nums.length) {
-        console.log(maxNum.toString() + " ^ " + nums[i].toString() + " = "
-                + (maxNum ^ nums[i]).toString());
+        // console.log(maxNum.toString() + " ^ " + nums[i].toString() + " = "
+        // + (maxNum ^ nums[i]).toString());
         if ((maxNum ^ nums[i]) > max) {
             max = maxNum ^ nums[i];
         }
@@ -45,15 +77,15 @@ var findMaximumXOR = function (nums) {
  */
 var findMaximumXOR_NSquare = function (nums) {
     var max = Number.MIN_VALUE;
-     nums.sort(function (a, b) {
-     return a - b;
-     });
-     console.log(nums);
+    nums.sort(function (a, b) {
+        return a - b;
+    });
+    // console.log(nums);
     for ( var indexI in nums) {
         for ( var indexJ in nums) {
-            console.log(nums[indexI].toString() + " ^ "
-                    + nums[indexJ].toString() + " = "
-                    + (nums[indexI] ^ nums[indexJ]).toString());
+            // console.log(nums[indexI].toString() + " ^ "
+            // + nums[indexJ].toString() + " = "
+            // + (nums[indexI] ^ nums[indexJ]).toString());
             if ((nums[indexI] ^ nums[indexJ]) > max) {
                 max = nums[indexI] ^ nums[indexJ];
             }
@@ -76,10 +108,12 @@ var findMaxNumInArray = function (nums) {
 
 var main = function () {
     nums = [ 10, 23, 20, 18, 28 ];
-    nums = [ 8, 10, 2];
-    //answer 30
+    nums = [ 3, 10, 5, 25, 2, 8 ];
+    // nums = [ 8, 10, 2 ];
+    // answer 30
     console.log(findMaximumXOR(nums));
     console.log(findMaximumXOR_NSquare(nums));
+    console.log(findMaximumXORNew(nums));
 }
 
 main();
