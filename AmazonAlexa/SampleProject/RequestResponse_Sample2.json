@@ -1,37 +1,4 @@
 {
-  "session": {
-    "sessionId": "SessionId.5775381c-9f1a-4c32-a4a9-1516bbd9b7ee",
-    "application": {
-      "applicationId": "amzn1.ask.skill.cf784555-e1e5-4060-8fdf-081a397cc109"
-    },
-    "attributes": {},
-    "user": {
-      "userId": "amzn1.ask.account.AFMIE3CX2VIOA3HIIWS3X6MQUFQYE64CF555BNVWMYAHBNJTKUJR52FM3EIUX4CT5EMHS5KO4ESNOY5DNWT5JSZY7OUCP5CSQOGJ5R3A3IDF5JYR7UMJJ6KDMAKONCV4FIE7NLDGXV7SMFC7Q4SQPCSFXP3U4UYBMLNNNPSXOHW6TCJHFJNDGB4GQM4B2K73725WXQZXLMBKRLA"
-    },
-    "new": true
-  },
-  "request": {
-    "type": "IntentRequest",
-    "requestId": "EdwRequestId.cb0d53e9-bbdd-479b-9b20-5aa83f353660",
-    "locale": "en-US",
-    "timestamp": "2017-07-30T00:11:16Z",
-    "intent": {
-      "name": "MyColorIsIntent",
-      "slots": {
-        "Color": {
-          "name": "Color",
-          "value": "red"
-        }
-      }
-    }
-  },
-  "version": "1.0"
-}
-
-
-
-
-{
   "version": "1.0",
   "response": {
     "outputSpeech": {

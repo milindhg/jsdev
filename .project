@@ -10,8 +10,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>net.vtst.ow.eclipse.js.closure.closureBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>net.vtst.ow.eclipse.js.closure.closureNature</nature>
 	</natures>
 </projectDescription>
