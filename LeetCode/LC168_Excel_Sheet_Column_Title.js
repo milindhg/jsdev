@@ -27,3 +27,10 @@ var convertToTitle = function(n) {
   }
   return answer;
 };
+
+var main = function() {
+  var input = 2600;
+  console.log(convertToTitle(input));
+};
+
+main();
