@@ -25,26 +25,26 @@ Output: false
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function (s) {
+var isPalindrome = function(s) {
     var x = 0;
-    var y = s.length - 1;
-    while (x < y) {
+    var y = s.length-1;
+    while(x<y){
         var currCharX = s.charAt(x);
         var currCharY = s.charAt(y);
-        while ((currCharX < 'A' || currCharX > 'Z') && (currCharX < 'a' || currCharX > 'z') && (currCharX < '0' || currCharX > '9') && x < y) {
+        while((currCharX<'A' || currCharX>'Z') && (currCharX<'a' || currCharX>'z') && (currCharX<'0' || currCharX>'9') && x<y){
             x++;
-            currCharX = s.charAt(x);
+            currCharX=s.charAt(x);
             // console.log('now x = ' + x);
         }
-        while ((currCharY < 'A' || currCharY > 'Z') && (currCharY < 'a' || currCharY > 'z') && (currCharY < '0' || currCharY > '9') && x < y) {
+        while((currCharY<'A' || currCharY>'Z') && (currCharY<'a' || currCharY>'z') && (currCharY<'0' || currCharY>'9') && x<y){
             y--;
-            currCharY = s.charAt(y);
+            currCharY=s.charAt(y);            
         }
-        if (currCharX.toLowerCase() == currCharY.toLowerCase()) {
+        if(currCharX.toLowerCase()==currCharY.toLowerCase()){
             // console.log('x = ' + x + ' value = ' + currCharX + ' | y = ' + y + ' value = ' + currCharY);
             x++;
             y--;
-        } else {
+        }else{
             return false;
         }
     }
