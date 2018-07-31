@@ -3,6 +3,18 @@ var app = express();
 
 var serverName = "Sprinklr";
 
+//TEST API SERVICE
+app.get('/TEST', function (req, res) {
+   console.log("Got a GET request for the" + serverName + " server");
+   var timerId = setTimeout(test,5000);
+   console.log('sleeping');
+   function test(){
+     console.log('woke up!!!');
+     res.send('Hello TEST');
+   }
+   console.log('timeId = ' + timerId);
+})
+
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the" + serverName + " server");
