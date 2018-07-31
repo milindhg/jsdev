@@ -11,7 +11,7 @@ Write the code that will take a string and make this conversion given a number o
 string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
-Solution:   https://leetcode.com/submissions/detail/74585299/
+Solution:   https://leetcode.com/submissions/detail/155163584/ beats 66.96% JS submissions
             First, depending on number of rows given, create empty lists of numRows count. Then just keep a flag to increment or decrement rowNum index and keep pushing in that list. Done.
 
 */
@@ -27,39 +27,31 @@ var convert = function (s, numRows) {
     }
     var arraymatrix = [];
     for (var i = 0; i < numRows; i++) {
-        arraymatrix.push([]);
+        arraymatrix.push('');
     }
     var rowToPushTo = 0;
     var rowFlowUp = true;
 
     for ( var c in s) {
         // console.log(rowToPushTo);
-        arraymatrix[rowToPushTo].push(s[c]);
-        if (rowFlowUp) {
+        arraymatrix[rowToPushTo] += s[c];
+        if (rowFlowUp) 
             rowToPushTo += 1;
-        } else {
+        else 
             rowToPushTo -= 1;
-        }
-        if (rowToPushTo == numRows - 1) {
+        if (rowToPushTo == numRows - 1) 
             rowFlowUp = false;
-        } else if (rowToPushTo === 0) {
+        else if (rowToPushTo === 0)
             rowFlowUp = true;
-        }
+    }
 
-    }
-    var outputstring = "";
-    for ( var x in arraymatrix) {
-        for ( var y in arraymatrix[x]) {
-            outputstring += arraymatrix[x][y];
-        }
-    }
-    return outputstring;
+    return arraymatrix.join('');
 
 };
 
 var main = function () {
     var inputstring = 'PAYPALISHIRING';
-    var numRows = 4;
+    var numRows = 3;
     console.log(convert(inputstring, numRows));
 };
 
