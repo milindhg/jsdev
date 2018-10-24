@@ -1,5 +1,9 @@
 /* Problem given: If a number is given. Give the largest number that can be formed by replicating any 1 digit of the number. */
 
+//Final replicator code.
+//Keep traversing the digits in the number from left to right. 
+//Inside a positive number, Whenever a dip is found, the previous number is the number that should be replicated to get the largest possible number.
+//Inside a negative number, Whenever a raise is found, the previous number is the number that should be replicated to get the largest possible number.
 var replicator = function (num) {
     var positiveNumFlag = true;
     if (num < 0) {
@@ -35,6 +39,7 @@ var replicator = function (num) {
     return i - 1;
 }
 
+//Replicator first intuition basic approach.
 var replicatorBasic = function (num) {
     var positiveCaseanswer = 0;
     var negativeCaseanswer = 0;
