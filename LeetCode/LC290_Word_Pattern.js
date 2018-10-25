@@ -41,7 +41,6 @@ var wordPattern = function (pattern, str) {
             return false;
         if (!map[pattern[i]]) {
             map[pattern[i]] = words[i];
-            // words[i] = pattern[i];
         }
         if(!reverseMap[words[i]]){
             reverseMap[words[i]]=pattern[i];
