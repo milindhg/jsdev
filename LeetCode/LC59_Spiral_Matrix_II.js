@@ -73,3 +73,17 @@ var generateMatrix = function(n) {
     
     return ansarr;
 };
+
+var main = function(){
+    var arr = generateMatrix(3);
+    printArr(arr);
+};
+
+var printArr = function(arr){
+    for(var i =0; i<arr.length; i++){
+        for(var j=0; j<arr.length; j++)
+            console.log(" " + arr[i][j]);
+    }
+};
+
+main();
