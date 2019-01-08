@@ -39,6 +39,7 @@ S only consists of '(' and ')' characters.
 
 Solution:   https://leetcode.com/submissions/detail/184943911/  beats 80.87% JS Submissions.
             Use a stack with the similar logic as for checking well formed parentheses problem.
+            !Here basically the crux of the problem is the length of the final stack since that is the number of parentheses required to make the input well formed.!!
  */
 
 

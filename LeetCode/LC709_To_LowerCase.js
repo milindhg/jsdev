@@ -1,4 +1,4 @@
-https://leetcode.com/problems/to-lower-case/description/
+/* https://leetcode.com/problems/to-lower-case/description/
 
 Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 
@@ -8,7 +8,7 @@ Solution:   https://leetcode.com/submissions/detail/164058366/ beats 100% of JS 
             Since there can be other characters or numbers or even already lower case characters or special characters in the input.
             Those should be ignored. Only [A-Z] should be converted to lower case.
 
-
+ */
 /**
  * @param {string} str
  * @return {string}
@@ -16,10 +16,16 @@ Solution:   https://leetcode.com/submissions/detail/164058366/ beats 100% of JS 
 var toLowerCase = function(str) {
     var answer = "";
     for(var i in str){
-        if(str.charCodeAt(i)>64 && str.charCodeAt(i)<(64+26))
-            answer += String.fromCharCode(str.charCodeAt(i)+97-65);
+        if(str.charCodeAt(i)>64 && str.charCodeAt(i)<(64+26))   //If the curr character is within [A-Z] i.e. [65 - 90]
+            answer += String.fromCharCode(str.charCodeAt(i)+97-65); //offset the curr character into the range [a-z] i.e. add offset (97 - 65)
         else
             answer += str.charAt(i);
     }
     return answer;
 };
+
+var main = function(){
+    console.log(toLowerCase("AbCDe8&^*"));
+};
+
+main();

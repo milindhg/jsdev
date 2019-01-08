@@ -157,6 +157,15 @@ var main = function () {
     replicator(-1 * num);
     console.log();
 
+    num = 99999;
+    console.log('input number: ' + num);
+    replicatorBasic(num);
+    replicator(num);
+    console.log();
+    console.log('input number: ' + -1 * num);
+    replicatorBasic(-1 * num);
+    replicator(-1 * num);
+    console.log();
 }
 
 main();

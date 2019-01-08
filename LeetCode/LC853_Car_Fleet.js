@@ -38,7 +38,12 @@ All initial positions are different.
 
 Solution:   https://leetcode.com/submissions/detail/163689681/  beats 90.54% of JS submissions.
 
-
+            Note the position, speed of all the cars and also calculate the time required for reach car to reach the target. Add time to reach target for every car into an object map.
+            Now sort the map based on position of the car in descending. So that the farthest car is last and nearest car to target is first in map.
+            Now starting from the first car, (i.e. nearest to target) car check if next car's time to reach is greater than previous car's time to reach. If it is greater, then add car fleet count. 
+            and set the next car's time to reach as the comparator for further cars to see if they reach before this car or after this car.
+            If next car's time to reach is less than the previous car's time to reach, i.e. even though the next car is farther but because it is faster, it can reach before. 
+            So you must combine this car with the previous car as a fleet of 2 cars going together towards target and thus both take same time as first car to reach.
  */
 
 /**
@@ -61,9 +66,11 @@ var carFleet = function (target, position, speed) {
         map.push(tuple);
     }
 
+    console.log(map);
     map.sort(function (a, b) {
         return b.pos - a.pos;
     });
+    console.log(map);
 
     var fleetCount = 1;
 
