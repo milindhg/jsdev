@@ -53,8 +53,23 @@ var hammingDistance = function (x, y) {
     return distance;
 };
 
+
+var hammingDistanceBetter = function(a, b){
+    var ans = a ^ b;
+    var retCnt = 0;
+    //console.log("ans is " + ans);
+    while(ans>=1){
+        if((ans & 1) == 1) retCnt++;
+        //console.log(ans);
+        ans = ans >> 1;
+        
+    }
+    return retCnt;
+}
+
 var main = function () {
     console.log(hammingDistance(1, 4));
+    console.log(hammingDistanceBetter(1, 4));
 };
 
 main();

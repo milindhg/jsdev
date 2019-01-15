@@ -18,8 +18,8 @@ You may assume the input string will only contain letters of alphabet.
 Solution:   https://leetcode.com/submissions/detail/109963181/ beats 73.85% of other JS submissions.
 
             First Prepare a hashmap of all the characters, uppercase and lowercase. Assign number to it.
-            Then for each work in the input, loop through the letters and keep a variable to track the row number. 
-            If row number changes anytime in the middle, break the loop and move to next work.
+            Then for each word in the input, loop through the letters and keep a variable to track the row number. 
+            If row number changes anytime in the middle, break the loop and move to next word.
             At the end of loop for every word, check whether the flipper is same as at the Start.
             If yes: add the word to the output.
             

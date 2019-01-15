@@ -1,5 +1,9 @@
-/*
+/*  
 https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+
+TYPE: MEDIUM
+TYPE: TRICKY
+
 Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
 
 Find all the elements of [1, n] inclusive that do not appear in this array.
@@ -28,6 +32,7 @@ var findDisappearedNumbers = function (nums) {
     var i = 0;
 
     // Negate the numbers present at the index. Index is the value present at the current iterator.
+    console.log(nums);
     while (i < nums.length) {
         var index = nums[i];
         if (index < 0) {
@@ -39,7 +44,7 @@ var findDisappearedNumbers = function (nums) {
             nums[index - 1] = -1 * nums[index - 1];
         i++;
     }
-
+    console.log(nums);
     // At this point all the numbers will be negative except at those index places which we didn't
     // get by traversing the array.
     // So those indexes where numbers are positive is our answer.

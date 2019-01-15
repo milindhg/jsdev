@@ -36,13 +36,14 @@ var convertToBase7 = function (num) {
         answer = remainder * multFactor + answer;
         multFactor *= 10;
     }
-    answer = num * multFactor + answer;
+    //answer = num * multFactor + answer;
     // console.log(answer);
     return (answer * answerMultiplier) + '';
 };
 
 var main = function () {
     console.log(convertToBase7(-7));
+    console.log(convertToBase7(-100));
 };
 
 main();

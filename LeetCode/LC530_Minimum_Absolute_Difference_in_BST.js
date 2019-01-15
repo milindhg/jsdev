@@ -43,6 +43,7 @@ Solution:   https://leetcode.com/submissions/detail/96143102/ - beats 21% of js 
  * @param {TreeNode} root
  * @return {number}
  */
+//TODO still need to improve this function based on the smart way as described in the solution.
 var getMinimumDifferenceBetter = function (root) {
     minAbsDiff = Number.MAX_VALUE;
     prevNodeVal = null;
