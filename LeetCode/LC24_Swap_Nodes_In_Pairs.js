@@ -35,12 +35,31 @@ var swapPairs = function (head) {
     return head;
 };
 
+var swap = function (prev, node1, node2) {
+    if (node1 === null || node2 === null)
+        return;
+    node1.next = node2.next;
+    node2.next = node1;
+    if (prev !== null) {
+        prev.next = node2;
+    }
+    return node2;
+};
+
 var swapPairsRecursive = function (head) {
     if (head == null || head.next == null) {
         return head;
     }
+    head = swapPairsRecursiveHelper(head);
+    return head;
+}
+
+var swapPairsRecursiveHelper = function (head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
     var n = head.next;
-    head.next = swapPairsRecursive(head.next.next);
+    head.next = swapPairsRecursiveHelper(head.next.next);
     n.next = head;
     return n;
 }
@@ -61,20 +80,10 @@ var printList = function (head) {
     console.log(str);
 }
 
-var swap = function (prev, node1, node2) {
-    if (node1 === null || node2 === null)
-        return;
-    node1.next = node2.next;
-    node2.next = node1;
-    if (prev !== null) {
-        prev.next = node2;
-    }
-    return node2;
-}
-
 var main = function () {
-    // var nums = [ 1, 2, 3, 4 ];
+    
     var nums = [];
+    nums = [ 1, 2, 3, 4 ];
     var head = null;
     for ( var i in nums) {
         var trav = new ListNode(nums[nums.length - i - 1]);
@@ -85,6 +94,8 @@ var main = function () {
             head = trav;
         }
     }
+    printList(head);
+    head = swapPairsRecursive(head);
     printList(head);
     head = swapPairs(head);
     printList(head);
