@@ -41,10 +41,11 @@ class LinkedList {
 module.exports = LinkedList;
 
 //Usage like below
+// var List = require('./LinkedList');
 /* var main = function(){
-    var l1 = LinkedList.prototype.constructList([1,2,3,4,5]);
-    LinkedList.prototype.printList(l1);
-    l1 = LinkedList.prototype.reverse(l1);
-    LinkedList.prototype.printList(l1);
+    var l1 = List.prototype.constructList([1,2,3,4,5]);
+    List.prototype.printList(l1);
+    l1 = List.prototype.reverse(l1);
+    List.prototype.printList(l1);
 };
 main(); */
