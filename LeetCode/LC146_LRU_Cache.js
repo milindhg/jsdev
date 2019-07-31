@@ -22,7 +22,7 @@ cache.get(1);       // returns -1 (not found)
 cache.get(3);       // returns 3
 cache.get(4);       // returns 4
 
-TYPE: HARD, TRICKY, GOOD, LinkedList, Queue, HashMap
+TYPE: HARD, TRICKY, GOOD, LinkedList, Queue, HashMap, Fundamental Real World Problem
 
 Solution:   https://leetcode.com/submissions/detail/222082067/  beats 77.69% JS Submissions.
             Really good logical problem.
