@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
 Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -18,7 +19,7 @@ In this case, no transaction is done, i.e. max profit = 0.
 */
 
 /*
-Solution:   https://leetcode.com/submissions/detail/96422415/ - beats 38% of js submissions.
+Solution:   https://leetcode.com/submissions/detail/224787019/ - beats 62.51% of JS submissions.
             The crux of the solution is to understand that this problem is not finding difference between min and max in the given array.
             In fact its finding the maximum profit that can be done by checking selling price on each day, considering we've taken the stock at the minimum price so far.
             So maintain min so far and keep checking with it, what is the profit that can be done today by difference with the min so far.
