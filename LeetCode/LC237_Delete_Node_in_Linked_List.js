@@ -9,6 +9,8 @@ Solution: Since you've been given direct access to node and you don't have to wo
 
 */
 
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/ListNode');
 
 /**
  * Definition for singly-linked list.
@@ -30,3 +32,12 @@ var deleteNode = function(node) {
     node.next = nextnode.next;
     delete nextnode;
 };
+
+var main = function(){
+    var l1 = List.prototype.constructList([1,2,3,4]);
+    List.prototype.printList(l1);
+    var thirdNode = l1.next.next;
+    deleteNode(thirdNode);
+    List.prototype.printList(l1);
+};
+main();

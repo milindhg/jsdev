@@ -13,7 +13,7 @@ A = [3,2,1,0,4], return false.
 
 
 
-Solution:   https://leetcode.com/submissions/detail/215117753/ beats 91.69% JS Submissions.
+Solution:   https://leetcode.com/submissions/detail/215117753/ beats 100% JS Submissions.
 
             Start from the first index and start with the initial number of jumps you can have.
             Then take a greedy approach and try to jump and reduce number of steps left in counter. If you jump on an index with more steps, add those to remaining steps so that you can jump more/longer.

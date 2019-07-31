@@ -14,6 +14,10 @@ Solution:   https://leetcode.com/submissions/detail/154804739/      beats 98.5% 
             Every time compare values at 2 pointers and join the smaller value node to the answer list.
             Keep joining and at last check if any of the list is already over, then join the remaining part of the other list to the answer linked list.
  */
+
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -47,3 +51,12 @@ if (l2 != null) tempNode.next = l2;
 return outputListHead.next;
 };
 
+var main = function(){
+    var l1 = List.prototype.constructList([1,3,5,16]);
+    List.prototype.printList(l1);
+    var l2 = List.prototype.constructList([2,3,5,7,8,10,20]);
+    List.prototype.printList(l2);
+    var l3 = mergeTwoLists(l1,l2);
+    List.prototype.printList(l3);
+};
+main();

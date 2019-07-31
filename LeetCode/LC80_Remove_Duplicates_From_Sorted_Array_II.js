@@ -15,13 +15,21 @@ Solution:   https://leetcode.com/submissions/detail/112996118/ beats 84% of othe
             The approach here is to try to copy the array into another array. So you will basically maintain 2 indices for source and target array.
             Then you realize keeping the similar indices logic you can also do it in place using i and j.
             Just use i as the iterator and j as the current index on the final array. Then pop all the elements from the end of the array till j.
+
+
+            Found a better solution
+            https://leetcode.com/submissions/detail/218441108/  beats 95.72% JS Submissions.
+            This is a better easier and efficient approach.
+            Keep 2 pointers. start j from 2 (i.e. 3rd index) intentionally because you want to check whether the first number is already repeated and you want to allow 2 duplicates.
+            Always overwrite numbers because we want to do this in-place in the array.
+            i.e. effectively we slide the numbers from right to left.
 */
 
 /**
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
+var removeDuplicatesComplicated = function (nums) {
     var numberOfOccurences = 1;
     var i = 0, j = 0;
     // The main loop to iterate over the array. i to iterate over and j to keep track of elements in
@@ -51,6 +59,23 @@ var removeDuplicates = function (nums) {
     }
 
     return nums.length;
+};
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    var j = 2;
+    for(var i=2; i<nums.length; i++){
+        if(nums[i]==nums[j-1] && nums[i]==nums[j-2])
+            continue;       //i.e. such a number needs to be overwritten further so don't increase j index.
+        else
+            nums[j++]=nums[i];  //always keep overwriting numbers. 
+        //We always overwrite to get the answer inplace.
+    }
+    return j;
 };
 
 var main = function () {

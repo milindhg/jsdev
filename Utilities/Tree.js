@@ -3,7 +3,7 @@ class Tree {
     buildBinaryTree(values) {
         var nodes = [];
         values.forEach(v => {
-            if (v)
+            if (v!=null)
                 nodes.push(new TreeNode(v));
             else
                 nodes.push(null);
@@ -31,11 +31,21 @@ class Tree {
     }
 
     printBinaryTree(root) {
-        var lines = this.buildTreeString(root, 0);
+        var response = this.buildTreeString(root, 0);
+        var lines = response[0];
+        var width = response[1];
+        var rootStart = response[2];
+        var rootEnd = response[3];
         // lines.forEach(line=> {
         //     line = line.trimRight();
         // });
-        console.log('\n' + '\n' + lines.join('\n'));
+        //console.log('\n' + '\n' + lines.join('\n'));
+        console.log('\n\n');
+        var outputTree = '\n\n';
+        for(var i in lines){
+            outputTree+=lines[i]+'\n';
+        }
+        console.log(outputTree);
     }
 
     buildTreeString(root, currIndex) {
@@ -59,10 +69,10 @@ class Tree {
         //Draw the branch connecting the current root node to the left sub-box
         //Pad the line with whitespaces where necessary
         if (l_box_width > 0) {
-            l_root = (l_root_start + l_root_end); // 2 + 1
+            l_root = Math.floor((l_root_start + l_root_end) / 2) + 1;
             line1.push(this.spaceMult(' ', (l_root + 1)));
-            line1.push(this.spaceMult(' ', (l_box_width - l_root)));
-            line2.push(this.spaceMult(' ', (l_root + '/')));
+            line1.push(this.spaceMult('_', (l_box_width - l_root)));
+            line2.push(this.spaceMult(' ',l_root) + '/');
             line2.push(this.spaceMult(' ', (l_box_width - l_root)));
             var newRootStart = l_box_width + 1;
             gapSize += 1;
@@ -77,15 +87,14 @@ class Tree {
         // Draw the branch connecting the current root node to the right sub-box
         // Pad the line with whitespaces where necessary
         if (r_box_width > 0) {
-            r_root = (r_root_start + r_root_end); // 2
-            line1.push(this.spaceMult(' ', r_root));
+            r_root = Math.floor((r_root_start + r_root_end) / 2);
+            line1.push(this.spaceMult('_', r_root));
             line1.push(this.spaceMult(' ', (r_box_width - r_root + 1)));
-            line2.push(this.spaceMult(' ', (r_root + '\\')));
+            line2.push(this.spaceMult(' ',r_root) + '\\');
             line2.push(this.spaceMult(' ', (r_box_width - r_root)));
             gapSize += 1;
-        } else {
-            newRootEnd = newRootStart + newRootWidth - 1;
         }
+        newRootEnd = newRootStart + newRootWidth - 1;
 
         // Combine the left and right sub-boxes with the branches drawn above
         var gap = this.spaceMult(' ', gapSize);

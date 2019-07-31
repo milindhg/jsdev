@@ -21,11 +21,15 @@ Solution:   https://leetcode.com/submissions/detail/79619191/
             
 */
 
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
+
+
 //Definition for singly-linked list.
-function ListNode (val) {
+/* function ListNode (val) {
     this.val = val;
     this.next = null;
-};
+}; */
 
 /**
  * @param {ListNode} head
@@ -68,35 +72,18 @@ var removeNthFromEnd = function (head, n) {
     }
 };
 
-var printList = function (head) {
-    var str = "";
-    var trav = head;
-    while (trav !== null) {
-        str += trav.val;
-        trav = trav.next;
-        if (trav != null) {
-            str += " -> ";
-        }
-    }
-    console.log(str);
-}
 
 var main = function () {
-    var nums = [ 11, 22 ];
-    var head = null;
-    var trav = null;
-    for ( var i in nums) {
-        if (head === null) {
-            trav = new ListNode(nums[i]);
-            head = trav;
-        } else {
-            trav.next = new ListNode(nums[i]);
-            trav = trav.next;
-        }
-    }
-    printList(head);
-    head = removeNthFromEnd(head, 2);
-    printList(head);
+    var nums = [ 1,2,3,4,5 ];
+    var l1 = List.prototype.constructList(nums);
+    List.prototype.printList(l1);
+    l1 = removeNthFromEnd(l1,2);
+    List.prototype.printList(l1);
+    nums = [11,22];
+    l1 = List.prototype.constructList(nums);
+    List.prototype.printList(l1);
+    l1 = removeNthFromEnd(l1,2);
+    List.prototype.printList(l1);
 };
 
 main();

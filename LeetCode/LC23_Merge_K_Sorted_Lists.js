@@ -19,6 +19,9 @@ Solution:   https://leetcode.com/submissions/detail/154737744/  beats 100% js su
             Use the given lists as a queue and keep removing 2 lists, merge them and enqueue the merged list back to queue.
  */
 
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -62,10 +65,14 @@ var mergeTwoLists = function (l1, l2) {
     return outputListHead.next;
 };
 
-
-var print = function (list) {
-    while (list != null) {
-        console.log(list.val);
-        list = list.next;
-    }
+var main = function(){
+    var l1 = List.prototype.constructList([1,3,5]);
+    List.prototype.printList(l1);
+    var l2 = List.prototype.constructList([1,3,4]);
+    List.prototype.printList(l2);
+    var l3 = List.prototype.constructList([2,6]);
+    List.prototype.printList(l3);
+    var l4 = mergeKLists([l1,l2,l3]);
+    List.prototype.printList(l4);
 };
+main();

@@ -77,6 +77,12 @@ var integerReplacement = function(n) {
     return ans;
 };
 
+/**
+ *
+ *
+ * @param {*} n
+ * @returns
+ */
 var toAddOrSubtractOneForOdd = function(n){
     var inputNum = n;
     var cnt = 0;

@@ -14,6 +14,9 @@ Solution:   https://leetcode.com/submissions/detail/93380570/ Iterative.
             
 */
 
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -71,43 +74,19 @@ var reverseListRecursiveHelper = function (prev, head) {
  * @Runtime: O(n) https://leetcode.com/submissions/detail/93388955/
  * 
  */
-var reverseListRecursive = function (prev, head) {
+var reverseListRecursive = function (head) {
     return reverseListRecursiveHelper(null, head);
 };
 
-function ListNode (val) {
-    this.val = val;
-    this.next = null;
-}
-
-var printList = function (list) {
-    var trav = list;
-    var output = "";
-    if (trav === null) {
-        console.log(null);
-        return;
-    }
-    while (trav.next !== null) {
-        output += trav.val + " -> ";
-        trav = trav.next;
-    }
-    output += trav.val;
-    console.log(output);
-};
-
 var main = function () {
-    var list = new ListNode(1);
-    var head = list;
-    for (var i = 2; i < 7; i++) {
-        list.next = new ListNode(i * 1);
-        list = list.next;
-    }
-
-    printList(head);
-    // head = reverseList(head);
-    // printList(head);
-    head = reverseListRecursive(null, head);
-    printList(head);
+    var list = List.prototype.constructList([1,2,3,4,5]);
+    List.prototype.printList(list);
+    list = reverseList(list);
+    List.prototype.printList(list);
+    list = List.prototype.constructList([1,2,3,4,5]);
+    List.prototype.printList(list);
+    list = reverseListRecursive(list);
+    List.prototype.printList(list);
 };
 
 main();

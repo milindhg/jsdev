@@ -182,6 +182,6 @@ var prepareTest = function(instructions,inputs){
         i++;
     }
     return output;
-}
+};
 
 main();

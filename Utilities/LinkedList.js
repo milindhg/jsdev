@@ -37,6 +37,14 @@ class LinkedList {
         }
         console.log(listStr.join(' -> '));
     }
+
+    getTail(head){
+        var trav = head;
+        while(trav.next!=null){
+            trav=trav.next;
+        }
+        return trav;
+    }
 }
 module.exports = LinkedList;
 

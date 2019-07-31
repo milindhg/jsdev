@@ -12,6 +12,9 @@ Solution 1: https://leetcode.com/submissions/detail/78416947/
 Solution 2: Keep fast and slow pointer to get to the node quickly. So that if fast node catches the element, then slow can follow till fast and then remove the fast node. Otherwise slow will traverse and follow the same method as solution 1.
 */
 
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -68,57 +71,26 @@ var removeElementsBetter = function (head, val) {
     return helper.next;
 };
 
-function ListNode (val) {
-    this.val = val;
-    this.next = null;
-}
-
-var printList = function (list) {
-    var trav = list;
-    var output = "";
-    if (trav === null) {
-        console.log(null);
-        return;
-    }
-    while (trav.next !== null) {
-        output += trav.val + " -> ";
-        trav = trav.next;
-    }
-    output += trav.val;
-    console.log(output);
-};
-
 var removeElementsRecursive = function (head, val) {
     if (head == null)
         return null;
     head.next = removeElements(head.next, val);
     return (head.val == val ? head.next : head);
-}
+};
 
 var main = function () {
-    var list = new ListNode(1);
-    var head = list;
-    for (var i = 2; i < 7; i++) {
-        list.next = new ListNode(i * 1);
-        list = list.next;
-    }
-
-    printList(head);
-    head = removeElements(head, 6);
-    printList(head);
-
-    var l2 = new ListNode(1);
-    head2 = l2;
-    l2.next = new ListNode(2);
-    l2 = l2.next;
-    l2.next = new ListNode(2);
-    l2 = l2.next;
-    l2.next = new ListNode(1);
-    printList(head2);
-    head2 = removeElementsRecursive(head2, 1);
-    head2 = removeElementsRecursive(head2, 2);
-    printList(head2);
-
+    var l1 = List.prototype.constructList([1,2,6,3,4,5,6]);
+    List.prototype.printList(l1);
+    l1 = removeElements(l1, 6);
+    List.prototype.printList(l1);
+    l1 = List.prototype.constructList([1,2,6,3,4,5,6]);
+    List.prototype.printList(l1);
+    l1 = removeElementsBetter(l1, 6);
+    List.prototype.printList(l1);
+    l1 = List.prototype.constructList([1,2,6,3,4,5,6]);
+    List.prototype.printList(l1);
+    l1 = removeElementsRecursive(l1, 6);
+    List.prototype.printList(l1);
 }
 
 main();
