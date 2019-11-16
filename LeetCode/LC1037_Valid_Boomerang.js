@@ -60,3 +60,17 @@ var arePointsSame = function(points){
     var point3 = points[2];
     return ((point1[0]==point2[0] && point1[1]==point2[1]) || (point2[0]==point3[0] && point2[1]==point3[1]) || (point1[0]==point3[0] && point1[1]==point3[1]));
 };
+
+
+var main = () => {
+    var inputs = [[[1,1],[2,3],[3,2]],
+    [[1,1],[2,2],[3,3]],
+    [[1,1],[2,1],[1,2]],
+    [[0,0],[1,1],[1,1]],
+    [[0,0],[2,1],[2,2]]];
+    inputs.forEach((input)=>{
+        console.log(isBoomerang(input));
+    });
+};
+
+main();
