@@ -23,6 +23,12 @@ Solution:   Use recursion,
             https://leetcode.com/submissions/detail/91061436/
 
 */
+
+var Tree = require('../Utilities/Tree');
+var TreeNode = require('../Utilities/TreeNode');
+
+
+
 /**
  * @param {TreeNode} p
  * @param {TreeNode} q
@@ -99,9 +105,29 @@ var printTree = function (treenode) {
 };
 
 var main = function () {
-    arr = (1,2,3,4,5,6,7);
-    var tree = constructTreeFromArray(arr);
-    printTree(tree);
+    var arr1 = [1,2,3];
+    var arr2 = [1,2,3];
+    var root1 =  Tree.prototype.buildBinaryTree(arr1);
+    Tree.prototype.printBinaryTree(root1);
+    var root2 =  Tree.prototype.buildBinaryTree(arr2);
+    Tree.prototype.printBinaryTree(root2);
+    console.log(isSameTree(root1,root2));
+
+    arr1 = [1,2];
+    arr2 = [1,null,2];
+    root1 =  Tree.prototype.buildBinaryTree(arr1);
+    Tree.prototype.printBinaryTree(root1);
+    root2 =  Tree.prototype.buildBinaryTree(arr2);
+    Tree.prototype.printBinaryTree(root2);
+    console.log(isSameTree(root1,root2));
+
+    arr1 = [1,2,1];
+    arr2 = [1,1,2];
+    root1 =  Tree.prototype.buildBinaryTree(arr1);
+    Tree.prototype.printBinaryTree(root1);
+    root2 =  Tree.prototype.buildBinaryTree(arr2);
+    Tree.prototype.printBinaryTree(root2);
+    console.log(isSameTree(root1,root2));
 }
 
 main();

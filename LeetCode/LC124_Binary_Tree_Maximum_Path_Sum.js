@@ -43,6 +43,12 @@ Solution:   https://leetcode.com/submissions/detail/219422191/  beats 90.24% JS 
 
  */
 
+
+var Tree = require('../Utilities/Tree');
+var TreeNode = require('../Utilities/TreeNode');
+
+
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -68,3 +74,14 @@ var maxPathSum = function(root) {
     return max;
 };
 
+var main = () => {
+    var root1 = Tree.prototype.buildBinaryTree([1,2,3]);
+    Tree.prototype.printBinaryTree(root1);
+    console.log(maxPathSum(root1));
+
+    root1 = Tree.prototype.buildBinaryTree([-10,9,20,null,null,15,7]);
+    Tree.prototype.printBinaryTree(root1);
+    console.log(maxPathSum(root1));
+};
+
+main();

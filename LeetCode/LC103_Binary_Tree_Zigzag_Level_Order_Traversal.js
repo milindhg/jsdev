@@ -26,6 +26,9 @@ Solution:   https://leetcode.com/submissions/detail/96117009/ - beats 100% of th
             Stack 2 will be used to push the elements in first left child then right child order.
 */
 
+var Tree = require("../Utilities/Tree");
+
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -76,3 +79,13 @@ var zigzagLevelOrder = function (root) {
 var isEmpty = function (stk) {
     return (stk.length === 0 ? true : false);
 };
+
+
+var main = () => {
+    var arr = [3,9,20,null,null,15,7];
+    var root = Tree.prototype.buildBinaryTree(arr);
+    Tree.prototype.printBinaryTree(root);
+    console.log(zigzagLevelOrder(root));
+};
+
+main();
