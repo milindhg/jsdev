@@ -7,6 +7,14 @@ a = "11"
 b = "1"
 Return "100".
 
+
+TYPE:   STRING, LINEAR PROBLEMS, ARRAY, ADDITION of NUMBERS
+
+Solution:   https://leetcode.com/submissions/detail/313132952/  beats 93.44% JS Submissions.
+            This is easier approach of school level addition basically. Follow method addBinaryEasier below
+
+            The other approach of convertingIntToBin and back is also ok but there is some complexity in conversions and code becomes little complicated.
+
 */
 
 /**
@@ -53,12 +61,64 @@ var convertIntToBin = function (integerNumber) {
     return (answer == "" ? 0 : answer);
 }
 
+/**
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+var addBinaryEasier = function(a, b) {
+    var i = a.length-1;
+    var j = b.length-1;
+    var ans = "";
+    var carry = '0';
+    while(i>=0 && j>=0){
+        var resp = addDigitsAndGetCarry(a[i--],b[j--],carry);
+        ans = resp[0] + ans;
+        carry = resp[1];
+    }
+    while(i>=0){
+        var resp = addDigitsAndGetCarry(a[i--],0,carry);
+        ans = resp[0] + ans;
+        carry = resp[1];
+    }
+    while(j>=0){
+        var resp = addDigitsAndGetCarry(0,b[j--],carry);
+        ans = resp[0] + ans;
+        carry = resp[1];
+    }
+    if(carry=='1')
+        ans = carry + ans;
+    return ans;
+};
+
+var addDigitsAndGetCarry = (num1, num2, carry) => {
+    //Return [additionOfDigits, carry]
+    if(num1=='1' && num2=='1')
+        return [carry, '1'];
+    else if(num1=='1' || num2=='1')
+        return [carry==1 ? 0 : 1, carry];
+    else return [carry, '0'];
+};
+
+
 var main = function () {
     console.log(addBinary("0", "0"));
-    console.log(convertToInteger("0"));
-    console.log(add(0, 0));
-    console.log(convertIntToBin(0));
+    console.log(addBinary("11", "1"));
+    console.log(addBinary("11" ,"1"));
+    console.log(addBinary("11", "111"));
+    console.log(addBinary("11", "11"));
+    console.log(addBinary("100", "101"));
+    console.log(addBinary("1010", "1011"));
+
+    console.log(addBinaryEasier("0", "0"));
+    console.log(addBinaryEasier("11", "1"));
+    console.log(addBinaryEasier("11" ,"1"));
+    console.log(addBinaryEasier("11", "111"));
+    console.log(addBinaryEasier("11", "11"));
+    console.log(addBinaryEasier("100", "101"));
+    console.log(addBinaryEasier("1010", "1011"));
     // console.log(convertToInteger())
 };
 
 main();
+
