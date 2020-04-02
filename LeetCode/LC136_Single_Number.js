@@ -34,9 +34,24 @@ var singleNumber = function (nums) {
     return ans;
 };
 
+// Don't know why but this does perform faster
+//https://leetcode.com/submissions/detail/318443050/ beats 98.94% JS Submissions.
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumberES6 = function(nums) {
+    let i = 0;
+    let ans;
+    nums.forEach((num)=>{
+        ans = ans ^ num;
+    });
+    return ans;
+};
+
 var main = function () {
     var nums = [ 1, 1, 2 ];
-    console.log(singleNumber(nums));
+    console.log(singleNumberES6(nums));
 };
 
 main();
