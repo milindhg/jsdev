@@ -182,8 +182,6 @@ https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-
 
 https://leetcode.com/problems/permutation-sequence/description/
 
-https://leetcode.com/problems/add-binary/description/
-
 https://leetcode.com/problems/line-reflection
 
 https://leetcode.com/problems/shortest-word-distance
@@ -365,4 +363,87 @@ https://leetcode.com/problems/employee-importance/description/
 https://leetcode.com/problems/redundant-connection-ii/description/
 
 https://leetcode.com/problems/nested-list-weight-sum
+
+https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/
+
+https://leetcode.com/problems/k-closest-points-to-origin/description/
+
+https://leetcode.com/problems/plus-one/description/
+
+https://leetcode.com/problems/add-binary/description/
+
+https://leetcode.com/problems/multiply-strings/description/
+
+https://leetcode.com/problems/corporate-flight-bookings/description/
+
+https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/description/
+
+https://leetcode.com/problems/prime-palindrome/description/
+
+https://leetcode.com/problems/longest-chunked-palindrome-decomposition/description/
+
+https://leetcode.com/problems/chalkboard-xor-game/description/
+
+https://leetcode.com/problems/verbal-arithmetic-puzzle/description/
+
+https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/description/
+
+https://leetcode.com/problems/rank-teams-by-votes/description/
+
+https://leetcode.com/problems/next-permutation/description/
+
+https://leetcode.com/problems/duplicate-zeros/description/
+
+https://leetcode.com/problems/pascals-triangle-ii/description/
+
+https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/description/
+
+https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/description/
+
+https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/description/
+
+https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
+
+https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/description/
+
+https://leetcode.com/problems/concatenated-words/description/   - think about this problem - https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/description/
+
+https://leetcode.com/problems/remove-boxes/description/ - think about this problem also - https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/description/
+
+https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/ - think about this problem also - https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/description/
+
+https://leetcode.com/problems/single-number-ii/description/ - think about 136.
+
+https://leetcode.com/problems/single-number-iii/description/ - think about 136.
+
+https://leetcode.com/problems/balance-a-binary-search-tree/description/ - think about 1038
+
+https://leetcode.com/problems/reverse-string/description/   - good recursion understanding. similar to reverse a linked list.
+https://leetcode.com/explore/featured/card/recursion-i/250/principle-of-recursion/1680/
+
+https://leetcode.com/problems/shortest-completing-word/description/ - think 202
+https://leetcode.com/problems/day-of-the-year/description/ - think 202
+
+https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/description/ - tink 1038
+
+https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
+
+https://leetcode.com/problems/score-of-parentheses/solution/
+
+https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows/description/
+
+https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/description/
+
+https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
+
+https://leetcode.com/problems/multiply-strings/description/
+
+https://leetcode.com/problems/longest-turbulent-subarray/description/ - think 53.
+
+https://leetcode.com/problems/first-missing-positive/description/ - very good problem.
+
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/ - think 122 also
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/ - think 122 also
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/ - think 122 also
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/ - think 122 also
 
