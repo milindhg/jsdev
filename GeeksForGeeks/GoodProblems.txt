@@ -447,3 +447,13 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/ - 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/ - think 122 also
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/ - think 122 also
 
+https://leetcode.com/problems/couples-holding-hands/description/
+
+https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/ - think about middle of linkedlist problem 876
+https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/ - think about middle of linkedlist problem 876
+https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/description/ - think about middle of linkedlist problem 876
+
+https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/ - think 844
+https://leetcode.com/problems/replace-the-substring-for-balanced-string/description/ - think 844
+Also check for the problem - Candy Crush. Premium but could be interesting. :D 
+
