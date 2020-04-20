@@ -142,7 +142,7 @@ https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-str
 
 https://leetcode.com/problems/next-greater-element-i/description/
 
-https://leetcode.com/problems/trapping-rain-water/description/
+https://leetcode.com/problems/trapping-rain-water/description/ - think 238
 
 https://leetcode.com/problems/surface-area-of-3d-shapes/description/
 
@@ -469,4 +469,20 @@ https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list
 https://leetcode.com/problems/unique-binary-search-trees-ii/description/ - think 543 - diameter of a binary tree
 https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/ - think 543 - diameter of a binary tree
 https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/ - think 543 - diameter of a binary tree
+https://leetcode.com/problems/construct-string-from-binary-tree/description/ - think 543 - diameter of a binary tree
+https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/ - think 543 - diameter of a binary tree
+
+https://leetcode.com/problems/is-subsequence/description/ - think 1046 last stone weight
+https://leetcode.com/problems/minimum-number-of-refueling-stops/description/ - think 1046 last stone weight
+
+https://leetcode.com/problems/continuous-subarray-sum/description/
+
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/ -
+think lc33
+https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/ -
+think lc33
+
+https://leetcode.com/problems/range-sum-of-bst/description/ - think 1008
+https://leetcode.com/problems/closest-binary-search-tree-value - think 1008
+https://leetcode.com/problems/path-sum-iv - think 1008
 
