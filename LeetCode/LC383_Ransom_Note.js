@@ -13,14 +13,23 @@ canConstruct("aa", "aab") -> true
 
 */
 /*
-Solution:   https://leetcode.com/submissions/detail/79675751/ [check the runtime for leetcode.]
-            Put all the letters along with its count in the magazine, in the hashmap.
-            Then traverse over the ransom note and check for each letter presense in the hashmap. 
-            keep track of count of the letters in hashmap, while adding or removing.
-            Anytime a letter from ransom note is not found in the magazine, return false.
+Solution:   
+
+https://leetcode.com/submissions/detail/79675751/ [check the runtime for leetcode.]
+
+Put all the letters along with its count in the magazine, in the hashmap.  Then
+traverse over the ransom note and check for each letter presense in the hashmap.
+keep track of count of the letters in hashmap, while adding or removing.
+Anytime a letter from ransom note is not found in the magazine, return false.
             
-            Just by changing the datastore from hashmap to array. the speed improves more than double.
-            https://leetcode.com/submissions/detail/93639888/ - beats 98% of js submissions
+Just by changing the datastore from hashmap to array. the speed improves more
+than double.  https://leetcode.com/submissions/detail/93639888/ - beats 98% of
+js submissions
+            
+Also there is one more approach i.e. to replace each character present in
+ransomNote which is from the magazine also to blank. So that at the end a blank
+ransomNote string will remain. 
+
 */
 
 /**
@@ -89,6 +98,26 @@ var canConstruct = function (ransomNote, magazine) {
     }
     return true;
 };
+
+/**
+ * @param {string} ransomNote
+ * @param {string} magazine
+ * @return {boolean}
+ * 
+ * https://leetcode.com/submissions/detail/334000023/ beats 99.39% JS Submissions.
+ * 
+ * 
+ * 
+ */
+var canConstruct = function (ransomNote, magazine) {
+    if(magazine.length < ransomNote)
+        return false;
+    for(let i=0; i<magazine.length; i++){
+        ransomNote = ransomNote.replace(magazine[i],'');
+    }
+    return ransomNote.length == 0 ? true : false;
+};
+
 
 var main = function () {
     var ransomNote = "a";
