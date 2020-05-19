@@ -192,6 +192,57 @@ class Tree {
     //             if kids: node.left  = kids.pop()
     //             if kids: node.right = kids.pop()
     //     return root
+
+    printInorder(root){
+        var output=[];
+        this._printInorderHelper(root,output);
+        console.log(output);
+    }
+
+    printPreorder(root){
+        var output=[];
+        this._printPreorderHelper(root,output);
+        console.log(output);
+    }
+
+    printPostorder(root){
+        var output=[];
+        this._printPostorderHelper(root,output);
+        console.log(output);
+    }
+
+    _printInorderHelper(root, output){
+        if(root){
+            this._printInorderHelper(root.left,output);
+            output.push(root.val);
+            this._printInorderHelper(root.right,output);
+        }
+    }
+
+    _printPreorderHelper(root, output){
+        if(root){
+            output.push(root.val);
+            this._printPreorderHelper(root.left,output);
+            this._printPreorderHelper(root.right,output);
+        }
+    }
+
+    _printPostorderHelper(root, output){
+        if(root){
+            this._printPostorderHelper(root.left,output);
+            this._printPostorderHelper(root.right,output);
+            output.push(root.val);
+        }
+    }
 }
 module.exports = Tree;
 
+// var main = () => {
+//     var root1 = Tree.prototype.buildBinaryTree([1,2,3,null,null,4,5]);
+//     Tree.prototype.printBinaryTree(root1);
+//     Tree.prototype.printInorder(root1);
+//     Tree.prototype.printPreorder(root1);
+//     Tree.prototype.printPostorder(root1);
+// };
+
+// main();
