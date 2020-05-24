@@ -19,21 +19,30 @@ X X X X
 X O X X
 Explanation:
 
-Surrounded regions shouldn’t be on the border, which means that any 'O' on the border of the board are not flipped to 'X'. Any 'O' that is not on the border and it is not connected to an 'O' on the border will be flipped to 'X'. Two cells are connected if they are adjacent cells connected horizontally or vertically.
+Surrounded regions shouldn’t be on the border, which means that any 'O' on the
+border of the board are not flipped to 'X'. Any 'O' that is not on the border
+and it is not connected to an 'O' on the border will be flipped to 'X'. Two
+cells are connected if they are adjacent cells connected horizontally or
+vertically.
 
 TYPE: ARRAY, MATRIX, VERY GOOD, FAVORITE, ISLANDS
 
 Solution:   https://leetcode.com/submissions/detail/259286726/  661.93%
-            The idea is simple. First we scan across the border of the matrix and try to get the list of elements which are zero with their coords.
-            We call such elements badGuys. We mark the badGuys with $ sign to identify them later.
+
+The idea is simple. First we scan across the border of the matrix and try to get
+the list of elements which are zero with their coords.  We call such elements
+badGuys. We mark the badGuys with $ sign to identify them later.
             
-            Then we simply prepare of queue of elements to process from this list and see if there are any neighboring elements of the badGuys.
-            For this we dequeue a badGuy and check if there are any neighboring bad guys.
-            As we get any more badGuys we keep adding them to the queue to process later and mark the badGuys as $.
-            Once all the elements in the queue are processed, we have found all the bad guys in the matrix.
+Then we simply prepare of queue of elements to process from this list and see if
+there are any neighboring elements of the badGuys.  For this we dequeue a badGuy
+and check if there are any neighboring bad guys.  As we get any more badGuys we
+keep adding them to the queue to process later and mark the badGuys as $.  Once
+all the elements in the queue are processed, we have found all the bad guys in
+the matrix.
             
-            Then we just iterate through the matrix in n^2 time and get any good guys and mark them as X. 
-            In the same traversal of the matrix we also mark the identified bad guys back to zero to return the final matrix answer.
+Then we just iterate through the matrix in n^2 time and get any good guys and
+mark them as X.  In the same traversal of the matrix we also mark the identified
+bad guys back to zero to return the final matrix answer.
 
  */
 
