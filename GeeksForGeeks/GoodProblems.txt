@@ -486,3 +486,127 @@ https://leetcode.com/problems/range-sum-of-bst/description/ - think 1008
 https://leetcode.com/problems/closest-binary-search-tree-value - think 1008
 https://leetcode.com/problems/path-sum-iv - think 1008
 
+https://leetcode.com/problems/print-binary-tree/description/ - think 637
+https://leetcode.com/problems/trim-a-binary-search-tree/description/ - think 637
+https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/ - think
+637
+
+https://leetcode.com/problems/split-bst - think 938
+https://leetcode.com/problems/output-contest-matches - think 938
+
+https://leetcode.com/problems/reverse-nodes-in-k-group/description/ - think 24
+
+https://leetcode.com/problems/reverse-linked-list-ii/description/ - think 206
+https://leetcode.com/problems/palindrome-linked-list/description/ - think 206
+
+https://leetcode.com/problems/sort-colors/description/ - think 234
+https://leetcode.com/problems/count-number-of-nice-subarrays/description/ -
+think 234
+
+https://leetcode.com/problems/continuous-subarray-sum/submissions/1 - think 560
+https://leetcode.com/problems/subarray-product-less-than-k/description/ - think 560
+https://leetcode.com/problems/subarray-sums-divisible-by-k/description/ - think
+560
+
+https://leetcode.com/problems/jump-game-iii/description/ - think 55
+https://leetcode.com/problems/jump-game-ii/description/ - think 55
+
+Check again - 221, 1143
+
+https://leetcode.com/problems/maximal-rectangle/description/ - check 221
+https://leetcode.com/problems/largest-plus-sign/description/ - check 221
+
+https://leetcode.com/problems/search-insert-position/description/ - think 278
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+- think 278
+
+https://leetcode.com/problems/sort-characters-by-frequency/description/ - think
+771
+https://leetcode.com/problems/design-hashset/description/ - think 771
+https://leetcode.com/problems/time-based-key-value-store/description/ - think
+771
+
+https://leetcode.com/problems/stickers-to-spell-word/description/ - think 383
+
+https://leetcode.com/problems/word-frequency/description/ - think 347
+https://leetcode.com/problems/kth-largest-element-in-an-array/description/ -
+think 347
+https://leetcode.com/problems/split-array-into-consecutive-subsequences/description/
+- think 347
+https://leetcode.com/problems/top-k-frequent-words/description/ - think 347
+https://leetcode.com/problems/k-closest-points-to-origin/description/ - think
+347
+
+https://leetcode.com/problems/wiggle-sort-ii/description/ - think 215
+https://leetcode.com/problems/third-maximum-number/description/ - think 215
+https://leetcode.com/problems/k-closest-points-to-origin/description/ - think
+215
+
+https://leetcode.com/problems/majority-element-ii/description/ - think 169
+
+https://leetcode.com/problems/max-consecutive-ones-iii/description/ - think 485.
+
+https://leetcode.com/problems/longest-consecutive-sequence/description/ - think
+1295
+https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/description/
+- think 1295
+https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/description/
+- think 1295
+
+https://leetcode.com/problems/merge-sorted-array/description/ - think 977
+
+https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/description/
+- think 1089
+https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/description/
+- think 1089
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/ -
+think 1089
+
+https://leetcode.com/problems/interval-list-intersections/description/ - think
+88
+
+https://leetcode.com/problems/global-and-local-inversions/description/ - think
+27
+https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/description/ -
+think 27
+
+https://leetcode.com/problems/cheapest-flights-within-k-stops/description/ -
+think 993 is cousin in binary tree
+https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/ -
+think 993 is cousin in binary tree
+
+https://leetcode.com/problems/search-insert-position/description/ - think 1346
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+- think 1346
+https://leetcode.com/problems/task-scheduler/description/ - think 1346
+
+https://leetcode.com/problems/rabbits-in-forest/description/ - think 1232
+https://leetcode.com/problems/numbers-with-repeated-digits/description/ - think
+1232
+https://leetcode.com/problems/circular-permutation-in-binary-representation/description/
+- think 1232
+
+https://leetcode.com/problems/create-maximum-number/description/ - think 402
+https://leetcode.com/problems/monotone-increasing-digits/description/ - think
+402
+
+https://leetcode.com/problems/add-and-search-word-data-structure-design/description/
+- think trie
+
+https://leetcode.com/problems/find-peak-element/description/ - think 918
+https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/description/
+- think 918
+
+https://leetcode.com/problems/longest-turbulent-subarray/description/ - think 53
+
+https://leetcode.com/problems/minimum-window-substring/description/ - think 438
+
+https://leetcode.com/problems/132-pattern/description/ - think 901
+https://leetcode.com/problems/odd-even-jump/description/ - think 901
+
+https://leetcode.com/problems/delete-nodes-and-return-forest/description/ -
+think 230
+https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
+- think 230
+https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree - think 230
+
