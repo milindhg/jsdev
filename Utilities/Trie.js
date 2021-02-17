@@ -6,6 +6,7 @@ class Trie {
  */
     constructor() {
         this.root = new TrieNode();
+        this.maxDepth = 0;
     }
 
     /**
@@ -15,11 +16,14 @@ class Trie {
      */
     insert(word) {
         let node = this.root;
+        let depth = 0;
         for (let ch of word) {
             if (!node.containsKey(ch)) {
                 node.put(ch, new TrieNode());
             }
             node = node.get(ch);
+            depth += 1;
+            this.maxDepth = Math.max(this.maxDepth, depth);
         }
         node.setEnd();
     }
@@ -46,7 +50,7 @@ class Trie {
     }
 
     /**
-     * Returns if there is any word in the trie that starts with the given prefix. 
+     * Returns if there is any word in the trie that starts with the given prefix.
      * @param {string} prefix
      * @return {boolean}
      */
@@ -54,20 +58,47 @@ class Trie {
         return this.searchPrefix(prefix) != null;
     }
 
-    printAllWords(trieRoot, str) {
-        //TODO If trieRoot is passed print all words in given trieRoot
-        //TODO Else print all words in this.root
+    match(regexWord, node) {
+        if (regexWord.length > this.maxDepth)
+            return false;
+        if (regexWord == '' && [...node.links.keys].length == 0)
+            return true;
+        if (regexWord.length == 1) {
+            if (regexWord == '.')
+                return [...node.links.entries()].some(subNode => subNode[1].isEnd());
+            else return node.links.has(regexWord) && node.links.get(regexWord).isEnd();
+        }
 
-        let curr = trieRoot;
-        curr.links.forEach( (node, index) => {
-            if(node){
-                str += String.fromCharCode(97 + index);
-                if(node.isEnd())
+        for (let i = 0; i < regexWord.length; i++) {
+            let ch = regexWord.charAt(i);
+            if (ch == '.') {
+                for (let [character, trieNode] of node.links.entries()) {
+                    if (this.match(regexWord.substring(1), trieNode))
+                        return true;
+                }
+            } else {
+                return node.links.has(ch) && this.match(regexWord.substring(1), node.links.get(ch));
+            }
+        }
+        return false;
+    }
+
+    getMaxDepth() {
+        return this.maxDepth;
+    }
+
+    printAllWords(trieRoot, str) {
+        let curr = trieRoot || this.root;
+        str = str || "";
+        for (let [ch, node] of curr.links.entries()) {
+            if (node) {
+                str += node.getVal();
+                if (node.isEnd())
                     console.log(str);
                 this.printAllWords(node, str);
-                str = str.substring(0, str.length-1);
+                str = str.substring(0, str.length - 1);
             }
-        });
+        };
     }
 
 };
@@ -81,6 +112,7 @@ let main = () => {
     console.log(trie.search("app"));     // returns false
     console.log(trie.startsWith("app")); // returns true
     trie.insert("app");
+    trie.insert("apple");
     trie.insert("answer");
     trie.insert("any");
     trie.insert("bye");
@@ -88,6 +120,13 @@ let main = () => {
     trie.insert("there");
     console.log(trie.search("app"));     // returns true
     Trie.prototype.printAllWords(trie.root, "");
+    console.log(trie.getMaxDepth());
+    trie.printAllWords();
+    console.log(trie.match("app", trie.root));
+    console.log(trie.match("app.", trie.root));
+    console.log(trie.match("app", trie.root));
+    console.log(trie.match("app.e", trie.root));
+    console.log(trie.match("apple", trie.root));
 };
 
-main();
+// main();

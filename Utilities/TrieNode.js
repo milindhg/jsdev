@@ -1,19 +1,20 @@
 class TrieNode {
-    constructor() {
-        this.links = new Array(26);
-        this.links.fill(null);
+    constructor(ch) {
+        this.links = new Map();
+        this.val = ch || null;
     }
 
     containsKey(ch) {
-        return this.links[ch.charCodeAt(0) - this.aCharCode()] != null;
+        return this.links.has(ch);
     }
 
     get(ch) {
-        return this.links[ch.charCodeAt(0) - this.aCharCode()];
+        return this.links.get(ch);
     }
 
     put(ch, trieNode) {
-        return this.links[ch.charCodeAt(0) - this.aCharCode()] = trieNode;
+        trieNode.setVal(ch);
+        return this.links.set(ch, trieNode);
     }
 
     setEnd() {
@@ -24,10 +25,13 @@ class TrieNode {
         return this.end == true;
     }
 
-    aCharCode() {
-        return 97;
+    setVal(ch) {
+        this.val = ch;
     }
 
+    getVal() {
+        return this.val;
+    }
 };
 
 module.exports = TrieNode;
