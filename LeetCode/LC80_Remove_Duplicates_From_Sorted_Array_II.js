@@ -67,7 +67,7 @@ var removeDuplicatesComplicated = function (nums) {
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    var j = 2;
+    var j = 2;  // This is basically because we can assume first 2 numbers are already 2 counts of first number in the sorted array.
     for(var i=2; i<nums.length; i++){
         if(nums[i]==nums[j-1] && nums[i]==nums[j-2])
             continue;       //i.e. such a number needs to be overwritten further so don't increase j index.

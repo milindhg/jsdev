@@ -22,6 +22,9 @@ Solution:   https://leetcode.com/submissions/detail/184957261/  beats 26% JS SUb
             https://leetcode.com/submissions/detail/186426502/  beats 100% JS Submissions.
             The tweak of generating the array as we go instead of first creating an array with $ signs and then modifying that array improved the run time a lot. 
             So looks like in javascript the run time array creation is better than creating an array and modifying the array.
+
+
+            ALSO think about filling the spiral from inside to outside... :D
  */
 
  /**

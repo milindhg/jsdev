@@ -36,7 +36,7 @@
  * 
  * 
  * 
- * Solution:    https://leetcode.com/submissions/detail/242697495/ beats 74.82% JS Submissions.
+ * Solution:    https://leetcode.com/submissions/detail/463149595/ beats 96.17% JS Submissions.
  *              Idea is simple recursion. Work with base cases of only 1 number and no numbers in array.
  *              Then whenever there are more than 1 numbers in array - prepare a root, left subtree and right subtree.
  *              The slice method takes start and end or only start (i.e. from start till end of array) as arguments so that we can work on the sub-array in recursion.
@@ -53,6 +53,7 @@
  * }
  */
 
+var Tree = require("../Utilities/Tree")
 var TreeNode = require("../Utilities/TreeNode")
 
 /**
@@ -74,7 +75,11 @@ var sortedArrayToBST = function(nums) {
 };
 
 var main = () => {
-    console.log(sortedArrayToBST([-10,-3,0,5,9]));
+    var root = sortedArrayToBST([-10,-3,0,5,9]);
+    Tree.prototype.printBinaryTree(root);
+
+    root = sortedArrayToBST([1,3]);
+    Tree.prototype.printBinaryTree(root);
 }
 
 main();

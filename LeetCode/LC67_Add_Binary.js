@@ -71,18 +71,9 @@ var addBinaryEasier = function(a, b) {
     var j = b.length-1;
     var ans = "";
     var carry = '0';
-    while(i>=0 && j>=0){
-        var resp = addDigitsAndGetCarry(a[i--],b[j--],carry);
-        ans = resp[0] + ans;
-        carry = resp[1];
-    }
-    while(i>=0){
-        var resp = addDigitsAndGetCarry(a[i--],0,carry);
-        ans = resp[0] + ans;
-        carry = resp[1];
-    }
-    while(j>=0){
-        var resp = addDigitsAndGetCarry(0,b[j--],carry);
+    while(i>=0 || j>=0){
+        
+        var resp = addDigitsAndGetCarry(i>=0 ? a[i--] : 0,j>=0 ? b[j--] : 0,carry);
         ans = resp[0] + ans;
         carry = resp[1];
     }

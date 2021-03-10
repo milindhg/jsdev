@@ -10,10 +10,10 @@ Input: head = 1->4->3->2->5->2, x = 3
 Output: 1->2->2->4->3->5
 
 
-Solution:   https://leetcode.com/submissions/detail/211299522/ beats 52% JS Submissions.
-            //segregate nodes into 2 lists, one containing nodes less than x and other containing nodes greater than or equal 
-            //join the lists. Join afterList after the beforeList. Check whether beforelist is prepared if not, then directly return afterlist.
-            //It is a good idea to prepare the before and after list as empty nodes first as dummy nodes. This will avoid handling any null pointer exceptions later to see if before or after list is empty or not.
+Solution:   https://leetcode.com/submissions/detail/211299522/ beats 100% JS Submissions.
+            segregate nodes into 2 lists, one containing nodes less than x and other containing nodes greater than or equal 
+            join the lists. Join afterList after the beforeList. Check whether beforelist is prepared if not, then directly return afterlist.
+            It is a good idea to prepare the before and after list as empty nodes first as dummy nodes. This will avoid handling any null pointer exceptions later to see if before or after list is empty or not.
 
  */
 

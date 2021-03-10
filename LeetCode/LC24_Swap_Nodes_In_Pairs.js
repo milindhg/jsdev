@@ -10,10 +10,13 @@
 // Your algorithm should use only constant space. You may not modify the values in the list, only
 // nodes itself can be changed.
 // Definition for singly-linked list.
-function ListNode (val) {
+/* function ListNode (val) {
     this.val = val;
     this.next = null;
-}
+} */
+
+var List = require('../Utilities/LinkedList');
+var ListNode = require('../Utilities/LinkedList');
 
 /**
  * @param {ListNode} head
@@ -64,41 +67,18 @@ var swapPairsRecursiveHelper = function (head) {
     return n;
 }
 
-var printList = function (head) {
-    var str = "";
-    if (head === null) {
-        console.log(head);
-        return str;
-    }
-
-    var trav = head;
-    while (trav.next !== null) {
-        str += trav.val + ' -> '
-        trav = trav.next;
-    }
-    str += trav.val;
-    console.log(str);
-}
-
 var main = function () {
     
     var nums = [];
     nums = [ 1, 2, 3, 4 ];
-    var head = null;
-    for ( var i in nums) {
-        var trav = new ListNode(nums[nums.length - i - 1]);
-        if (head === null) {
-            head = trav;
-        } else {
-            trav.next = head;
-            head = trav;
-        }
-    }
-    printList(head);
-    head = swapPairsRecursive(head);
-    printList(head);
+    var head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
     head = swapPairs(head);
-    printList(head);
+    List.prototype.printList(head);
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
 }
 
 main();

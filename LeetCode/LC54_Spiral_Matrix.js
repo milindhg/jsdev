@@ -29,6 +29,7 @@ Solution:   https://leetcode.com/submissions/detail/186435669/  beats 48.71% JS 
             Now the condition on the while loop is very important and tricky. 
             Also there is additional check same as while loop required before every inside for loop. The main reason of doing it is in this problem we do not have symmetric matrix. i.e. m!=n.
             
+            Another simple to read solution with same approach available here - https://leetcode.com/problems/spiral-matrix/discuss/20570/Clean-Java-readable-human-friendly-code
 
  */
 

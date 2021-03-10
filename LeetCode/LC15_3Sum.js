@@ -17,6 +17,16 @@ Solution:   https://leetcode.com/submissions/detail/91227497/
 
             Runtime: O(n^2)
 
+            Better approach without storing anything in map
+            ```
+            Step 1: Sort the array (nlogn)
+            Step 2: Now in n^2 we can find all combinations for nums[i] + nums[j] + nums[k] = 0
+            Step 3: To optimize for nums[i], while nums[i] = nums[i+1], do i += 1
+            Step 4: Similary for j and k,
+                        while nums[j] = nums[j+1], do j += 1
+                        while nums[k] = nums[k-1], k -= 1
+            ```
+
 */
 
 

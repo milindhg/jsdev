@@ -13,13 +13,18 @@ Your function should return length = 2, with the first two elements of nums bein
 
 /*
 Solution:   https://leetcode.com/submissions/detail/96421254/ - beats 79.16% js submissions.
-            Since the array is already sorted, a simple linear run through the array can give the solution.
-            We can maintain a pointer to write the current element at the tracked index. This will be written only if the current element is not same as last element seen.
-            This means that basically we're copying the existing array to a new array only if the current element is not duplicate of the last seen element.
-            So since we're copying and doing in place, we're maintaining the pointer writeAtIndex which increments only when there is no duplicate element.
-            Finally we return the value of this writeAtPointer.
+Since the array is already sorted, a simple linear run through the array can
+give the solution.  We can maintain a pointer to write the current element at
+the tracked index. This will be written only if the current element is not same
+as last element seen.  This means that basically we're copying the existing
+array to a new array only if the current element is not duplicate of the last
+seen element.  So since we're copying and doing in place, we're maintaining the
+pointer writeAtIndex which increments only when there is no duplicate element.
+Finally we return the value of this writeAtPointer.
             
-            MAIN intuition here is to see that the unique elements are being copied to a new array only in here IN PLACE.
+MAIN intuition here is to see that the unique elements are being copied to a new
+array only in here IN PLACE.
+
 */
 
 /**

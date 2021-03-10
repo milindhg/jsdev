@@ -19,7 +19,7 @@ TODO this problem is yet incomplete.
  * @param {number[]} nums
  * @return {number}
  */
-var firstMissingPositive = function (nums) {
+var firstMissingPositiveIncomplete = function (nums) {
     var cursor = 0;
     while (cursor < nums.length) {
         var target = nums[cursor];
@@ -44,6 +44,37 @@ var firstMissingPositive = function (nums) {
         cursor++;
     }
     return nums.length;
+};
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var firstMissingPositive = function (nums) {
+    if (nums.length < 1)
+        return 1;
+    //loop zero to mark all out of window numbers into 1+nums.length
+    nums.forEach((num,i)=>{
+        if (num <= 0 || num > nums.length)
+            nums[i] = nums.length+1;
+    });
+
+        //Loop 1 to mark the numbers as negative when found
+    //Since we want to handle numbers outside the window, we can name them as something like Number.MAX_VALUE etc. or some sentinel
+    nums.forEach((num, i) => {
+        num = Math.abs(num);
+        if (num > 0 && num <= nums.length)
+            nums[num - 1] = (-1 * Math.abs(nums[num - 1]));
+    });
+    // console.log(nums);
+    let ans;
+    //Loop 2 to find the number (i.e. index which has positive number) that is missing.
+    nums.forEach((num, i) => {
+        if (!ans && num > 0)
+            ans = i + 1;
+    });
+    return (ans) ? ans : nums.length + 1;
 };
 
 var main = function () {

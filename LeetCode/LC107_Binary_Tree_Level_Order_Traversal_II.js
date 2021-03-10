@@ -25,6 +25,8 @@ Solution:   https://leetcode.com/submissions/detail/96136603/ - beats 21.51% of 
             Only thing here is we put the answers in the array in reverse order. Or we can use a stack to put prepare the answer and then pop and print the stack.
 */
 
+const Tree = require("../Utilities/Tree");
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -38,7 +40,7 @@ Solution:   https://leetcode.com/submissions/detail/96136603/ - beats 21.51% of 
  */
 var levelOrderBottom = function (root) {
     var answer = [];
-    if (root === null)
+    if (!root || root === null)
         return answer;
     var queue = [];
     queue.push(root);
@@ -63,3 +65,19 @@ var levelOrderBottom = function (root) {
     }
     return answer;
 };
+
+const main = () => {
+    let t1 = Tree.prototype.buildBinaryTree([3,9,20,null,null,15,7]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log(levelOrderBottom(t1));
+
+    t1 = Tree.prototype.buildBinaryTree([3]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log(levelOrderBottom(t1));
+
+    t1 = Tree.prototype.buildBinaryTree([]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log(levelOrderBottom(t1));
+};
+
+main();

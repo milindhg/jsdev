@@ -43,30 +43,30 @@ adjustment.
  * @param {number} target
  * @return {number}
  */
-var search = function(nums, target) {
+var search = function (nums, target) {
     // First find the smallest element in the array to get the adjusted starting
     // index of the pseudo sorted array.
     let low = 0;
-    let high = nums.length-1;
-    while(low<high){
-        let mid = Math.floor((low+high)/2);
-        if(nums[mid]>nums[high])
+    let high = nums.length - 1;
+    while (low < high) {
+        let mid = Math.floor((low + high) / 2);
+        if (nums[mid] > nums[high])
             low = mid + 1;
         else
             high = mid;
     }
-    
+
     //when low == high means that index is the start of the pseudo sorted array.
     //Now find the element in the array with the adjustment
     let rotationAdjustment = low;
     low = 0;
     high = nums.length - 1;
-    while(low <= high){
-        let mid = Math.floor((low+high)/2);
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
         let readMid = (mid + rotationAdjustment) % nums.length;
-        if(nums[readMid] == target)
+        if (nums[readMid] == target)
             return readMid;
-        else if(target < nums[readMid])
+        else if (target < nums[readMid])
             high = mid - 1;
         else
             low = mid + 1;
@@ -74,9 +74,41 @@ var search = function(nums, target) {
     return -1;
 };
 
-let main = ()=>{
-    console.log(search([4,5,6,7,0,1,2],0));
-    console.log(search([4,5,6,7,0,1,2],3));
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ * 
+ * https://leetcode.com/submissions/detail/327332902/   beats 66.07% JS Submissions.
+ * 
+ */
+var searchEasier = function (nums, target) {
+    let low = 0;
+    let high = nums.length - 1;
+    while (low <= high) {
+        let mid = Math.floor(low + (high - low) / 2);
+        if (nums[mid] == target)
+            return mid;
+        else if (nums[mid] <= nums[high]) {
+            if (target <= nums[high] && target >= nums[mid])
+                low = mid + 1;
+            else
+                high = mid - 1;
+        } else {
+            if (target <= nums[mid] && target >= nums[low])
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+    }
+    return -1;
+};
+
+let main = () => {
+    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 0));
+    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 3));
+    console.log(searchEasier([1, 3], 3));
 };
 
 main();

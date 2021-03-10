@@ -32,6 +32,8 @@ Solution:   https://leetcode.com/submissions/detail/99361487/ beats 57.53% solut
             To avoid this problem, whenever we find a positive root to leaf path, we should push a copy of pathTillNow instead of directly pushing the reference of the array.
 */
 
+const Tree = require("../Utilities/Tree");
+
 /**
  * Definition for a binary tree node. function TreeNode(val) { this.val = val; this.left =
  * this.right = null; }
@@ -67,10 +69,26 @@ var pathSumHelper = function (root, sum, sumTillNow, pathTillNow, pathSumPaths) 
     } else {
         pathTillNow.push(root.val);
         pathSumPaths = pathSumHelper(root.left, sum, sumTillNow + root.val,
-                pathTillNow, pathSumPaths);
+            pathTillNow, pathSumPaths);
         pathSumPaths = pathSumHelper(root.right, sum, sumTillNow + root.val,
-                pathTillNow, pathSumPaths);
+            pathTillNow, pathSumPaths);
         pathTillNow.pop();
     }
     return pathSumPaths;
 };
+
+const main = () => {
+    let t1 = Tree.prototype.buildBinaryTree([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((pathSum(t1, 22)));
+
+    t1 = Tree.prototype.buildBinaryTree([1, 2, 3]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((pathSum(t1, 5)));
+
+    t1 = Tree.prototype.buildBinaryTree([1, 2]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((pathSum(t1, 0)));
+};
+
+main();

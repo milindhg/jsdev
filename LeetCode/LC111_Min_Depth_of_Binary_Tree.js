@@ -24,12 +24,13 @@ https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
 
 
 /*
- * Solution:    https://leetcode.com/submissions/detail/151670264/ beats 96.76% of submissions in JS
+ * Solution:    https://leetcode.com/submissions/detail/463147721/ beats 99.21% of submissions in JS
  *              Start level order traversal of the tree and keep noting the depths in an array whenever you encounter a leaf node in level order traversal.
  *              Then find the min of the depths array and return after adding 1 to it. 
  * 
  */
 
+ const Tree = require("../Utilities/Tree");
 
 /**
  * Definition for a binary tree node.
@@ -56,8 +57,10 @@ var minDepth = function(root) {
             depth+=1;
             queue.push(elem);
         }else{
-            if(elem.left==null && elem.right==null)
+            if(elem.left==null && elem.right==null){
                 depthArr.push(depth);
+                break;  // this is a trick for performance. As soon as you find a leaf node in Level Order traversal, you have your answer.
+            }
             if(elem.left!=null)
                 queue.push(elem.left);
             if(elem.right!=null)
@@ -68,3 +71,14 @@ var minDepth = function(root) {
 };
 
 
+const main = () => {
+    var t1 = Tree.prototype.buildBinaryTree([3,9,20,null,null,15,7]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log(minDepth(t1));
+
+    t1 = Tree.prototype.buildBinaryTree([2,null,3,null,4,null,5,null,6]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log(minDepth(t1));
+};
+
+main();

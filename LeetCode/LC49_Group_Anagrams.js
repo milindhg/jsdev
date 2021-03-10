@@ -48,6 +48,11 @@ var groupAnagrams = function (strs) {
  * @return {string[][]}
  * 
  * https://leetcode.com/submissions/detail/111830708/ beats 92% of other js submissions
+ * In this efficient algorithm we basically assign a unique character for each of the 26 alphabets as reference. And then prepare a unique hash for every word.
+ * So if there are same words in a given string only then the product of all 3 prime numbers i.e. alphabets will be same. 
+ * We multiply to avoid the summation coming close to each other or clashing.
+ * 
+ * Really very effective technique and AVOIDS the need to sort the strings.
  * 
  */
 var groupAnagramsEfficient = function (strs) {

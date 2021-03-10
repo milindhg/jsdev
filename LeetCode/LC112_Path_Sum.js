@@ -23,6 +23,8 @@ Solution:   https://leetcode.com/submissions/detail/96649061/ - beats 47% of js 
             So we do both calculate height and compare in the same function which is a helper function.
 */
 
+const Tree = require("../Utilities/Tree");
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -55,6 +57,22 @@ var hasPathSumHelper = function (root, sum, sumTillNow) {
     } else {
         // console.log('root is: ' + root.val + ' sum is: ' + sum + ' sumTillNow is ' + sumTillNow);
         return hasPathSumHelper(root.left, sum, sumTillNow + root.val)
-                || hasPathSumHelper(root.right, sum, sumTillNow + root.val);
+            || hasPathSumHelper(root.right, sum, sumTillNow + root.val);
     }
 };
+
+const main = () => {
+    let t1 = Tree.prototype.buildBinaryTree([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((hasPathSum(t1, 22)));
+
+    t1 = Tree.prototype.buildBinaryTree([1, 2, 3]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((hasPathSum(t1, 5)));
+
+    t1 = Tree.prototype.buildBinaryTree([1, 2]);
+    Tree.prototype.printBinaryTree(t1);
+    console.log((hasPathSum(t1, 2)));
+};
+
+main();
