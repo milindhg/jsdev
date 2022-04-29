@@ -71,7 +71,7 @@ var topKFrequent = function(nums, k) {
 var topKFrequent = function(nums, k) {
     let countsMap = new Map();
     nums.forEach(num=>countsMap.set(num, (countsMap.get(num) || 0) + 1 ));
-    console.log(countsMap);
+    // console.log(countsMap);
     
     return [...countsMap.entries()].sort(([, countA], [, countB])=>countB-countA).slice(0,k).map(a=>a[0]);
     

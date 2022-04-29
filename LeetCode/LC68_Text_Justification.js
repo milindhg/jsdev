@@ -59,7 +59,7 @@ Solution:   https://leetcode.com/submissions/detail/213673730/  beats 87.89% JS 
             The idea is basically to first keep track of taking in words and preparing a line. Keep track of the ongoing width including 1 space between words and see that it does not cross maxWidth.
             If we cross maxWidth, the word on which we exceed should be put in the next line.
             For current line, generate the justified string.
-            For last line, left justify the line and add to answer. To detet you're on last line, check the iterator index == input words.length.
+            For last line, left justify the line and add to answer. To detect you're on last line, check the iterator index == input words.length.
 
             For creating justified string, use below logic:
             Calculate number of spaces remaining to pad in between to prepare the justified string.

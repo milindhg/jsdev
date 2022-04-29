@@ -9,9 +9,12 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 
 */
 /*
-Solution:   https://leetcode.com/submissions/detail/93380570/ Iterative.
-            Keep 3 pointers prev, curr and next. Always change the pointer of curr to point from next to prev. And keep moving 3 pointers ahead as necessary until next node is NULL.
-            
+Solution:   https://leetcode.com/submissions/detail/328522236/ Iterative.  beats
+            80.68 JS Submissions
+ Keep 3 pointers prev, curr and next. Always change the
+pointer of curr to point from next to prev. And keep moving 3 pointers ahead as
+necessary until next node is NULL.
+
 */
 
 var List = require('../Utilities/LinkedList');

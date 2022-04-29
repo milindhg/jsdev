@@ -30,10 +30,19 @@ Follow up:
 What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
 
 
-Solution:   https://leetcode.com/submissions/detail/279209203/ beats 95.06% JS Submissions.
-            Simple idea since its already a BST. So sort of already sorted array given.
-            So just do a inorder traversal to actually get the sorted array and then return the k-1th number since array indices start from 0.
-            O(n) where n is the number of nodes in the tree.
+Solution:   https://leetcode.com/submissions/detail/279209203/ 
+            beats 95.06% JS Submissions.
+
+Simple idea since its already a BST. So sort of already sorted array given.  So
+just do a inorder traversal to actually get the sorted array and then return the
+k-1th number since array indices start from 0.
+
+O(n) where n is the number of nodes in the tree.
+
+Think about another solution given below which is better in run time since it does not
+prepare complete inorder traversal everytime.
+
+
  */
 
 
@@ -58,11 +67,35 @@ var kthSmallest = function(root, k) {
 };
 
 var inorder = function(root, inorderOutput, k){
+    if(inorderOutput.length==k) return;     //Simply addingthis line can also improve the recursion performance since we're doing a continuation break here.
     if(root){
         inorder(root.left, inorderOutput);
         inorderOutput.push(root.val);
         inorder(root.right, inorderOutput);
     }
+};
+
+// Think about this solution which is better in run time since it does not
+// prepare complete inorder traversal everytime.
+var kthSmallestBetter = function(root, k) {
+    let res;
+    
+    function traverse(node) {
+        if (!node) return;
+        
+        traverse(node.left);
+        k--;
+        
+        if (k === 0) {
+            res = node.val;
+            return;
+        }
+        
+        traverse(node.right)
+    }
+    
+    traverse(root)
+    return res;
 };
 
 var main = () => {

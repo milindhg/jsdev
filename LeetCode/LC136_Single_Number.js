@@ -41,7 +41,6 @@ var singleNumber = function (nums) {
  * @return {number}
  */
 var singleNumberES6 = function(nums) {
-    let i = 0;
     let ans;
     nums.forEach((num)=>{
         ans = ans ^ num;

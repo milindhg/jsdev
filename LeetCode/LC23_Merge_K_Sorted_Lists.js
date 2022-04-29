@@ -17,6 +17,8 @@ Output: 1->1->2->3->4->4->5->6
 Solution:   https://leetcode.com/submissions/detail/154737744/  beats 100% js submissions.
             Best way is to keep merging 2 lists at a time until 1 list is left. 
             Use the given lists as a queue and keep removing 2 lists, merge them and enqueue the merged list back to queue.
+
+            !!! TODO Do this problem using Priority Queue. Explanation here - https://www.youtube.com/watch?v=ptYUCjfNhJY | https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue 
  */
 
 var List = require('../Utilities/LinkedList');

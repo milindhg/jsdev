@@ -1,0 +1,143 @@
+Course content
+Collapse all 54 lectures
+04:17:35
+–
+Introduction
+22:09
+Welcome to the Course!
+Preview
+01:06
+Optional JavaScript Crash-Course (Skip ahead if you already know JavaScript!)
+07:23
+Environment Setup - Windows
+04:53
+Environment Setup - macOS
+03:57
+Course GitHub Repository and How-To Run Tests
+04:24
+How to get the most value from this course
+Preview
+00:26
+–
+Strings
+35:59
+Valid Palindrome (LC #125)
+07:25
+Longest Palindromic Substring (LC #5)
+07:25
+Longest Substring Without Repeating Characters - Part 1 (LC #3)
+Preview
+05:07
+Longest Substring Without Repeating Characters - Part 2 (LC #3)
+Preview
+04:56
+Group Anagrams (LC #49)
+05:23
+Valid Parentheses (LC #20)
+05:43
+–
+Dynamic Programming
+44:40
+Climbing Stairs (LC #70)
+05:11
+House Robber (LC #198)
+06:15
+Jump Game - Part 1 (LC #55)
+03:21
+Jump Game - Part 2 (LC #55)
+03:42
+Longest Increasing Subsequence - Part 1 (LC #300)
+03:52
+Longest Increasing Subsequence - Part 2 (LC #300)
+04:09
+Coin Change - Part 1 (LC #322)
+05:34
+Coin Change - Part 2 (LC #322)
+05:09
+Unique Paths (LC #62)
+07:27
+–
+Interval
+17:48
+Meeting Rooms (LC #252)
+04:59
+Non-overlapping Intervals (LC #435)
+06:54
+Merge Intervals (LC #56)
+05:55
+–
+Linked List
+18:53
+Reverse Linked List (LC #206)
+04:17
+Linked List Cycle (LC #141)
+04:12
+Remove Nth Node From End of List (LC #19)
+05:04
+Merge Two Sorted Lists (LC #21)
+05:20
+–
+Matrix
+26:22
+Spiral Matrix - Part 1 (LC #54)
+02:20
+Spiral Matrix - Part 2 (LC #54)
+06:07
+Set Matrix Zeroes - Part 1 (LC #73)
+03:42
+Set Matrix Zeroes - Part 2 (LC #73)
+06:00
+Word Search (LC #79)
+08:13
+–
+Trees and Graphs
+34:53
+Number of Islands (LC #200)
+06:32
+Invert Binary Tree (LC #226)
+Preview
+03:27
+Maximum Depth of Binary Tree (LC #104)
+03:27
+Binary Tree Level Order Traversal (LC #102)
+04:17
+Same Tree (LC #100)
+04:33
+Validate Binary Search Tree (LC #98)
+06:28
+Lowest Common Ancestor of a Binary Search Tree - Part 1 (LC #235)
+02:39
+Lowest Common Ancestor of a Binary Search Tree - Part 2 (LC #235)
+03:30
+–
+Arrays
+56:16
+Contains Duplicate (LC #217)
+03:01
+Product of Array Except Self (LC #238)
+06:04
+Container With Most Water (LC #11)
+06:18
+Best Time to Buy and Sell Stock (LC #121)
+04:36
+Two Sum (LC #1)
+05:06
+3Sum - Part 1 (LC #15)
+04:30
+3Sum - Part 2 (LC #15)
+07:36
+Maximum Product Subarray - Part 1 (LC #152)
+04:37
+Maximum Product Subarray - Part 2 (LC #152)
+04:23
+Find Minimum in Rotated Sorted Array - Part 1 (LC #153)
+04:56
+Find Minimum in Rotated Sorted Array - Part 2 (LC #153)
+05:09
+–
+Conclusion
+00:36
+Congratulations!
+00:20
+Additional Resources & YouTube Channel
+00:16

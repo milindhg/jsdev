@@ -19,6 +19,18 @@ Solution:   https://leetcode.com/submissions/detail/79734151/
             Case 4: lets say 5 houses - get max of (5 + getMax(3) + getMax(2)) or getMax(4)
             Case 5: Similarly build for 6, 7, houses and so on.
 
+
+            Easier and efficient approach - https://leetcode.com/submissions/detail/305827074/  beats 92.78% JS Submissions.
+            It is based on dynamic programming with memoization.
+            just have 3 cases - 
+            Case 1: empty nums. - return 0
+            Case 2: only 1 house - return that house value.
+            Case 3: more than 1 house. Then start preparing the memoization array.
+            For 2 houses its simple. Pick the max value of the 2.
+            But as houses increase, find what is more - current last house + value of all the remaining houses except the previous house. OR
+            Don't rob current house and rob maximum till the previous house.
+
+            Automatically the memoization array is built and return the last element number from the memoization array.
 */
 /**
  * @param {number[]} nums
@@ -73,9 +85,25 @@ var getMaxProfit = function (nums, start, end, memo) {
     }
 }
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var robNew = function(nums) {
+    if(nums.length==0) return 0;
+    if(nums.length==1) return nums[0];
+    var mem = [];
+    mem.push(nums[0]);
+    mem.push(Math.max(nums[0],nums[1]));
+    for(var i=2; i<nums.length; i++){
+        mem.push(Math.max(mem[i-1], mem[i-2] + nums[i]));
+    }
+    return mem[nums.length-1];
+};
+
 var main = function () {
     var nums = [ 2, 7, 9, 3, 1 ];
-    console.log(rob(nums));
+    console.log(robNew(nums));
 };
 
 main();

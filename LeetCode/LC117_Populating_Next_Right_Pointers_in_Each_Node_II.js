@@ -31,7 +31,7 @@ You may only use constant extra space.
 Recursive approach is fine, implicit stack space does not count as extra space for this problem.
 
 
-Solution:   https://leetcode.com/submissions/detail/215326598/ beats 4% JS Subsmissions.
+Solution:   https://leetcode.com/submissions/detail/466302355/ beats 95.95% JS Subsmissions.
             The easiest and most intuitive approach is to do this problem by Level Order Traversal.
             However, one of the conditions given in the notes, is that this problem should be done in constant space.
             Level order traversal general is done by using queue usually which takes up max O(2^h) space at a time where h is the height of the tree.

@@ -63,7 +63,12 @@ Constraints:
 instructions[i] is 'G', 'L' or, 'R'.
 
 
-
+Solution:   https://leetcode.com/submissions/detail/624946433/  beats 88.10% js submissions
+            The main crux of the problem is that the robot is going to repeat the instructions forever.
+            That means when at the end of the instructions there are 2 possibilities when the circle can exist and sometime you will be coming back at the same point you started at i.e. 0,0 and with the same direction you started with.
+                A. You move to some point and still not facing North (because you started facing North) so there is a chance after too many repetitions you will return to 0,0
+                B. If you are still at 0,0, but facing another direction, that means you will return again and again at 0,0 but facing a different direction after every repetition.
+            So to solve this, basically traverse through the commands and at the end check these above 2 conditions - if (direction is still not North || the point at the end of traversal of commands is again 0,0) then answer is true.
 
  */
 
@@ -71,46 +76,46 @@ instructions[i] is 'G', 'L' or, 'R'.
  * @param {string} instructions
  * @return {boolean}
  */
- var isRobotBounded = function(instructions) {
+var isRobotBounded = function (instructions) {
     var currD = 0;
     //var dirLookup = {0:'N', 1:'E', 2:'S', 3:'W'};
-    
-    var currCoords = [0,0]
-    
+
+    var currCoords = [0, 0]
+
     //for (var i = 0; i < 4; i++){
-        var j = 0;
-        while(j < instructions.length){
-            var c = instructions.charAt(j);
-            //console.log(c);
-            if (c == 'G'){
-                switch(currD){
-                    case 0: currCoords[1]++; 
-                        break;
-                    case 1: currCoords[0]++; 
-                        break;
-                    case 2: currCoords[1]--; 
-                        break;
-                    case 3: currCoords[0]--; 
-                        break;  
-                }
+    var j = 0;
+    while (j < instructions.length) {
+        var c = instructions.charAt(j);
+        //console.log(c);
+        if (c == 'G') {
+            switch (currD) {
+                case 0: currCoords[1]++;
+                    break;
+                case 1: currCoords[0]++;
+                    break;
+                case 2: currCoords[1]--;
+                    break;
+                case 3: currCoords[0]--;
+                    break;
             }
-            else if(c == 'L')
-                currD=(currD-1)%4; if(currD<0) currD = 4+currD;
-            else if (c == 'R')
-                currD=(currD+1)%4;
-            j++;
-            //console.log("completing current while iteration " + "currCoords is " + currCoords + " and currD is " + currD);
         }
-        if((currCoords[0]==0 && currCoords[1]==0) || (currD != 0))
-        return true;
-        return false;
-    //}
-    
-    //console.log(currCoords);
-    if(currCoords[0]==0 && currCoords[1]==0)
+        else if (c == 'L')
+            currD = (currD - 1) % 4; if (currD < 0) currD = 4 + currD;
+        else if (c == 'R')
+            currD = (currD + 1) % 4;
+        j++;
+        //console.log("completing current while iteration " + "currCoords is " + currCoords + " and currD is " + currD);
+    }
+    if ((currCoords[0] == 0 && currCoords[1] == 0) || (currD != 0))
         return true;
     return false;
-    
+    //}
+
+    //console.log(currCoords);
+    if (currCoords[0] == 0 && currCoords[1] == 0)
+        return true;
+    return false;
+
 };
 
 var main = () => {
