@@ -18,6 +18,9 @@ https://leetcode.com/problems/happy-number/
     Solution:   https://leetcode.com/submissions/detail/77134710/
                 Keep a hashmap of numbers which are coming again and again in the calculation.
                 This helps in avoiding the infinite loop. Because infinite loop basically happens because there are numbers coming again and again in the answer.
+
+                Tried again during the Corona Virus 30 day LeetCode challenge and found that the same approach using set gave better performance.
+                https://leetcode.com/submissions/detail/318519651/  beats 98.46% JS Submissions.
 */
 
 /**
@@ -48,9 +51,38 @@ var determineIsHappy = function (n) {
     return determineIsHappy(newnum);
 };
 
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappyNew = function(n) {
+    let foundNums = new Set();
+    let newNum;
+    while(true){
+        foundNums.add(n);
+        n = getNewNum(n);
+        if(n==1)
+            return true;
+        else if(foundNums.has(n))
+            return false;
+    }
+};
+
+var getNewNum = (n) =>{
+    let ans = 0;
+    while(n>0){
+        ans += Math.pow(n%10,2);
+        n = Math.floor(n/10);
+    }
+    return ans;
+}
+
 var main = function () {
     var n = 18;
-    console.log(isHappy(n));
+    console.log(isHappyNew(n));
+    var n = 19;
+    console.log(isHappyNew(n));
 };
 
 main();

@@ -44,5 +44,7 @@ var maxProfit = function (prices) {
 
 var main = function () {
     var prices = [ 7, 1, 5, 3, 6, 4 ];
-    console.log()
-}
+    console.log(maxProfit(prices));
+};
+
+main();

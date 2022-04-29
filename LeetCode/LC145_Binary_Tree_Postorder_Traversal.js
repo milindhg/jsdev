@@ -15,6 +15,8 @@ Input: [1,null,2,3]
 Output: [3,2,1]
 Follow up: Recursive solution is trivial, could you do it iteratively?
 
+TYPE = HARD, Tree, Order traversal, DFS
+
 Solution:   https://leetcode.com/submissions/detail/279787572/ beats 99.44% JS Submissions.
             Basic idea of recursive approach is very simple for all three pre, post and inorder solutions.
             pre = VLR

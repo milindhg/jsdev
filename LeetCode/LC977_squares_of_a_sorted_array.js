@@ -87,10 +87,10 @@ var sortedSquares = function(A) {
  * 
  */
 var sortedSquaresBetter = function(A) {
-    let ans = new Array(nums.length);
-    let [start, end] = [0, nums.length - 1]
-    for(let i=nums.length-1; i>=0; i++){
-        let [sqStart, sqEnd] = [nums[start] ** 2, nums[end] ** 2];
+    let ans = new Array(A.length);
+    let [start, end] = [0, A.length - 1]
+    for(let i=A.length-1; i>=0; i--){
+        let [sqStart, sqEnd] = [A[start] ** 2, A[end] ** 2];
         if(sqStart > sqEnd){
             ans[i] = sqStart;
             start++;
@@ -104,3 +104,8 @@ var sortedSquaresBetter = function(A) {
 };
 // @lc code=end
 
+let main = () => {
+    console.log(sortedSquaresBetter([-7,-3,2,3,11]));
+};
+
+main();

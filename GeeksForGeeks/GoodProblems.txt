@@ -465,6 +465,7 @@ https://leetcode.com/problems/sliding-window-maximum/description/ - think about 
 https://leetcode.com/problems/plus-one-linked-list - think 1171
 https://leetcode.com/problems/design-phone-directory - think 1171
 https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/description/ - think 1171
+https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/ - 1171
 
 https://leetcode.com/problems/unique-binary-search-trees-ii/description/ - think 543 - diameter of a binary tree
 https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/ - think 543 - diameter of a binary tree
@@ -609,4 +610,65 @@ think 230
 https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
 - think 230
 https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree - think 230
+
+https://leetcode.com/problems/maximize-distance-to-closest-person/description/ -
+think 1333
+https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/description/
+- think 1333
+https://leetcode.com/problems/invalid-transactions/description/ - think 1333
+https://leetcode.com/problems/pascals-triangle/description/ - think 1333
+https://leetcode.com/problems/maximum-gap/description/ - think 1333
+https://leetcode.com/problems/contains-duplicate-ii/description/ - think 1333
+
+https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+
+https://leetcode.com/problems/two-sum-iii-data-structure-design/
+
+https://leetcode.com/problems/4sum/
+https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+https://leetcode.com/problems/two-sum-less-than-k/
+https://leetcode.com/problems/max-number-of-k-sum-pairs/
+https://leetcode.com/problems/count-good-meals/
+Think problem 1
+
+
+https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
+https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/
+https://leetcode.com/problems/maximum-product-of-word-lengths/
+https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/
+Think problem 1290 - bitwise
+
+https://leetcode.com/problems/maximum-of-absolute-value-expression/
+https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+https://leetcode.com/problems/maximum-performance-of-a-team/
+Think problem 1356 problem. Bitwise
+
+Similar problems to 56 - Merge intervals
+btw here are the questions that can be solved with the same technique
+252 Meeting Rooms
+253 Meeting Rooms II
+435 Non-overlapping Intervals <- very similar, i did it with just 3 lines different
+Practice them in a row for better understanding 
+
+https://leetcode.com/problems/furthest-building-you-can-reach/
+https://leetcode.com/problems/minimum-number-of-refueling-stops/
+Both problems above are simple.
+
+Heap implementation
+https://codereview.stackexchange.com/questions/232248/binary-heap-module-in-typescript-javascript-supporting-min-heap-and-max-heap
+https://github.com/harsh07bharvada/structures-wiz/blob/master/data-structures/PriorityQueue.js
+
+Similar problems to Furthest Building you can reach 1642
+https://leetcode.com/problems/minimum-number-of-refueling-stops/
+https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+https://leetcode.com/problems/magnetic-force-between-two-balls/
+https://leetcode.com/problems/find-the-most-competitive-subsequence/
+
+
+Problems similar to a good hard problem - https://leetcode.com/problems/minimum-number-of-refueling-stops/submissions/
+https://leetcode.com/problems/employee-free-time/
+https://leetcode.com/problems/shortest-common-supersequence/
+https://leetcode.com/problems/reducing-dishes/
+
+https://leetcode.com/problems/ugly-number-iii/
 

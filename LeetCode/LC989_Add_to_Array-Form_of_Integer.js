@@ -45,6 +45,9 @@ Solution:   https://leetcode.com/submissions/detail/313118561/  beats 42.60% JS 
 
             So adding or subtracting etc can be done only one digit at a time.
 
+            Time Complexity: O(max(N,logK)) where N is the length of A.
+            Space Complexity: O(max(N,logK)).
+
  */
 
 /**

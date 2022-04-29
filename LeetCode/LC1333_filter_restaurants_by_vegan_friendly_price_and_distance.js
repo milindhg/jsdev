@@ -80,8 +80,8 @@
  * All idi are distinct.
  * 
  * 
- * Solution:    https://leetcode.com/submissions/detail/344699144/
- *              beats 67.35% JS Submissions.
+ * Solution:    https://leetcode.com/submissions/detail/344700360/
+ *              beats 91.84% JS Submissions.
  * 
 
 The main idea is very simple and using the inbuilt array functions of JS ES6

@@ -34,6 +34,8 @@ Solution:   https://leetcode.com/submissions/detail/274633176/  beats 91.91% JS 
             Then traverse the string and if I is found then remove an element from the start i.e. increasing order and if D is found then remove an element from the end of the array.
             Then return the answer.
 
+            TO OPTIMIZE - Instead of storing an array, simply have 2 variables tracking to start - low as 0 and high as N. then keep updating low and high.
+
  */
 
 /**

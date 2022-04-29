@@ -83,8 +83,8 @@ let TreeNode = require("../Utilities/TreeNode");
  * @param {number[]} preorder
  * @return {TreeNode}
  */
-var bstFromPreorder = function(preorder) {
-    let root = bstFromPreorderHelper(preorder, 0, preorder.length-1);
+var bstFromPreorder = function (preorder) {
+    let root = bstFromPreorderHelper(preorder, 0, preorder.length - 1);
     return root;
 };
 // @lc code=end
@@ -92,45 +92,59 @@ var bstFromPreorder = function(preorder) {
 
 let bstFromPreorderHelper = (preorder, start, end) => {
     let root = new TreeNode(preorder[start]);
-    if(start == end)
+    console.log(start, end ,findNextRoot(preorder, start, end));
+    if (start == end)
         return root;
     start++;
 
     let lStart = start;
-    let lEnd = start;
-    while(preorder[lEnd]<root.val) lEnd++;
-    if(lStart<lEnd)
-        root.left = bstFromPreorderHelper(preorder, lStart, lEnd-1);
+    let lEnd = findNextRoot(preorder, start , end);
+    // while (preorder[lEnd] < root.val) lEnd++;
+    if (lStart < lEnd)
+        root.left = bstFromPreorderHelper(preorder, lStart, lEnd - 1);
 
-        let rStart = lEnd;
+    let rStart = lEnd;
     let rEnd = end;
-    if(rStart<=rEnd)
+    if (rStart <= rEnd)
         root.right = bstFromPreorderHelper(preorder, rStart, rEnd);
 
     return root;
 }
 
+let findNextRoot = (preorder, start, end) => {
+    let rootVal = preorder[start++];
+    let mid = start;
+    while (start <= end) {
+        mid = Math.floor(start + (end - start) / 2);
+        if (preorder[mid] < rootVal)
+            start = mid + 1;
+        else
+            end = mid - 1;
+    }
+    return mid;
+}
 
-let main = ()=>{
-    let l1 = Tree.prototype.buildBinaryTree([8,5,10,1,7,null,12]);
+
+let main = () => {
+    let l1 = Tree.prototype.buildBinaryTree([8, 5, 10, 1, 7, null, 12]);
     Tree.prototype.printBinaryTree(l1);
     Tree.prototype.printPreorder(l1);
 
-    let arr = [ 8, 5, 1, 7, 10, 12 ];
+    let arr = [8, 5, 1, 7, 10, 12];
     Tree.prototype.printBinaryTree(bstFromPreorder(arr));
-    arr = [ 8, 5, 1, 7, 10, 9, 12 ];
-    Tree.prototype.printBinaryTree(bstFromPreorder(arr));
-    arr = [ 8, 5, 1, 7, 10, 8 ];
-    Tree.prototype.printBinaryTree(bstFromPreorder(arr));
-    arr = [ 8, 5, 1, 7, 10];
-    Tree.prototype.printBinaryTree(bstFromPreorder(arr));
-    arr = [ 1, 13];
-    Tree.prototype.printBinaryTree(bstFromPreorder(arr));
-    arr = [ 12, 1];
-    Tree.prototype.printBinaryTree(bstFromPreorder(arr));
+    // arr = [8, 5, 1, 7, 10, 9, 12];
+    // Tree.prototype.printBinaryTree(bstFromPreorder(arr));
+    // arr = [8, 5, 1, 7, 10, 8];
+    // Tree.prototype.printBinaryTree(bstFromPreorder(arr));
+    // arr = [8, 5, 1, 7, 10];
+    // Tree.prototype.printBinaryTree(bstFromPreorder(arr));
+    // arr = [1, 13];
+    // Tree.prototype.printBinaryTree(bstFromPreorder(arr));
+    // arr = [12, 1];
+    // Tree.prototype.printBinaryTree(bstFromPreorder(arr));
 
-    let l2 = Tree.prototype.buildBinaryTree([8,5,12,1,7,null,null,null,null,null,10,8]);
-    Tree.prototype.printBinaryTree(l2);
+    // let l2 = Tree.prototype.buildBinaryTree([8, 5, 12, 1, 7, null, null, null, null, null, 10, 8]);
+    // Tree.prototype.printBinaryTree(l2);
 };
 
 main();

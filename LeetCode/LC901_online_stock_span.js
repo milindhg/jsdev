@@ -65,7 +65,8 @@
  * 
 
 This is a good stack problem. Think about the problem to give a Data Structure
-to output minimum element in stack anytime. - 155 https://leetcode.com/problems/min-stack/description/
+to output minimum element in stack anytime. - 155
+https://leetcode.com/problems/min-stack/description/
 
 A slight modification is to always have the maximum element in our stack. So our
 stack is a window of all the lements which are greater than current element in
