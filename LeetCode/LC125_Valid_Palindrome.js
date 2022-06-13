@@ -26,30 +26,35 @@ Output: false
  * @return {boolean}
  */
 var isPalindrome = function (s) {
-    var x = 0;
-    var y = s.length - 1;
-    while (x < y) {
-        var currCharX = s.charAt(x);
-        var currCharY = s.charAt(y);
-        while ((currCharX < 'A' || currCharX > 'Z') && (currCharX < 'a' || currCharX > 'z') && (currCharX < '0' || currCharX > '9') && x < y) {
-            x++;
-            currCharX = s.charAt(x);
+    var left = 0;
+    var right = s.length - 1;
+    while (left < right) {
+        var currCharLeft = s.charAt(left);
+        var currCharRight = s.charAt(right);
+
+        while (!isAlphanumeric(currCharLeft) && left < right) {
+            left++;
+            currCharLeft = s.charAt(left);
             // console.log('now x = ' + x);
         }
-        while ((currCharY < 'A' || currCharY > 'Z') && (currCharY < 'a' || currCharY > 'z') && (currCharY < '0' || currCharY > '9') && x < y) {
-            y--;
-            currCharY = s.charAt(y);
+        while (!isAlphanumeric(currCharRight) && left < right) {
+            right--;
+            currCharRight = s.charAt(right);
         }
-        if (currCharX.toLowerCase() == currCharY.toLowerCase()) {
+        if (currCharLeft.toLowerCase() == currCharRight.toLowerCase()) {
             // console.log('x = ' + x + ' value = ' + currCharX + ' | y = ' + y + ' value = ' + currCharY);
-            x++;
-            y--;
+            left++;
+            right--;
         } else {
             return false;
         }
     }
     return true;
 };
+
+var isAlphanumeric = function (character) {
+    return (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z') || (character >= '0' && character <= '9');
+}
 
 
 var main = function () {

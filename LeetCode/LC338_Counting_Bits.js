@@ -21,6 +21,8 @@ out number of 1s in the binary representation of each number as we traverse from
 0 to num.  So the run time of this solution becomes O(n * 32) since there are 32
 bits for each of the numbers
 
+This can be done using the function in problem 191 (Number of 1 Bits) as a helper function.
+
 https://leetcode.com/submissions/detail/345766788/
 beats 99 % of JS SUbmissions. THe idea is as below.
 But another radical solution can be written based on looking at the pattern

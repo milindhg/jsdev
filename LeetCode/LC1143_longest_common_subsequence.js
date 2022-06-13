@@ -92,12 +92,14 @@ var longestCommonSubsequence = function (text1, text2) {
         }
     }
 
+    console.log(mem);
     return mem[m][n];
 };
 // @lc code=end
 
 let main = () => {
     console.log(longestCommonSubsequence("abcde", "ace"));
+    console.log(longestCommonSubsequence("abcdefghijk", "ace"));
     console.log(longestCommonSubsequence("abc", "abc"));
     console.log(longestCommonSubsequence("abc", "def"));
 };

@@ -46,16 +46,16 @@ Solution:   https://leetcode.com/submissions/detail/211908789/  beats 53% JS Sub
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
-var setZeroes = function(matrix) {
+var setZeroesComplicated = function (matrix) {
     //hint use the first index of row and column as the flagger to check whether we need to update this row and column to 0. Then iterate over the first row and first column and check and update respective rows and columns to 0.
-    
+
     //mark topLeftCornerFlag
     var topLeftCornerFlag = (matrix[0][0] == 0 ? true : false);
     // console.log(topLeftCornerFlag);
 
-    for(var i=0; i<matrix.length; i++){
-        for(var j=0; j<matrix[0].length; j++){
-            if(matrix[i][j]==0){
+    for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] == 0) {
                 matrix[i][0] = '$';
                 matrix[0][j] = '$';
             }
@@ -63,69 +63,121 @@ var setZeroes = function(matrix) {
     }
 
     //loop over first column
-    for(var i=matrix.length-1; i>0; i--){
-        if(matrix[i][0]=='$'){
+    for (var i = matrix.length - 1; i > 0; i--) {
+        if (matrix[i][0] == '$') {
             matrix[i][0] = 0;
-            for(var j=0; j<matrix[0].length; j++){
+            for (var j = 0; j < matrix[0].length; j++) {
+                /* if (i == 0 && j == 0 && matrix[0][0] == '$$') {
+                    matrix[0][0] == '$$';
+                } else { */
                 matrix[i][j] = 0;
+                /* } */
             }
         }
     }
-    
+
     //loop over first row
-    for(var j=matrix[0].length-1; j>0; j--){
-        if(matrix[0][j]=='$'){
+    for (var j = matrix[0].length - 1; j > 0; j--) {
+        if (matrix[0][j] == '$') {
             matrix[0][j] = 0;
-            for(var i=0; i<matrix.length; i++){
+            for (var i = 0; i < matrix.length; i++) {
+                /* if (i == 0 && j == 0 && matrix[0][0] == '$$') {
+                    matrix[0][0] == '$$';
+                } else { */
                 matrix[i][j] = 0;
+                /* } */
             }
         }
     }
 
-    if(matrix[0][0]=='$'){
-        matrix[0][0]=0;
-        //set complete first column as zero.
-        var j=0;
-        for(var i=1; i<matrix.length; i++){
-            matrix[i][j] = 0;
-        }
-        
-        //set complete first row as zero.
-        var i=0;
-        for(var j=1; j<matrix[0].length; j++){
-            matrix[i][j] = 0;
-        }
-    }
+    if (matrix[0][0] == '$') {
+        matrix[0][0] = 0;
+        if (topLeftCornerFlag) {
+            //set complete first column as zero.
+            var j = 0;
+            for (var i = 1; i < matrix.length; i++) {
+                matrix[i][j] = 0;
+            }
 
-/*     if(matrix[0][0]==0 && topLeftCornerFlag==true){
+            //set complete first row as zero.
+            var i = 0;
+            for (var j = 1; j < matrix[0].length; j++) {
+                matrix[i][j] = 0;
+            }
+        }
+    } /* else if (matrix[0][0] == '$') {
+        matrix[0][0] = 0;
+    } */
+
+    /* if (matrix[0][0] == 0 && topLeftCornerFlag == true) {
         //set complete first column as zero.
-        var j=0;
-        for(var i=1; i<matrix.length; i++){
+        var j = 0;
+        for (var i = 1; i < matrix.length; i++) {
             matrix[i][j] = 0;
         }
-        
+
         //set complete first row as zero.
-        var i=0;
-        for(var j=1; j<matrix[0].length; j++){
+        var i = 0;
+        for (var j = 1; j < matrix[0].length; j++) {
             matrix[i][j] = 0;
         }
     } */
 };
 
-var main = function(){
-/*     var input = [[1,1,1],[1,0,1],[1,1,1]];
-    console.log(input);
-    setZeroes(input);
-    console.log(input);
-    input = [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
-    console.log(input);
-    setZeroes(input);
-    console.log(input); */
-/*     input = [[1,1,1],[0,1,2]];
-    console.log(input);
-    setZeroes(input);
-    console.log(input); */
+
+//A very easy to read and understand solution with O(1) space.
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var setZeroes = function (matrix) {
+    //hint use the first index of row and column as the flagger to check whether we need to update this row and column to 0. Then iterate over the first row and first column and check and update respective rows and columns to 0.
+
+    for (var i = 0; i < matrix.length; i++)
+        for (var j = 0; j < matrix[0].length; j++)
+            if (matrix[i][j] == 0) updateRowCol(matrix, i, j);
+    // console.log(matrix);
+    for (var i = 0; i < matrix.length; i++)
+        for (var j = 0; j < matrix[0].length; j++)
+            if (matrix[i][j] == '$') matrix[i][j] = 0;
+
+};
+
+
+var updateRowCol = function (matrix, i, j) {
+    for (var k = 0; k < matrix[i].length; k++)
+        if (k != j && matrix[i][k] != 0) matrix[i][k] = '$';
+    for (var k = 0; k < matrix.length; k++)
+        if (k != i && matrix[k][j] != 0) matrix[k][j] = '$';
+}
+
+
+var main = function () {
+        var input = [[1,1,1],[1,0,1],[1,1,1]];
+        console.log(input);
+        setZeroes(input);
+        console.log(input);
+        input = [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
+        console.log(input);
+        setZeroes(input);
+        console.log(input);
+        input = [[1,1,1],[0,1,2]];
+        console.log(input);
+        setZeroes(input);
+        console.log(input);
     input = [[1,0,3]];
+    console.log(input);
+    setZeroes(input);
+    console.log(input);
+    input = [[1, 2, 3, 4], [5, 0, 7, 8], [0, 10, 11, 12], [13, 14, 15, 0]];
+    console.log(input);
+    setZeroes(input);
+    console.log(input);
+    input = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]];
+    console.log(input);
+    setZeroes(input);
+    console.log(input);
+    input = [[1, 0, 3]];
     console.log(input);
     setZeroes(input);
     console.log(input);

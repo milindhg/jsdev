@@ -37,7 +37,7 @@ var ListNode = require('../Utilities/LinkedList');
  */
 var mergeKLists = function (lists) {
     if (lists == null || lists.length == 0)
-        return [];
+        return null;
     while (lists.length > 1) {
         var list1 = lists.shift();
         var list2 = lists.shift();

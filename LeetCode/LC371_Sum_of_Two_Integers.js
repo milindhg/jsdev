@@ -7,7 +7,7 @@ Given a = 1 and b = 2, return 3.
 
 */
 /*
-Solution:   https://leetcode.com/submissions/detail/95797516/ - beats around 20% js submissions. Can check for better algo.
+Solution:   https://leetcode.com/submissions/detail/710912434/ - beats around 95.95% js submissions. Can check for better algo.
             The solution intuition is similar to adding the bit by bit positions and maintaining carry to find the final answer.
             However instead of looping 32 times for a 32 bit number addition, we can do this smartly by this solution
             1. Calculate all the bits where you will be getting a carry bit. 
@@ -42,6 +42,17 @@ var getSum = function (a, b) {
     }
     return a;
 };
+
+
+
+var getSumEasyRead = function (a, b) {
+    while (b != 0) {
+        var temp = (a & b) << 1;
+        a = a ^ b;
+        b = temp;
+    }
+    return a;
+}
 
 var main = function () {
     var a = 3;

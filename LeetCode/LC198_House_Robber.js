@@ -36,7 +36,7 @@ Solution:   https://leetcode.com/submissions/detail/79734151/
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function (nums) {
+var robRecursive = function (nums) {
     if (nums.length === 0) {
         return 0;
     } else if (nums.length === 1) {
@@ -45,6 +45,7 @@ var rob = function (nums) {
         memo = [];
         var index = 0;
         var length = nums.length;
+        //prepare the empty memo array of length = nums array.
         while (index < length) {
             memo.push(-1);
             index++;
@@ -68,7 +69,7 @@ var getMaxProfit = function (nums, start, end, memo) {
     } else if (start === end - 2) { // Case for 3 houses. Get max of 1,2 to 3.
         memo[start] = Math.max(nums[start] + nums[start + 2], nums[start + 1]);
         return memo[start];
-    } else { // //Case for 4 houses. Get max of houses 1,3 or 2,4 or 1,4.
+    } else {    //Case for 4 houses. Get max of houses 1,3 or 2,4 or 1,4.
         if (memo[start + 2] === -1) {
             memo[start + 2] = getMaxProfit(nums, start + 2, end, memo);
         }
@@ -89,7 +90,7 @@ var getMaxProfit = function (nums, start, end, memo) {
  * @param {number[]} nums
  * @return {number}
  */
-var robNew = function(nums) {
+var robNewDPMem = function(nums) {
     if(nums.length==0) return 0;
     if(nums.length==1) return nums[0];
     var mem = [];

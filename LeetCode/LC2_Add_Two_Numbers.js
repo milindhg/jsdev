@@ -6,7 +6,7 @@
  */
 
 /*
- * https://leetcode.com/submissions/detail/74556531/
+ * Solution: https://leetcode.com/submissions/detail/74556531/
  * Logic: Since the numbers are in reverse order the unit's place is head of the list and the highest order bit is the last element of the list.
  * Hence similar to the addition of numbers logic, we'll add the corresponding bit numbers and attach to the new linked list. 
  * Special conditions where one of the list might be null or one list ends and other remains are handled by iterating through the remaining list.
@@ -30,7 +30,7 @@ var ListNode = require('../Utilities/ListNode');
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function (l1, l2) {
+var addTwoNumbers1 = function (l1, l2) {
     var l3;
     var carry = 0;
     var l3Head;
@@ -94,9 +94,63 @@ var addTwoNumbers = function (l1, l2) {
     return l3Head;
 };
 
+
+var addTwoNumbers = function (l1, l2) {
+    let carry = 0;
+    let l3 = null;
+    let l3Head = null;
+    while (l1 !== null || l2 !== null) {
+        //Calc num
+        let num = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+        
+        //Keep track of carry
+        if (num > 9) {
+            num = num % 10;
+            carry = 1;
+        }else{
+            carry = 0;
+        }
+
+        //Maintain the l3 pointer to keep adding nodes to list headed by l3Head
+        if (!l3Head || l3Head == undefined || l3Head == null) {
+            l3Head = new ListNode(num);
+            l3 = l3Head;
+        } else {
+            let newNode = new ListNode(num);
+            if (l3) {
+                l3.next = newNode;
+                l3 = l3.next;
+            }
+        }
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+    }
+
+    //Do a final carry check since the num calc cannot be done after both l1 and l2 are pointers are null
+    if (carry > 0) {
+        l3.next = new ListNode(carry);
+        l3 = l3.next;
+    }
+    return l3Head;
+};
+
 var main = function () {
-    var l1head = List.prototype.constructList([2,4,3]);
-    var l2head = List.prototype.constructList([5,6,4]);
+    var l1head = List.prototype.constructList([2, 4, 3]);
+    var l2head = List.prototype.constructList([5, 6, 4]);
+    List.prototype.printList(l1head);
+    List.prototype.printList(l2head);
+    var l3 = addTwoNumbers(l1head, l2head);
+    List.prototype.printList(l3);
+
+    var l1head = List.prototype.constructList([2, 4]);
+    var l2head = List.prototype.constructList([5, 6, 4]);
+    List.prototype.printList(l1head);
+    List.prototype.printList(l2head);
+    var l3 = addTwoNumbers(l1head, l2head);
+    List.prototype.printList(l3);
+
+    var l1head = List.prototype.constructList([9, 9, 9, 9, 9, 9, 9]);
+    var l2head = List.prototype.constructList([9, 9, 9, 9]);
     List.prototype.printList(l1head);
     List.prototype.printList(l2head);
     var l3 = addTwoNumbers(l1head, l2head);

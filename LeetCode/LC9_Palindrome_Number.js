@@ -50,7 +50,7 @@ var isPalindrome = function (x) {
         // get first and last digit everytime and compare them.
         front = Math.floor(x / divider);
         end = x % 10;
-        console.log("front=" + front + " end=" + end);
+        // console.log("front=" + front + " end=" + end);
         if (front != end) {
             return false;
         }
@@ -61,7 +61,7 @@ var isPalindrome = function (x) {
         // considered. and resulting number/10 removes the END
         // number already considered.
         divider = Math.floor(divider / 100);
-        console.log("x=" + x + " divider=" + divider);
+        // console.log("x=" + x + " divider=" + divider);
     }
 
     return true;
@@ -69,7 +69,6 @@ var isPalindrome = function (x) {
 
 var main = function () {
     var inputnumber = 1020201;
-    console.log("Hi");
     console.log(isPalindrome(inputnumber));
 };
 

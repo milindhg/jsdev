@@ -21,7 +21,7 @@ Input:
 ]
 Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 
-Solution:   https://leetcode.com/submissions/detail/186435669/  beats 48.71% JS Submissions.
+Solution:   https://leetcode.com/submissions/detail/186435669/  beats 98.64% JS Submissions.
             The problem is similar to LC59 Spiral Matrix II.
             Well basically trick is to have 2 indices as traversal for row and column.
             Also have 2 more indices per row and column for tracking valid min and max of the row and column respectively.
@@ -37,59 +37,59 @@ Solution:   https://leetcode.com/submissions/detail/186435669/  beats 48.71% JS 
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var spiralOrder = function(matrix) {
-    if(!matrix.length) return [];
+var spiralOrder = function (matrix) {
+    if (!matrix.length) return [];
     var rowStart = 0;
-    var rowEnd = matrix.length-1;
+    var rowEnd = matrix.length - 1;
     var colStart = 0;
-    var colEnd = matrix[0].length-1;
-    var num=1;
+    var colEnd = matrix[0].length - 1;
+    var num = 1;  // This will basically track total number of cells in the matrix. And there is going to be atleast 1 cell as per constraints.
     var ansarr = [];
 
-    while(num<=(matrix.length * matrix[0].length)){
-        var i=rowStart;
-        var j=colStart
-        if(num>(matrix.length * matrix[0].length)) break;
-        for(j=colStart; j<=colEnd; j++){
+    while (num <= (matrix.length * matrix[0].length)) {
+        var i = rowStart;
+        var j = colStart
+        if (num > (matrix.length * matrix[0].length)) break;
+        for (j = colStart; j <= colEnd; j++) {        //Top horizontal line
             ansarr.push(matrix[i][j]);
             num++
         }
         j--;
         rowStart++;
 
-        if(num>(matrix.length * matrix[0].length)) break;
-        for(i=rowStart; i<=rowEnd; i++){
+        if (num > (matrix.length * matrix[0].length)) break;
+        for (i = rowStart; i <= rowEnd; i++) {       //right vertical line
             ansarr.push(matrix[i][j]);
             num++
         }
         i--;
-        
+
         colEnd--;
-        if(num>(matrix.length * matrix[0].length)) break;
-        for(j=colEnd; j>=colStart; j--){
+        if (num > (matrix.length * matrix[0].length)) break;
+        for (j = colEnd; j >= colStart; j--) {        //Bottom horizontal line
             ansarr.push(matrix[i][j]);
             num++
         }
         j++
-        
+
         rowEnd--;
-        if(num>(matrix.length * matrix[0].length)) break;
-        for(i=rowEnd; i>=rowStart; i--){
+        if (num > (matrix.length * matrix[0].length)) break;
+        for (i = rowEnd; i >= rowStart; i--) {        //left vertical line
             ansarr.push(matrix[i][j]);
             num++;
         }
         i++
-        
+
         colStart++;
 
     }
-    
+
     return ansarr;
-    
+
 };
 
-var main = function(){
-    var matrix = [[1,2,3]];
+var main = function () {
+    var matrix = [[1, 2, 3]];
     var ans = spiralOrder(matrix);
     console.log(ans);
 };

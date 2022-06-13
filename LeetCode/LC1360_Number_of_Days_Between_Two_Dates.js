@@ -87,7 +87,7 @@ var daysBetweenDatesHack = function (date1, date2) {
     let time1 = date1.getTime();
     let time2 = date2.getTime();
 
-    return Math.abs(time1 - time2) / (24*60*60*1000)
+    return Math.abs(time1 - time2) / (24 * 60 * 60 * 1000)
 };
 
 var main = () => {

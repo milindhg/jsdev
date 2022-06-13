@@ -34,7 +34,7 @@
  *              As you iterate over the elements in the array, keep checking whether there is a saved answer index for the complement of the element.
  *              If you find a complement index for the current element in array, return the answer.
  * 
- *              Trick: Using an ES6 array.some function helps break the continuation of a look as well as improve the performance.
+ *              Trick: Using an ES6 array.some function helps break the continuation of a loop as well as improve the performance.
  * 
  * 
  */
@@ -48,21 +48,9 @@
 var twoSum = function (nums, target) {
     let complementMap = {};
     let ans = [-1, -1];
-    let newTarget = target;
-    let myFunc = (item, index, target, ans) => {
-        let complement = target - item;
-        if (!complementMap[complement]) {
-            complementMap[item] = index;
-            return false;
-        } else {
-            ans = [complementMap[complement], index];
-            return true;
-        }
-    }
-    // nums.some((item, index) => myFunc(item, index, newTarget, ans));
     nums.some((item, index) => {
         let complement = target - item;
-        if (complementMap[complement] && (complementMap[complement] > -1)) {
+        if (complementMap[complement] > -1) {
             ans = [complementMap[complement], index];
             return true;
         } else {

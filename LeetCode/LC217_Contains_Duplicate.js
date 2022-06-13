@@ -10,10 +10,10 @@ Given an array of integers, find if the array contains any duplicates. Your func
  */
 var containsDuplicate = function (nums) {
     var hm = {
-        'unique' : {},
-        'duplicate' : {}
+        'unique': {},
+        'duplicate': {}
     };
-    for ( var i in nums) {
+    for (var i in nums) {
         if (hm['duplicate'][nums[i]]) {
             hm['duplicate'][nums[i]] = hm['duplicate'][nums[i]] + 1;
         } else if (hm['unique'][nums[i]]) {
@@ -30,4 +30,15 @@ var containsDuplicate = function (nums) {
     return true;
 };
 
+
+var containsDuplicate = function (nums) {
+    const set = new Set()
+    return nums.some(num => {
+        if (set.has(num)) {
+            return true
+        }
+
+        set.add(num)
+    })
+}
 

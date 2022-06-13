@@ -74,9 +74,7 @@ var findPath = function (m, n, i, j) {
         return uniquePaths.memArray[i][j];
     } else {
         if (i < m) {
-            // if (uniquePaths.memArray[i][j] == -1) {
             deepAnswerDown = findPath(m, n, i + 1, j);
-            // }
         }
         if (j < n) {
             deepAnswerRight = findPath(m, n, i, j + 1);

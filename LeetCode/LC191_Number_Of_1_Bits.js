@@ -1,8 +1,8 @@
 /*
 https://leetcode.com/problems/number-of-1-bits/
-Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the Hamming weight).
+Write a function that takes an unsigned integer and returns the number of ï¿½1' bits it has (also known as the Hamming weight).
 
-For example, the 32-bit integer ’11' has binary representation 00000000000000000000000000001011, so the function should return 3.
+For example, the 32-bit integer ï¿½11' has binary representation 00000000000000000000000000001011, so the function should return 3.
 
 */
 
@@ -49,17 +49,15 @@ var hammingWeight = function (n) {
  * @param {number} n - a positive integer
  * @return {number}
  * 
- * beats 49.23% javascript submissions
+ * beats 53.96% javascript submissions
+ * https://leetcode.com/submissions/detail/711443612/
  * 
  */
 var hammingWeightBetter = function (n) {
     var ans = 0;
-    if (n > Math.pow(2, 31))
-        return 1;
     while (n > 0) {
         ans += n & 1;
         n = Math.floor(n / 2);
-        console.log(ans);
     }
     return ans;
 };

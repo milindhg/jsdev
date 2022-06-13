@@ -26,9 +26,9 @@ var lengthOfLongestSubstring = function (s) {
     var hm = {};
     var maxlen = 0;
     console.log('At the start: ' + 'HashMap: ' + JSON.stringify(hm),
-            'Queue Length: ' + queue.length, 'Queue Content: ' + queue);
+        'Queue Length: ' + queue.length, 'Queue Content: ' + queue);
 
-    for ( var index in s) {
+    for (var index in s) {
         if (hm[s[index]]) {
             // console.log('present in hm');
             var item = queue[0];
@@ -43,7 +43,7 @@ var lengthOfLongestSubstring = function (s) {
         queue.push(s[index]);
         hm[s[index]] = index;
         console.log('HashMap: ' + JSON.stringify(hm), 'Queue Length: '
-                + queue.length, 'Queue Content: ' + queue);
+            + queue.length, 'Queue Content: ' + queue);
         if (queue.length > maxlen) {
             maxlen = queue.length;
         }

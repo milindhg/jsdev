@@ -24,6 +24,9 @@ array, you are good. If not, then return false.
 One good point in between while jumping through could be to keep checking if my
 current remaining steps are long enough to jump directly to the end of array or
 out of the array.
+
+
+Another approach could be of looking at the answer or array from behind/end of the array.
 */
 
 /**

@@ -9,10 +9,17 @@ Follow up:
 If this function is called many times, how would you optimize it?
 
 Related problem: Reverse Integer
+
+Solution: Simple approach reverse the digits i.e. keep picking last bit from input number.
+1. Initialize answer as 0
+2. Pick last bit from n and then right shift n
+3. Right shift answer and append the last bit on to answer as the LSB.
+4. Do this for all 32 bits of the input number n.
+
  * 
  */
 
-//TODO this problem is yet incomplete.
+
 
 /**
  * @param {number} n - a positive integer
@@ -23,13 +30,32 @@ var reverseBits = function (n) {
     var i = 0;
     while (i < 32) {
         var lastBit = n & 1;
-        ans <<= 1;
-        ans += lastBit;
+        ans = ans << 1;
+        ans = ans | lastBit;
         n = n >> 1;
         i += 1;
     }
     console.log('ans currently is: ' + ans);
     return Math.abs(ans);
+};
+
+/**
+ * @param {number} n - a positive integer
+ * @return {number} - a positive integer
+ */
+ var reverseBitsEasyRead = function(n) {
+    let result = 0b0;
+    let curr = n;
+    
+    for (let i = 0; i < 32; i += 1) {
+        const lastBit = curr & 0b1;   // Get last bit
+        result = result << 1;         // Make space for new last bit
+        result = result | lastBit;    // Apply last bit to result
+        curr = curr >> 1;             // destroy last bit of current 
+    }
+    
+	// Fix results less than zero (destroy sign bit)
+    return result >>> 0;
 };
 
 var main = function () {
