@@ -106,9 +106,9 @@ var searchEasier = function (nums, target) {
 };
 
 let main = () => {
-    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 0));
-    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 3));
-    console.log(searchEasier([1, 3], 3));
+    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 0) == 4 ? "correct" : "incorrect");
+    console.log(searchEasier([4, 5, 6, 7, 0, 1, 2], 3) == -1 ? "correct" : "incorrect");
+    console.log(searchEasier([1, 3], 3) == 1 ? "correct" : "incorrect");
 };
 
 main();
