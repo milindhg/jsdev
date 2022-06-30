@@ -51,4 +51,28 @@ var lengthOfLongestSubstring = function (s) {
     return maxlen;
 };
 
-console.log(lengthOfLongestSubstring('tmmzuxtu'));
+//https://leetcode.com/submissions/detail/732904997/ beats 94.95% js submissions.
+var lengthOfLongestSubstringBetter = function (s) {
+    const mySet = new Set();
+    let longest = 0;
+    let l = 0;
+    for (let r = 0; r < s.length; r++) {
+        while(mySet.has(s[r])){
+            mySet.delete(s[l]); //keep removing all the elements found till r pos. Because there is a repeat we found. i.e. restart from r pos as the new l's position.
+            l++;
+        }
+        mySet.add(s[r]);
+        longest = Math.max(longest, r-l+1); //keep updating longest with the difference between valid r and l positions.
+    }
+
+    return longest;
+}
+
+
+var main = function () {
+    console.log(lengthOfLongestSubstring('tmmzuxtu'));
+};
+
+main();
+
+

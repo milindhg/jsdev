@@ -38,3 +38,4 @@ class Solution(object):
         if min_col != N:
             return min_col
         return -1
+

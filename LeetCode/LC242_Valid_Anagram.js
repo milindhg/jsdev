@@ -15,7 +15,7 @@ What if the inputs contain unicode characters? How would you adapt your solution
 */
 
 /*
-Solution:   https://leetcode.com/submissions/detail/79677998/
+Solution:   https://leetcode.com/submissions/detail/732899561/ beats 58.68% js submissions.
             The simple solution is to keep track of the alphabets occuring in the words.
             In first loop for first word, note counts of all the alphabets.
             In second loop for second word, reduce counts of all the alphabets occurring.
@@ -32,7 +32,7 @@ Solution:   https://leetcode.com/submissions/detail/79677998/
  */
 var isAnagram = function (s, t) {
     var hm = {};
-    for ( var i in s) {
+    for (var i in s) {
         if (hm[s[i]]) {
             hm[s[i]] = hm[s[i]] + 1;
         } else {
@@ -40,7 +40,7 @@ var isAnagram = function (s, t) {
         }
     }
 
-    for ( var j in t) {
+    for (var j in t) {
         if (!hm[t[j]]) {
             return false;
         } else {
@@ -55,3 +55,31 @@ var isAnagram = function (s, t) {
     }
     return false;
 };
+
+//This approach is really good but fails for very big strings. Since the product value goes beyond Infinity.
+var isAnagramBetter = function (s, t) {
+    if (s.length != t.length)
+        return false;
+
+    var first26Primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
+        47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101];
+    var sProd = 1;
+    var tProd = 1;
+
+    for (var i = 0; i < s.length; i++) {
+        sProd *= first26Primes[s.charCodeAt(i) - 97];  //97 is ascii val of a.
+    }
+
+    for (var i = 0; i < t.length; i++) {
+        tProd *= first26Primes[t.charCodeAt(i) - 97];  //97 is ascii val of a.
+    }
+
+    return sProd == tProd;
+}
+
+var main = function () {
+    console.log(isAnagramBetter("anagram", "nagaram"));
+    console.log(isAnagramBetter("rat", "car"));
+};
+
+main();
