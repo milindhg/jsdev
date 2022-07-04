@@ -38,6 +38,10 @@ Could you devise a constant space solution?
 
 
 Solution:   https://leetcode.com/submissions/detail/211908789/  beats 53% JS Submissions
+            https://leetcode.com/submissions/detail/735433254/ beats 99.34% js submissions
+            hint use the first index of row and column as the flagger to check whether we need to update this row and column to 0. Then iterate over the first row and first column and check and update respective rows and columns to 0.
+            So whenever you encounter a cell with value 0, call updateRowCol function to update that cells i row and j column to $ for all cells which are Non-zero.
+            Then run a similar double for loop to basically turn all $s into 0s.
 
  */
 
@@ -129,6 +133,8 @@ var setZeroesComplicated = function (matrix) {
 /**
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
+ * https://leetcode.com/submissions/detail/735433254/ beats 99.34% js submissions
+ * 
  */
 var setZeroes = function (matrix) {
     //hint use the first index of row and column as the flagger to check whether we need to update this row and column to 0. Then iterate over the first row and first column and check and update respective rows and columns to 0.
