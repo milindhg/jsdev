@@ -672,3 +672,8 @@ https://leetcode.com/problems/reducing-dishes/
 
 https://leetcode.com/problems/ugly-number-iii/
 
+https://leetcode.com/problems/course-schedule-ii/
+
+https://leetcode.com/problems/graph-valid-tree/
+
+https://leetcode.com/problems/minimum-height-trees/
