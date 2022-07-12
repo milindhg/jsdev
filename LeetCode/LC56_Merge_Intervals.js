@@ -7,12 +7,12 @@ For example,
 Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18].
 
-Solution: https://leetcode.com/submissions/detail/134818631/ beats 75% submissions.
-           The idea is to first sort the array by start.
-           Then use 2 pointers - 1 to point to the first node and second for traversing checking if we found the end pointer.
-           Then starting from the first node, keep checking whether you have found the end of first tuple in result.
-           As soon as you find the tuple, add it to the resultset. 
-           Then move the current node pointer and start preparing the new node of the result set.
+Solution:   https://leetcode.com/submissions/detail/134818631/ beats 75% submissions.
+            The idea is to first sort the array by start.
+            Then use 2 pointers - 1 to point to the first node and second for traversing checking if we found the end pointer.
+            Then starting from the first node, keep checking whether you have found the end of first tuple in result.
+            As soon as you find the tuple, add it to the resultset. 
+            Then move the current node pointer and start preparing the new node of the result set.
 
 */
 
