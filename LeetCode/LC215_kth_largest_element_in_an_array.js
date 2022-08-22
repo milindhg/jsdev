@@ -46,8 +46,46 @@ using something like QuickSort and Partition.
  * @param {number} k
  * @return {number}
  */
-var findKthLargest = function(nums, k) {
-    return nums.sort((a,b)=>b-a)[k-1];
+var findKthLargest = function (nums, k) {
+    return nums.sort((a, b) => b - a)[k - 1];
 };
+
+var PQ = require('../Utilities/PriorityQueue');
+
+
+//Somehow according the tests done in leetcode, this approach is considerably slower than just sorting the given input elements in the array in descending order and returning k-1th index element.
+//However it probably makes sense since array methods are probably faster when the array size is < 1000 elements. But the min heap approach is perhaps the best approach when the input elements are in an infinite stream.
+var findKthLargestUsingHeap = function (nums, k) {
+    var pq = new PQ((a, b) => a < b);
+    pq.push(nums[0]);
+    for (let i = 1; i < nums.length; i++) {
+        if (pq.size() < k) {
+            pq.push(nums[i]);
+        } else if (nums[i] > pq.peek()) {
+            if (pq.size() == k)
+                pq.pop();
+            pq.push(nums[i]);
+        }
+    }
+    return pq.peek();
+}
 // @lc code=end
 
+
+//Need to code another approach which is to use to use the partition logic in quick sort to get the kth largest element using the divide and conquer method.
+var findKthLargestUsingPartition = function (nums, k) {
+}
+
+let main = (() => {
+    console.log(findKthLargest([3, 2, 3, 1, 2, 5, 4, 5, 6], 4));
+    console.log(findKthLargest([3, 2, 3, 1, 2, 5, 4, 5, 6], 2));
+    console.log(findKthLargest([3, 2, 3, 1, 2, 5, 4, 5, 6], 3));
+    console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2));
+    console.log(findKthLargestUsingHeap([3, 2, 3, 1, 2, 5, 4, 5, 6], 4));
+    console.log(findKthLargestUsingHeap([3, 2, 1, 5, 6, 4], 2));
+    console.log(findKthLargestUsingHeap([3, 2, 3, 1, 2, 5, 4, 5, 6], 2));
+    console.log(findKthLargestUsingHeap([3, 2, 3, 1, 2, 5, 4, 5, 6], 3));
+    console.log(findKthLargestUsingHeap([2, 1], 2));
+});
+
+main();
