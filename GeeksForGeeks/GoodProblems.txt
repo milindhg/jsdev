@@ -677,3 +677,31 @@ https://leetcode.com/problems/course-schedule-ii/
 https://leetcode.com/problems/graph-valid-tree/
 
 https://leetcode.com/problems/minimum-height-trees/
+
+https://leetcode.com/problems/longest-palindromic-substring/
+
+https://leetcode.com/problems/maximum-and-sum-of-array/
+
+https://leetcode.com/problems/pizza-with-3n-slices/
+
+https://leetcode.com/problems/wiggle-sort-ii/
+
+https://leetcode.com/problems/third-maximum-number/
+
+https://leetcode.com/problems/kth-largest-element-in-a-stream/
+
+https://leetcode.com/problems/k-closest-points-to-origin/
+
+https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/ - Here the problem is what if the number if integer overflow.
+
+https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/
+
+https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/
+
+https://leetcode.com/problems/destination-city/
+
+https://leetcode.com/problems/two-furthest-houses-with-different-colors/
+
+https://leetcode.com/problems/valid-number/
+
+https://leetcode.com/problems/pacific-atlantic-water-flow/
