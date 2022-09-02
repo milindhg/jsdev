@@ -700,8 +700,27 @@ https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/
 
 https://leetcode.com/problems/destination-city/
 
-https://leetcode.com/problems/two-furthest-houses-with-different-colors/
+https://leetcode.com/problems/two-furthest-houses-with-different-colors/ - O(2n)
 
 https://leetcode.com/problems/valid-number/
 
-https://leetcode.com/problems/pacific-atlantic-water-flow/
+https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/
+
+https://leetcode.com/problems/sort-the-jumbled-numbers/
+
+https://leetcode.com/problems/cutting-ribbons/
+
+https://leetcode.com/problems/sort-even-and-odd-indices-independently/
+
+https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/
+
+https://leetcode.com/problems/maximum-difference-between-increasing-elements/
+
+https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/
+
+https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
+
+https://leetcode.com/problems/insert-delete-getrandom-o1/
+
+https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/
+
