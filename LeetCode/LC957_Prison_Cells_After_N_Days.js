@@ -64,6 +64,7 @@ Solution:   https://leetcode.com/submissions/detail/789255013/  beats 90.05% JS 
             Also once on any day an existing cells combination is found then the further days cells will match sequentially as stored before. Hence memoization can be done in an array sequentially whose 0th index will day 1 and last index will be total number of cells combination which will start appearing in cycle.
             This cycle will always start on Day1.
 
+            Exact reverse problem in GeeksForGeeks too = https://www.geeksforgeeks.org/active-inactive-cells-k-days/
 
 */
 
