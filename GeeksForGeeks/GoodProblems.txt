@@ -2,8 +2,6 @@ https://www.geeksforgeeks.org/c-program-find-gcd-hcf-two-numbers/
 
 https://www.geeksforgeeks.org/active-inactive-cells-k-days/
 
-https://leetcode.com/problems/partition-list/description/   DONE
-
 https://leetcode.com/problems/set-matrix-zeroes/description/
 
 https://leetcode.com/problems/vowel-spellchecker/description/
@@ -17,8 +15,6 @@ https://leetcode.com/problems/3sum-with-multiplicity/description/
 https://leetcode.com/problems/subarray-sum-equals-k/description/
 
 https://leetcode.com/problems/repeated-dna-sequences/description/
-
-https://leetcode.com/problems/broken-calculator/description/    DONE
 
 https://leetcode.com/problems/factorial-trailing-zeroes/description/
 
@@ -723,4 +719,20 @@ https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-charac
 https://leetcode.com/problems/insert-delete-getrandom-o1/
 
 https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/
+
+https://leetcode.com/problems/sort-array-by-parity/
+
+https://leetcode.com/problems/sort-array-by-parity-ii/
+
+https://leetcode.com/problems/number-of-squareful-arrays/
+
+https://leetcode.com/problems/minimum-time-to-build-blocks/
+
+https://leetcode.com/problems/minimum-garden-perimeter-to-collect-enough-apples/
+
+https://leetcode.com/problems/count-subarrays-with-more-ones-than-zeros/
+
+https://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/
+
+https://leetcode.com/problems/number-of-matching-subsequences/
 
