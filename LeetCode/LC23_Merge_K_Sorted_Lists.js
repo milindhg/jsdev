@@ -17,8 +17,14 @@ Output: 1->1->2->3->4->4->5->6
 Solution:   https://leetcode.com/submissions/detail/154737744/  beats 100% js submissions.
             Best way is to keep merging 2 lists at a time until 1 list is left. 
             Use the given lists as a queue and keep removing 2 lists, merge them and enqueue the merged list back to queue.
+            Runtime: O(nlogk) where n is total number of nodes and k is number of linked lists.
+            Space: O(n) where n is the total number of nodes
 
-            !!! TODO Do this problem using Priority Queue. Explanation here - https://www.youtube.com/watch?v=ptYUCjfNhJY | https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue 
+            This can also be done using Priority Queue. Explanation here - https://www.youtube.com/watch?v=ptYUCjfNhJY | https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue 
+            https://leetcode.com/submissions/detail/810739423/ beats 91.04% JS Submissions
+            Runtime: O(nlogk) where n is total number of nodes and k is number of linked lists.
+            Space: O(1) where n is the total number of nodes
+
  */
 
 var List = require('../Utilities/LinkedList');
@@ -67,14 +73,46 @@ var mergeTwoLists = function (l1, l2) {
     return outputListHead.next;
 };
 
-var main = function(){
-    var l1 = List.prototype.constructList([1,3,5]);
+
+let PriorityQueue = require("../Utilities/PriorityQueue");
+
+// https://leetcode.com/submissions/detail/810739423/ beats 91.04% JS Submissions
+// Runtime: O(nlogk)
+let mergeKListsUsingPQ = (lists) => {
+    if (lists == null || lists.length == 0) return null;
+
+    let head = new ListNode(0);
+    let trav = head;
+
+    let pq = new PriorityQueue((a, b) => {
+        return a.val < b.val;
+    });
+    for (let listIndex in lists) {
+        let currList = lists[listIndex];
+        if (currList) {
+            pq.push(currList);
+            currList = currList.next;
+        }
+    }
+    while (!pq.isEmpty()) {
+        trav.next = pq.pop();
+        trav = trav.next;
+        if (trav.next)
+            pq.push(trav.next);
+    }
+
+    return head.next;
+}
+
+
+var main = function () {
+    var l1 = List.prototype.constructList([1, 3, 5]);
     List.prototype.printList(l1);
-    var l2 = List.prototype.constructList([1,3,4]);
+    var l2 = List.prototype.constructList([1, 3, 4]);
     List.prototype.printList(l2);
-    var l3 = List.prototype.constructList([2,6]);
+    var l3 = List.prototype.constructList([2, 6]);
     List.prototype.printList(l3);
-    var l4 = mergeKLists([l1,l2,l3]);
+    var l4 = mergeKListsUsingPQ([l1, l2, l3]);
     List.prototype.printList(l4);
 };
 main();
