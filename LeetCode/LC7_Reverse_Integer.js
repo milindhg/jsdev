@@ -16,7 +16,8 @@ Did you notice that the reversed integer might overflow? Assume the input is a 3
 For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 */
 /*
-Solution:   https://leetcode.com/submissions/detail/74600935/
+Solution:   https://leetcode.com/submissions/detail/74600935/   beats 15% Python Submissions
+            https://leetcode.com/submissions/detail/702473280/  beats 51.61% JS Submissions
             output = output*10 + (num%10)
             !!!Here keep in mind that number can overflow, so 2^31 power check should be present. If number overflows, then return 0
             Also the number can be positive as well as negative. In case of negative, keep a flag and work on positive number. Later make the output result negative again and return.

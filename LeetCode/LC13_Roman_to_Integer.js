@@ -83,7 +83,7 @@ Solution:   https://leetcode.com/submissions/detail/281002063/ beats 86.62% JS S
             Basic idea is very simple. 
 
             Just prepare a map of all the possible characters in roman and their corresponding atomic value.
-            Then just iterate over the roman characters in the given input roman number and convert each one into integer based on the mapping and add all.
+            Then just iterate over the roman characters from right to left in the given input roman number and convert each one into integer based on the mapping and add all.
             Only the tricky part here is to mind the numbers where next character is greater than the current character. example IV, IX.
             So in such cases instead of adding the current char to int conversion, subtract it from the ongoing answer.
 
@@ -96,7 +96,7 @@ Solution:   https://leetcode.com/submissions/detail/281002063/ beats 86.62% JS S
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s) {
+var romanToInt = function (s) {
     var map = {};
     map["I"] = {};
     map["I"].val = 1;
@@ -119,15 +119,15 @@ var romanToInt = function(s) {
     map["M"] = {};
     map["M"].val = 1000;
     map["M"].level = 7;
-    
+
     var output = 0;
     var prev = null;
-    for(var i = s.length-1; i>=0; i--){
+    for (var i = s.length - 1; i >= 0; i--) { //Iterate from Units place to higher.
         // console.log(map[s[i]].val);
-        if(prev && map[s[prev]].level>map[s[i]].level)
-            output-= map[s[i]].val;
+        if (prev && map[s[prev]].level > map[s[i]].level)
+            output -= map[s[i]].val;
         else
-            output+=map[s[i]].val;
+            output += map[s[i]].val;
         prev = i;
     }
     return output;

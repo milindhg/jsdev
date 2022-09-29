@@ -52,17 +52,23 @@ var lengthOfLongestSubstring = function (s) {
 };
 
 //https://leetcode.com/submissions/detail/732904997/ beats 94.95% js submissions.
+//Simple approach of having a sliding window of characters which are non-repeating. 
+//But not need to store the real characters in the window. Only keep storing them in the set as individual chars.
+//As soon as a repeat if found, reset by removing all same characters from the set.
+//Meanwhile in the iteration keep tracking the size of the window of characters. i.e. length between Left and Right index of the window.
+
+//Essentially Set is for uniqueness and L and R are for tracking the maximum size of substring.
 var lengthOfLongestSubstringBetter = function (s) {
     const mySet = new Set();
     let longest = 0;
     let l = 0;
     for (let r = 0; r < s.length; r++) {
-        while(mySet.has(s[r])){
+        while (mySet.has(s[r])) {
             mySet.delete(s[l]); //keep removing all the elements found till r pos. Because there is a repeat we found. i.e. restart from r pos as the new l's position.
             l++;
         }
         mySet.add(s[r]);
-        longest = Math.max(longest, r-l+1); //keep updating longest with the difference between valid r and l positions.
+        longest = Math.max(longest, r - l + 1); //keep updating longest with the difference between valid r and l positions.
     }
 
     return longest;

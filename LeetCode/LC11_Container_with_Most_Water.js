@@ -26,7 +26,7 @@ var maxArea = function (height) {
         var leftHeight = height[i];
         var rightHeight = height[j];
         maxArea = Math
-                .max(maxArea, Math.min(leftHeight, rightHeight) * (j - i));
+            .max(maxArea, Math.min(leftHeight, rightHeight) * (j - i));
         // We use this condition to calculate the max area mostly when we may have a larger line.
         // Basically maximization
         if (leftHeight < rightHeight) {
@@ -43,7 +43,7 @@ var maxArea = function (height) {
 };
 
 main = function () {
-    var height = [ 1, 1 ];
+    var height = [1, 1];
     console.log(maxArea(height));
 };
 

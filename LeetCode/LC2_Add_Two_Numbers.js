@@ -100,7 +100,7 @@ var addTwoNumbers = function (l1, l2) {
     let l3 = null;
     let l3Head = null;
     while (l1 !== null || l2 !== null) {
-        //Calc num
+        //Calc num as (val1) + (val2) + (carry over if any).
         let num = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
         
         //Keep track of carry

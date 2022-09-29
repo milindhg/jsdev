@@ -22,16 +22,20 @@ Solution:   https://leetcode.com/submissions/detail/155163584/ beats 66.96% JS s
  * @return {string}
  */
 var convert = function (s, numRows) {
+    //base case if only 1 row is to be filled. Essentially no zigzag
     if (numRows < 2) {
         return s;
     }
+
+    //Prepare empty matrix of number of rows required.
     var arraymatrix = [];
     for (var i = 0; i < numRows; i++) {
         arraymatrix.push('');
     }
+
     var rowToPushTo = 0;
     var rowFlowUp = true;
-
+    //start looping on input string but push the current character to right row in array of strings.
     for ( var c in s) {
         // console.log(rowToPushTo);
         arraymatrix[rowToPushTo] += s[c];
@@ -44,7 +48,7 @@ var convert = function (s, numRows) {
         else if (rowToPushTo === 0)
             rowFlowUp = true;
     }
-
+    //Finally join the array and return the answer
     return arraymatrix.join('');
 
 };

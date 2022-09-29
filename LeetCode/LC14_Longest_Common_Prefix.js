@@ -42,7 +42,7 @@ var longestCommonPrefix = function (strs) {
         var trav = 0;
         // Counting maximum number of letters that match in while loop.
         while (trav < commPreLength && trav < currWordLength
-                && strs[i][trav] === commonPrefix[trav]) {
+            && strs[i][trav] === commonPrefix[trav]) {
             trav++;
         }
         commonPrefix = commonPrefix.substr(0, trav);
@@ -59,7 +59,7 @@ var longestCommonPrefix = function (strs) {
  * @return
  */
 var main = function () {
-    var inputarray = [ "OKOK", "OK", "OKIE" ];
+    var inputarray = ["OKOK", "OK", "OKIE"];
     console.log("LongestCommonPrefix is: " + longestCommonPrefix(inputarray));
 }
 
