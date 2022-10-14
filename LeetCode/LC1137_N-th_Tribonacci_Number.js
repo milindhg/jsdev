@@ -44,6 +44,7 @@ Submissions
 
 Solution:   https://leetcode.com/submissions/detail/816942430/  beats 68.76% JS Submissions
             Simple iterative approach to keep calculating the tribonacci number sequence for each number from 1 to n and return nth answer value.
+            This can also be done using a recursive approach with memoization.
 
  */
 

@@ -26,6 +26,9 @@ Solution:   https://leetcode.com/submissions/detail/224787019/ - beats 62.51% of
             If we're asked to get the days when to buy and sell then we need to maintain the day at which we got min price so far and the date on which we got the max profit.
             Return x and y.
             This looks like a kadane's algorithm problem.
+
+            Runtime: O(n)
+            Space: O(1)
 */
 
 /**

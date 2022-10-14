@@ -58,16 +58,10 @@ var removeElement = function (nums, val) {
                 // number can be present anywhere.
                 j -= 1;
             }
-            // console.log( i );
-            // console.log( j );
-            // console.log( nums );
         } else {
             i += 1;
         }
     }
-    // console.log(i);
-    // console.log(j);
-    // console.log(nums);
     while (nums[j] == val && j >= 0) {
         j -= 1;
     }

@@ -63,23 +63,22 @@ var spiralOrder = function (matrix) {
             num++
         }
         i--;
-
         colEnd--;
+
         if (num > (matrix.length * matrix[0].length)) break;
         for (j = colEnd; j >= colStart; j--) {        //Bottom horizontal line
             ansarr.push(matrix[i][j]);
             num++
         }
         j++
-
         rowEnd--;
+
         if (num > (matrix.length * matrix[0].length)) break;
         for (i = rowEnd; i >= rowStart; i--) {        //left vertical line
             ansarr.push(matrix[i][j]);
             num++;
         }
         i++
-
         colStart++;
 
     }

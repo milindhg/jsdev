@@ -14,8 +14,32 @@ Minimize the total number of operations.
 Solution:   https://leetcode.com/submissions/detail/91970391/
             Keep 2 variables, one to iterate and second to count number of zeroes. While counting, wherever you find zero in iteration, overwrite next non-zero numbers into it. 
             So basically move the non-zero elements to the left and finally write all zeroes to the end.
-            
-*/
+            Runtime: O(n)
+            Space: O(1)
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ * 
+ *  https://leetcode.com/submissions/detail/817550193/  beats 94.03% JS Submissions
+ * 
+ */
+var moveZeroesBetter = function (nums) {
+    let currNonZeroPointer = 0;
+    let numOfZeroes = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            nums[currNonZeroPointer++] = nums[i];
+        } else {
+            numOfZeroes++;
+        }
+    }
+    for (let i = nums.length - numOfZeroes; i < nums.length; i++) {
+        nums[i] = 0;
+    }
+};
+
+
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
@@ -89,10 +113,14 @@ var moveZeroesOldSolution_notbetter = function (nums) {
 };
 
 var main = function () {
-    // var nums = [ 1, 1, 0, 0, 1 ];
-    // var nums = [ 1, 2, 3, 0, 0, 4 ];
-    var nums = [ 0, 0, 1, 2, 3 ];
-    moveZeroes(nums);
+    var nums = [1, 1, 0, 0, 1];
+    moveZeroesBetter(nums);
+    console.log(nums);
+    var nums = [1, 2, 3, 0, 0, 4];
+    moveZeroesBetter(nums);
+    console.log(nums);
+    var nums = [0, 0, 1, 2, 3];
+    moveZeroesBetter(nums);
     console.log(nums);
 }
 

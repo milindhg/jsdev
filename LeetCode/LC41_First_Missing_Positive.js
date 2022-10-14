@@ -24,7 +24,7 @@ Note:
 Your algorithm should run in O(n) time and uses constant extra space.
 
 
-Solution:   https://leetcode.com/submissions/detail/319985935/ beats 86.54% JS Submissions.
+Solution:   https://leetcode.com/submissions/detail/319985935/ beats 100% JS Submissions.
 
             Very very good problem and very tricky and indeed HARD.
             Remember to also refer the problem where we detect one missing number in an array of size n with numbers 1 to n in unsorted order.

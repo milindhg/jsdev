@@ -11,9 +11,12 @@ Note: In the string, each word is separated by single space and there will not b
 
 Solution:   https://leetcode.com/submissions/detail/311952183/ beats 86.94% JS Submissions.
             This method is basically more object oriented. In a way that first split the string into array of words, reverse all words and then join again. Easy peasy.
+            
 
             https://leetcode.com/submissions/detail/311958161/ beats 99.76% JS Submissions.
             This method is better performance wise since in this case, we simply work in O(n) and single pass. This is cool because we just go on from left to right OR right to left and then construct the answer.
+            Runtime: O(n)
+            Space: O(1)
 
  */
 

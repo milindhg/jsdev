@@ -1,4 +1,8 @@
-/* Implement pow(x, n), which calculates x raised to the power n (xn).
+/*
+
+https://leetcode.com/problems/powx-n/
+
+Implement pow(x, n), which calculates x raised to the power n (xn).
 
 Example 1:
 
@@ -32,39 +36,39 @@ Solution:   https://leetcode.com/submissions/detail/217288010/ beats 92.21% of J
  * @param {number} n
  * @return {number}
  */
-var myPow = function(x, n) {
+var myPow = function (x, n) {
     var ans;
-    if(n<0){
-        ans = 1/myPowHelper(x, -n);
-    }else{
+    if (n < 0) {
+        ans = 1 / myPowHelper(x, -n);
+    } else {
         ans = myPowHelper(x, n);
     }
     return ans;
 };
 
-var myPowHelper = function(x, n){
-    if(n==0)
+var myPowHelper = function (x, n) {
+    if (n == 0)
         return 1;
-    if(n==1)
+    if (n == 1)
         return x;
-    if(n%2==0){
-        var myPowEven = myPowHelper(x, n/2);
+    if (n % 2 == 0) {
+        var myPowEven = myPowHelper(x, n / 2);
         return myPowEven * myPowEven;
     }
-    else{
-        return myPowHelper(x, n-1) * x;
+    else {
+        return myPowHelper(x, n - 1) * x;
     }
-        
+
 
 }
 
-var main = function(){
+var main = function () {
     var ans = myPow(2.00000, 10);
-    console.log(ans + ' ' + ((ans==1024.00000) ? 'Correct' : 'Incorrect'));
+    console.log(ans + ' ' + ((ans == 1024.00000) ? 'Correct' : 'Incorrect'));
     var ans = myPow(2.10000, 3);
-    console.log(ans + ' ' + ((ans==9.26100) ? 'Correct' : 'Incorrect'));
+    console.log(ans + ' ' + ((ans == 9.26100) ? 'Correct' : 'Incorrect'));
     var ans = myPow(2.00000, -2);
-    console.log(ans + ' ' + ((ans==0.25000) ? 'Correct' : 'Incorrect'));
+    console.log(ans + ' ' + ((ans == 0.25000) ? 'Correct' : 'Incorrect'));
 };
 
 main();

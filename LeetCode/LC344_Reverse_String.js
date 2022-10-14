@@ -9,6 +9,8 @@ Solution:   https://leetcode.com/submissions/detail/93616598/
             Very easy and efficient with 2 pointers. 
             1 from start and 1 from end. 
             Keep swapping numbers till the middle of the string.
+            Runtime: O(n)
+            Space: O(1)
 */
 
 /**
@@ -28,3 +30,10 @@ var reverseString = function (s) {
     }
     return chararray.join('');
 };
+
+
+let main = () => {
+    console.log(reverseString("Hello"));
+};
+
+main();

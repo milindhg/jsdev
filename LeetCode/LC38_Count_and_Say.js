@@ -12,7 +12,7 @@ Note: The sequence of integers will be represented as a string.
 
 */
 /*
-Solution:   https:// leetcode.com/submissions/detail/77985323/
+Solution:   https://leetcode.com/submissions/detail/77985323/
             Solution is basically to go over each character digit, count it and prepare an answer to be given back.
             Do this literally for each digit in the given input. Keep counting till the digit does not change. When digit changes, append count and digit to the output answer.
 */

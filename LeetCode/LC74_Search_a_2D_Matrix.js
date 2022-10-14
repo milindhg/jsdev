@@ -26,7 +26,7 @@ matrix = [
 target = 13
 Output: false
 
-Solution:    https://leetcode.com/submissions/detail/322380463/ beats 97.13% JS Submissions.
+Solution:   https://leetcode.com/submissions/detail/322380463/ beats 97.13% JS Submissions.
 
  */
 

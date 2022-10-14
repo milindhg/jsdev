@@ -12,6 +12,11 @@ Solution:   https://leetcode.com/submissions/detail/711610080/ - beats 96.15% in
             You will realize that they form the fibonacci pattern.
             This is basically following a fibonacci pattern. So you can write fibonacci program with memoization to avoid recalculation of steps already done and reduce run-time.
 
+            basic fibonacci problem runtime
+            https://leetcode.com/submissions/detail/816974850/  beats 96.78% JS Submissions
+            Runtime: O(n)
+            Space: O(n)
+
 Another good explanation here: https://leetcode.com/problems/climbing-stairs/solution/#approach-3-dynamic-programming-accepted
 Good youtube video here - https://www.youtube.com/watch?v=Y0lT9Fck7qI
 
@@ -21,7 +26,7 @@ Good youtube video here - https://www.youtube.com/watch?v=Y0lT9Fck7qI
  * @param {number} n
  * @return {number}
  */
-var climbStairs = function (n) {
+var climbStairsRecursive = function (n) {
     var arr = [];
     var i = 0;
     //prepare an array of length n
@@ -47,9 +52,22 @@ var climbFib = function (n, arr) {
     }
 };
 
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairsIterative = function (n) {
+    let stairsWays = [1, 1];
+    for (let i = 2; i <= n; i++) {
+        stairsWays.push(stairsWays[i - 1] + stairsWays[i - 2]);
+    }
+    return stairsWays[n];
+};
+
 var main = function () {
     var n = 5;
-    console.log(climbStairs(n));
+    console.log(climbStairsRecursive(n));
+    console.log(climbStairsIterative(n));
 };
 
 main();

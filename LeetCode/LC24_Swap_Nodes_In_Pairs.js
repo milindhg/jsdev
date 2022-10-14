@@ -15,9 +15,12 @@
     this.next = null;
 } */
 
-var List = require('../Utilities/LinkedList');
-var ListNode = require('../Utilities/LinkedList');
 
+
+//https://leetcode.com/submissions/detail/328518272/ beats 99.83% JS Submissions
+//Runtime: O(n)
+//Space: O(1)
+//Iterative approach: have 2 pointers, trav and prev to track current traversal node and previous node.
 /**
  * @param {ListNode} head
  * @return {ListNode}
@@ -49,6 +52,12 @@ var swap = function (prev, node1, node2) {
     return node2;
 };
 
+//https://leetcode.com/submissions/detail/811131731/ beats 97.82% JS Submissions
+//Runtime: O(n)
+//Space: O(stack space)
+//Recursive approach: Work from base case, 
+//  if 1 node return the node
+//  if 2 nodes, swap the nodes and return the new head amongst the 2 nodes
 var swapPairsRecursive = function (head) {
     if (head == null || head.next == null) {
         return head;
@@ -61,16 +70,16 @@ var swapPairsRecursiveHelper = function (head) {
     if (head == null || head.next == null) {
         return head;
     }
-    var n = head.next;
-    head.next = swapPairsRecursiveHelper(head.next.next);
-    n.next = head;
-    return n;
+    var toBeHead = head.next;
+    head.next = swapPairsRecursiveHelper(toBeHead.next);
+    toBeHead.next = head;
+    return toBeHead;
 }
 
 var main = function () {
-    
+    var List = require('../Utilities/LinkedList');
     var nums = [];
-    nums = [ 1, 2, 3, 4 ];
+    nums = [1, 2, 3, 4];
     var head = List.prototype.constructList(nums);
     List.prototype.printList(head);
     head = swapPairs(head);
@@ -79,6 +88,35 @@ var main = function () {
     List.prototype.printList(head);
     head = swapPairsRecursive(head);
     List.prototype.printList(head);
+    nums = [1, 2, 3];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
+    nums = [];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
+    nums = [1];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
+    nums = [1, 2];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
+    nums = [1, 2, 3, 4, 5, 6, 7, 8];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
+    List.prototype.printList(head);
+    nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    head = List.prototype.constructList(nums);
+    List.prototype.printList(head);
+    head = swapPairsRecursive(head);
 }
 
 main();

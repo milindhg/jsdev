@@ -12,8 +12,9 @@ Output: index1=1, index2=2
 */
 
 /*
-Solution: Keep 2 pointers at start and end. Then then meet in the middle while summing the numbers at 2 indices and comparing to the target sum.
-https://leetcode.com/submissions/detail/109272607/ : Beats 69.43% of JS submissions.
+Solution: https://leetcode.com/submissions/detail/817561509/ : Beats 80.37% of JS submissions.
+Keep 2 pointers at start and end. Then then meet in the middle while summing the numbers at 2 indices and comparing to the target sum.
+
 */
 
 /**
@@ -31,13 +32,13 @@ var twoSum = function (numbers, target) {
         } else if (sum > target) {
             j--;
         } else {
-            return [ i + 1, j + 1 ];
+            return [i + 1, j + 1];
         }
     }
 };
 
 var main = function () {
-    var numbers = [ 2, 7, 11, 15 ];
+    var numbers = [2, 7, 11, 15];
     var target = 9;
     console.log(twoSum(numbers, target));
 };

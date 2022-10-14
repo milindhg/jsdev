@@ -18,6 +18,9 @@ Solution:   https://leetcode.com/submissions/detail/79619191/
             keep 2 pointers. Fast to go till n from front.
             then fast and slow move together untill fast reaches end of list. Automatically that slow pointer is at n from end of list.
             Remove the element, slow pointer is pointing to. We get the updated LinkList.
+
+            Runtime: O(n)
+            Space: O(1)
             
 */
 
@@ -74,15 +77,15 @@ var removeNthFromEnd = function (head, n) {
 
 
 var main = function () {
-    var nums = [ 1,2,3,4,5 ];
+    var nums = [1, 2, 3, 4, 5];
     var l1 = List.prototype.constructList(nums);
     List.prototype.printList(l1);
-    l1 = removeNthFromEnd(l1,2);
+    l1 = removeNthFromEnd(l1, 2);
     List.prototype.printList(l1);
-    nums = [11,22];
+    nums = [11, 22];
     l1 = List.prototype.constructList(nums);
     List.prototype.printList(l1);
-    l1 = removeNthFromEnd(l1,2);
+    l1 = removeNthFromEnd(l1, 2);
     List.prototype.printList(l1);
 };
 

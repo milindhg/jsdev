@@ -27,123 +27,116 @@ Solution:   https://leetcode.com/submissions/detail/184957261/  beats 26% JS SUb
             ALSO think about filling the spiral from inside to outside... :D
  */
 
- /**
- * @param {number} n
- * @return {number[][]}
- */
-var generateMatrix = function(n) {
+/**
+* @param {number} n
+* @return {number[][]}
+*/
+var generateMatrix = function (n) {
     var rowStart = 0;
-    var rowEnd = n-1;
+    var rowEnd = n - 1;
     var colStart = 0;
-    var colEnd = n-1;
-    var num=1;
+    var colEnd = n - 1;
+    var num = 1;
     var ansarr = [];
-    for(var i=0; i<n; i++){
+    for (var i = 0; i < n; i++) {
         var tempArr = [];
-        for(var j=0; j<n; j++){
+        for (var j = 0; j < n; j++) {
             tempArr.push('$');
         }
         ansarr.push(tempArr);
     }
-    while(rowStart<=rowEnd && colStart<=colEnd){
-        var i=rowStart;
-        var j=colStart
-        for(j=colStart; j<=colEnd; j++){
-            ansarr[i][j]=num++;
+    while (rowStart <= rowEnd && colStart <= colEnd) {
+        var i = rowStart;
+        var j = colStart
+        for (j = colStart; j <= colEnd; j++) {
+            ansarr[i][j] = num++;
         }
         j--;
-        
         rowStart++;
 
-        for(i=rowStart; i<=rowEnd; i++){
+        for (i = rowStart; i <= rowEnd; i++) {
             ansarr[i][j] = num++;
         }
         i--;
-        
         colEnd--;
-        
-        for(j=colEnd; j>=colStart; j--){
+
+        for (j = colEnd; j >= colStart; j--) {
             ansarr[i][j] = num++;
         }
         j++
-        
         rowEnd--;
-        
-        for(i=rowEnd; i>=rowStart; i--){
+
+        for (i = rowEnd; i >= rowStart; i--) {
             ansarr[i][j] = num++;
         }
         i++
-        
         colStart++;
 
     }
-    
+
     return ansarr;
 };
 
- /**
- * @param {number} n
- * @return {number[][]}
- */
-var generateMatrixBetter = function(n) {
+/**
+* @param {number} n
+* @return {number[][]}
+*/
+var generateMatrixBetter = function (n) {
     var rowStart = 0;
-    var rowEnd = n-1;
+    var rowEnd = n - 1;
     var colStart = 0;
-    var colEnd = n-1;
-    var num=1;
+    var colEnd = n - 1;
+    var num = 1;
     var ansarr = [];
 
-    while(rowStart<=rowEnd && colStart<=colEnd){
-        var i=rowStart;
-        var j=colStart
-        for(j=colStart; j<=colEnd; j++){
-            if(!ansarr[i]) ansarr[i] = [];
-            ansarr[i][j]=num++;
+    while (rowStart <= rowEnd && colStart <= colEnd) {
+        var i = rowStart;
+        var j = colStart
+        for (j = colStart; j <= colEnd; j++) {
+            if (!ansarr[i]) ansarr[i] = [];
+            ansarr[i][j] = num++;
         }
         j--;
-        
         rowStart++;
 
-        for(i=rowStart; i<=rowEnd; i++){
-            if(!ansarr[i]) ansarr[i] = [];
+        for (i = rowStart; i <= rowEnd; i++) {
+            if (!ansarr[i]) ansarr[i] = [];
             ansarr[i][j] = num++;
         }
         i--;
-        
         colEnd--;
-        
-        for(j=colEnd; j>=colStart; j--){
-            if(!ansarr[i]) ansarr[i] = [];
+
+        for (j = colEnd; j >= colStart; j--) {
+            if (!ansarr[i]) ansarr[i] = [];
             ansarr[i][j] = num++;
         }
         j++
-        
         rowEnd--;
-        
-        for(i=rowEnd; i>=rowStart; i--){
-            if(!ansarr[i]) ansarr[i] = [];
+
+        for (i = rowEnd; i >= rowStart; i--) {
+            if (!ansarr[i]) ansarr[i] = [];
             ansarr[i][j] = num++;
         }
         i++
-        
+
         colStart++;
 
     }
-    
+
     return ansarr;
 };
 
 
-var main = function(){
+var main = function () {
     var arr = generateMatrix(3);
     printArr(arr);
     var arr = generateMatrixBetter(3);
     printArr(arr);
 };
 
-var printArr = function(arr){
-    for(var i =0; i<arr.length; i++){
-        for(var j=0; j<arr.length; j++)
+var printArr = function (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++)
             console.log(" " + arr[i][j]);
     }
 };

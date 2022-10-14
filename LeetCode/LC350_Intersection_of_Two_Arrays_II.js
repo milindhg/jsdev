@@ -17,6 +17,8 @@ What if elements of nums2 are stored on disk, and the memory is limited such tha
 /*
 Solution:   https:// leetcode.com/submissions/detail/83274124/
             The solution is very easy with a hashmap with the number from array as key and the number of times it is found as the value.
+            Runtime: O(m+n)
+            Space: O(n)
 */
 
 /**
@@ -26,7 +28,7 @@ Solution:   https:// leetcode.com/submissions/detail/83274124/
  */
 var intersect = function (nums1, nums2) {
     hm = {};
-    for ( var i in nums1) {
+    for (var i in nums1) {
         if (hm[nums1[i]]) {
             hm[nums1[i]] = hm[nums1[i]] + 1;
         } else {
@@ -35,7 +37,7 @@ var intersect = function (nums1, nums2) {
     }
 
     var ans = [];
-    for ( var j in nums2) {
+    for (var j in nums2) {
         if (hm[nums2[j]] >= 1) {
             hm[nums2[j]] = hm[nums2[j]] - 1;
             ans.push(nums2[j]);
@@ -46,8 +48,8 @@ var intersect = function (nums1, nums2) {
 };
 
 var main = function () {
-    var nums1 = [ 1, 2, 2, 2, 1 ];
-    var nums2 = [ 2, 2, 2 ];
+    var nums1 = [1, 2, 2, 2, 1];
+    var nums2 = [2, 2, 2];
     console.log(intersect(nums1, nums2));
 };
 

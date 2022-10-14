@@ -14,6 +14,7 @@ https://leetcode.com/problems/rotate-array/#/description
 
 /*
 Solution:   beats 76.51% of js submissions: https://leetcode.com/submissions/detail/102679280/
+            The main constraint here is to do this in place.
             Basic crux of the solution is thinking it in terms of solving the problem of reversing the order of words in a sentence.
             So basically we take the k as the splitting point in the array to make this array into 2.
             Then reverse left half, reverse right half (both inplace)

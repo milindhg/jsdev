@@ -27,7 +27,7 @@ Solution:   https://leetcode.com/submissions/detail/130797836/  beats 56.44 % of
             Similarly if the matrix is 10X1, then there is only one way to reach the last row of the first column.
             Then just fill in the matrix and get the answer for the last row, last column as addition of the previous cell in row and column.
 
-*/            
+*/
 
 /**
  * @param {number} m
@@ -96,39 +96,46 @@ var printArray = function (arr, m, n) {
  * @param {number} n
  * @return {number}
  */
-var uniquePathsEasy = function(m,n){
+var uniquePathsEasy = function (m, n) {
     var mat = [];
-    for(var i=0; i<m; i++){
+    //initialize memoization matrix with 0
+    for (var i = 0; i < m; i++) {
         var temp = [];
-        for(var j=0; j<n; j++)
+        for (var j = 0; j < n; j++)
             temp.push(0);
         mat.push(temp);
     }
 
     // console.log(mat);
-    for(var i=0; i<m; i++)
-        mat[i][0]=1;
+    for (var i = 0; i < m; i++)
+        mat[i][0] = 1;
 
-    for(var j=0; j<n; j++)
-        mat[0][j]=1;
-        
-    for(var i=1; i<m; i++)
-        for(var j=1; j<n; j++)
-            mat[i][j] = mat[i-1][j] + mat[i][j-1];
-    
-    return mat[m-1][n-1];
+    for (var j = 0; j < n; j++)
+        mat[0][j] = 1;
 
-};
+    for (var i = 1; i < m; i++)
+        for (var j = 1; j < n; j++)
+            mat[i][j] = mat[i - 1][j] + mat[i][j - 1];
 
-var findPathEasy = function(m,n){
+    return mat[m - 1][n - 1];
 
 };
 
 var main = function () {
     var m = 3;
     var n = 5;
-    console.log(uniquePaths(m, n, 0, 0));
-    uniquePathsEasy(m,n);
+    // console.log(uniquePaths(m, n));
+    console.log(uniquePathsEasy(m, n));
+
+    m = 3;
+    n = 7;
+    // console.log(uniquePaths(m, n));
+    console.log(uniquePathsEasy(m, n));
+
+    m = 3;
+    n = 2;
+    // console.log(uniquePaths(m, n));
+    console.log(uniquePathsEasy(m, n));
 };
 
 var printDebug = function (msg) {
@@ -136,7 +143,7 @@ var printDebug = function (msg) {
 };
 
 var printArrayDebug = function (arr, m, n) {
-    printArray(arr,m,n);
+    printArray(arr, m, n);
 }
 
 main();

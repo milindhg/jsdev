@@ -96,24 +96,26 @@ var insert = function (intervals, newInterval) {
  */
 var insert = function (intervals, newInterval) {
     const result = [];
+    const start = 0;
+    const end = 0;
 
     for (let i = 0; i < intervals.length; i++) {
-        let interval = intervals[i];
+        let currInterval = intervals[i];
 
         // If overlaps
-        if (Math.max(interval[0], newInterval[0]) <= Math.min(interval[1], newInterval[1])) {
-            newInterval = [Math.min(interval[0], newInterval[0]), Math.max(interval[1], newInterval[1])];
+        if (Math.max(currInterval[start], newInterval[start]) <= Math.min(currInterval[end], newInterval[end])) {
+            newInterval = [Math.min(currInterval[start], newInterval[start]), Math.max(currInterval[end], newInterval[end])];
             continue;
         }
 
         // If newInterval slot is lower than the current interval slot then insert newInterval in between
-        if (interval[0] > newInterval[1]) {
-            result.push(newInterval, ...intervals.slice(i));
+        if (newInterval[end] < currInterval[start]) {
+            result.push(newInterval, ...intervals.slice(i));  //inject newInterval before remaining intervals and then push remaining intervals. All in one function using slice and push.
             return result;
         }
 
         //Keep pushing current interval in answer since newInterval does not overlap and is coming later.
-        result.push(interval);
+        result.push(currInterval);
     }
 
     result.push(newInterval);
